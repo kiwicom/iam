@@ -5,7 +5,7 @@ import (
 	"net/http"
 
 	"github.com/getsentry/raven-go"
-	"gitlab.skypicker.com/platform/security/iam/api"
+	"github.com/iam/api"
 )
 
 // panicHandler prevents the server crashing due to unhandled panics

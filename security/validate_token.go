@@ -3,7 +3,7 @@ package security
 import (
 	"errors"
 
-	"gitlab.skypicker.com/platform/security/iam/security/secrets"
+	"github.com/iam/security/secrets"
 )
 
 var (

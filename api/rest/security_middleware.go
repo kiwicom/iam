@@ -6,10 +6,10 @@ import (
 
 	"github.com/julienschmidt/httprouter"
 
-	"gitlab.skypicker.com/platform/security/iam/api"
-	"gitlab.skypicker.com/platform/security/iam/monitoring"
-	"gitlab.skypicker.com/platform/security/iam/security"
-	"gitlab.skypicker.com/platform/security/iam/security/secrets"
+	"github.com/iam/api"
+	"github.com/iam/monitoring"
+	"github.com/iam/security"
+	"github.com/iam/security/secrets"
 	"gopkg.in/DataDog/dd-trace-go.v1/ddtrace/tracer"
 )
 

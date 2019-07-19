@@ -4,10 +4,10 @@ import (
 	"net/http"
 	"strings"
 
+	"github.com/iam/monitoring"
+	"github.com/iam/security/secrets"
+	"github.com/iam/services/okta"
 	"github.com/julienschmidt/httprouter"
-	"gitlab.skypicker.com/platform/security/iam/monitoring"
-	"gitlab.skypicker.com/platform/security/iam/security/secrets"
-	"gitlab.skypicker.com/platform/security/iam/services/okta"
 	tracingRouter "gopkg.in/DataDog/dd-trace-go.v1/contrib/julienschmidt/httprouter"
 )
 

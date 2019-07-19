@@ -6,14 +6,14 @@ import (
 	"net/http"
 	"time"
 
-	grpcAPI "gitlab.skypicker.com/platform/security/iam/api/grpc"
-	pb "gitlab.skypicker.com/platform/security/iam/api/grpc/v1"
-	restAPI "gitlab.skypicker.com/platform/security/iam/api/rest"
-	cfg "gitlab.skypicker.com/platform/security/iam/config"
-	"gitlab.skypicker.com/platform/security/iam/monitoring"
-	"gitlab.skypicker.com/platform/security/iam/security/secrets"
-	"gitlab.skypicker.com/platform/security/iam/services/okta"
-	"gitlab.skypicker.com/platform/security/iam/storage"
+	grpcAPI "github.com/iam/api/grpc"
+	pb "github.com/iam/api/grpc/v1"
+	restAPI "github.com/iam/api/rest"
+	cfg "github.com/iam/config"
+	"github.com/iam/monitoring"
+	"github.com/iam/security/secrets"
+	"github.com/iam/services/okta"
+	"github.com/iam/storage"
 
 	"github.com/getsentry/raven-go"
 	// AppEngine is added manually due to issues with go.mod

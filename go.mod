@@ -1,4 +1,4 @@
-module gitlab.skypicker.com/platform/security/iam
+module github.com/iam
 
 go 1.12
 

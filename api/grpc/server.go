@@ -5,8 +5,8 @@ import (
 	"errors"
 	"strconv"
 
-	pb "gitlab.skypicker.com/platform/security/iam/api/grpc/v1"
-	"gitlab.skypicker.com/platform/security/iam/services/okta"
+	pb "github.com/iam/api/grpc/v1"
+	"github.com/iam/services/okta"
 )
 
 type userDataService interface {

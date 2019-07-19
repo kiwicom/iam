@@ -6,9 +6,9 @@ import (
 	"strings"
 	"time"
 
-	cfg "gitlab.skypicker.com/platform/security/iam/config"
-	"gitlab.skypicker.com/platform/security/iam/monitoring"
-	"gitlab.skypicker.com/platform/security/iam/storage"
+	cfg "github.com/iam/config"
+	"github.com/iam/monitoring"
+	"github.com/iam/storage"
 
 	"github.com/getsentry/raven-go"
 )

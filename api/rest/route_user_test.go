@@ -10,8 +10,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 
-	"gitlab.skypicker.com/platform/security/iam/monitoring"
-	"gitlab.skypicker.com/platform/security/iam/services/okta"
+	"github.com/iam/monitoring"
+	"github.com/iam/services/okta"
 )
 
 var testUser = okta.User{

@@ -5,9 +5,9 @@ import (
 	"net/http"
 	"testing"
 
+	"github.com/iam/security/secrets"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
-	"gitlab.skypicker.com/platform/security/iam/security/secrets"
 )
 
 type mockedSecretManager struct {

@@ -3,8 +3,8 @@ package okta
 import (
 	"testing"
 
+	"github.com/iam/storage"
 	"github.com/stretchr/testify/assert"
-	"gitlab.skypicker.com/platform/security/iam/storage"
 )
 
 func TestGroupMemberships(t *testing.T) {

@@ -4,8 +4,8 @@ import (
 	"context"
 	"log"
 
-	"gitlab.skypicker.com/platform/security/iam/security"
-	"gitlab.skypicker.com/platform/security/iam/security/secrets"
+	"github.com/iam/security"
+	"github.com/iam/security/secrets"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"

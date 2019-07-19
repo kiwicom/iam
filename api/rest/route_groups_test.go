@@ -6,11 +6,11 @@ import (
 	"net/http/httptest"
 	"testing"
 
+	"github.com/iam/services/okta"
+	"github.com/iam/storage"
 	"github.com/julienschmidt/httprouter"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
-	"gitlab.skypicker.com/platform/security/iam/services/okta"
-	"gitlab.skypicker.com/platform/security/iam/storage"
 )
 
 type mockGroupsGetter struct {

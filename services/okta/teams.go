@@ -3,7 +3,7 @@ package okta
 import (
 	"time"
 
-	cfg "gitlab.skypicker.com/platform/security/iam/config"
+	cfg "github.com/iam/config"
 )
 
 type cache interface {

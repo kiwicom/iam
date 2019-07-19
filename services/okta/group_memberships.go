@@ -6,8 +6,8 @@ import (
 	"strings"
 
 	"github.com/getsentry/raven-go"
-	cfg "gitlab.skypicker.com/platform/security/iam/config"
-	"gitlab.skypicker.com/platform/security/iam/storage"
+	cfg "github.com/iam/config"
+	"github.com/iam/storage"
 )
 
 // GroupMembership holds the current user ids for users who are part of a given group
