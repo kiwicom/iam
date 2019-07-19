@@ -1,0 +1,60 @@
+kind: pipeline
+name: default
+
+steps:
+  # Test stage
+  - name: test
+    image: golang
+    volumes: &deps-volume
+      - name: deps
+        path: /go
+    commands:
+      - make test/ci
+    when:
+      event: [pull_request]
+    depends_on: [clone]
+
+  - name: e2e_tests
+    image: docker:dind
+    volumes:
+      - name: dockersock
+        path: /var/run
+    commands:
+      - sleep 5 # give docker enough time to start
+      - touch .env.yaml
+      - apk add --no-cache make py-pip git
+      - pip install --quiet docker-compose==1.23
+      - make e2e
+      - make e2e/env-stop
+    when:
+      event: [pull_request]
+    depends_on: [clone]
+
+  - name: e2e_tests/nocache
+    image: docker:dind
+    volumes:
+      - name: dockersock
+        path: /var/run
+    commands:
+      - sleep 5 # give docker enough time to start
+      - touch .env.yaml
+      - apk add --no-cache make py-pip git
+      - pip install --quiet docker-compose==1.23
+      - REDIS_HOST=nocache make e2e
+      - make e2e/env-stop
+    when:
+      event: [pull_request]
+    depends_on: [clone]
+
+services:
+  - name: docker
+    image: docker:dind
+    volumes:
+      - name: dockersock
+        path: /var/run
+
+volumes:
+  - name: deps
+    temp: {}
+  - name: dockersock
+    temp: {}
