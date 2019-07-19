@@ -1,5 +1,7 @@
 # Kiwi IAM
 
+[![Build Status](https://cloud.drone.io/api/badges/kiwicom/iam/status.svg)](https://cloud.drone.io/kiwicom/iam)
+
 ## Usage
 
 Create `.env.yaml` file and set environment variables. Check `.env-sample.yaml`
