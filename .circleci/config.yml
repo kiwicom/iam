@@ -1,0 +1,57 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: golang:1.12.7
+    steps:
+      - checkout
+      - run: make build
+
+  test:
+    docker:
+      - image: golang:1.12.7
+    steps:
+      - checkout
+      - run: make test/ci
+
+  e2e-tests:
+    docker:
+      - image: golang:1.12.7
+    steps:
+      - checkout
+      - run: |
+          curl -L https://github.com/docker/compose/releases/download/1.19.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+          chmod +x /usr/local/bin/docker-compose
+      - setup_remote_docker
+      - run: |
+          mkdir .well-known
+          touch .env.yaml .well-known/test.json
+          make e2e
+          make e2e/env-stop
+
+  e2e-tests/nocache:
+    docker:
+      - image: golang:1.12.7
+    steps:
+      - checkout
+      - run: |
+          curl -L https://github.com/docker/compose/releases/download/1.19.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+          chmod +x /usr/local/bin/docker-compose
+      - setup_remote_docker
+      - run: |
+          mkdir .well-known
+          touch .env.yaml .well-known/test.json
+          REDIS_HOST=nocache make e2e
+          make e2e/env-stop
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build
+  test:
+    jobs:
+      - test
+      - e2e-tests
+      - e2e-tests/nocache
