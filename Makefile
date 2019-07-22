@@ -52,7 +52,7 @@ endif
 lint: ## Runs golangci-lint. It outputs to the code-climate json file in if CI is defined.
 	$(call log_info, Running golangci-lint)
 ifndef GOLANGCI_LINT
-	@echo "Can\'t find executable of the golangci-lint. Make sure it is insatlled. See github.com\/golangci\/golangci-lint#install"
+	@echo "Can\'t find executable of the golangci-lint. Make sure it is installed. See github.com\/golangci\/golangci-lint#install"
 	@exit 1
 endif
 	golangci-lint run $(if $(CI),--out-format code-climate > gl-code-quality-report.json)
@@ -61,7 +61,7 @@ endif
 coala:
 	docker run -v "$(shell pwd)":/app -v /tmp/coala-cache:/cache --workdir=/app coala/base:0.11 coala -a -n -j 4
 
--include ./tests/e2e/e2e.mk
+-include ./test/e2e/e2e.mk
 
 proto:
 	protoc --go_out=plugins=grpc:. ./api/grpc/v1/iam.proto

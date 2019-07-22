@@ -6,16 +6,16 @@ import (
 	"net/http"
 	"time"
 
+	"github.com/getsentry/raven-go"
 	grpcAPI "github.com/iam/api/grpc"
 	pb "github.com/iam/api/grpc/v1"
 	restAPI "github.com/iam/api/rest"
-	cfg "github.com/iam/config"
-	"github.com/iam/monitoring"
-	"github.com/iam/security/secrets"
-	"github.com/iam/services/okta"
-	"github.com/iam/storage"
+	cfg "github.com/iam/configs"
+	"github.com/iam/internal/monitoring"
+	"github.com/iam/internal/security/secrets"
+	"github.com/iam/internal/services/okta"
+	"github.com/iam/internal/storage"
 
-	"github.com/getsentry/raven-go"
 	// AppEngine is added manually due to issues with go.mod
 	// https://skypicker.slack.com/archives/CA154LA5T/p1560781760024700
 	_ "google.golang.org/appengine"

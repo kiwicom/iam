@@ -6,8 +6,8 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/iam/services/okta"
-	"github.com/iam/storage"
+	"github.com/iam/internal/services/okta"
+	"github.com/iam/internal/storage"
 	"github.com/julienschmidt/httprouter"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"

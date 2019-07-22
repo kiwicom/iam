@@ -6,8 +6,8 @@ import (
 	"time"
 
 	"github.com/getsentry/raven-go"
-	cfg "github.com/iam/config"
-	"github.com/iam/storage"
+	cfg "github.com/iam/configs"
+	"github.com/iam/internal/storage"
 )
 
 const iamGroupPrefix = "iam-"

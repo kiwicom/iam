@@ -13,7 +13,7 @@ WORKDIR /app
 COPY --from=builder /app/main ./main
 COPY --from=builder /app/.env.yaml .env.yaml
 COPY --from=builder /app/.well-known .well-known/
-COPY --from=builder /app/config config/
+COPY --from=builder /app/configs config/
 EXPOSE 8080 8090
 
 USER nobody

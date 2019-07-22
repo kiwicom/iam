@@ -6,7 +6,7 @@ import (
 	"strconv"
 
 	pb "github.com/iam/api/grpc/v1"
-	"github.com/iam/services/okta"
+	"github.com/iam/internal/services/okta"
 )
 
 type userDataService interface {

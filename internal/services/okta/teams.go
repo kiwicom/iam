@@ -3,7 +3,7 @@ package okta
 import (
 	"time"
 
-	cfg "github.com/iam/config"
+	cfg "github.com/iam/configs"
 )
 
 type cache interface {

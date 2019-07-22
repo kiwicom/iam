@@ -9,7 +9,7 @@ import (
 	"path"
 	"time"
 
-	"github.com/iam/monitoring"
+	"github.com/iam/internal/monitoring"
 	jsoniter "github.com/json-iterator/go"
 )
 

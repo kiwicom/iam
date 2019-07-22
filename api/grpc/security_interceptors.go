@@ -4,8 +4,9 @@ import (
 	"context"
 	"log"
 
-	"github.com/iam/security"
-	"github.com/iam/security/secrets"
+	"github.com/iam/internal/security"
+	"github.com/iam/internal/security/secrets"
+
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"

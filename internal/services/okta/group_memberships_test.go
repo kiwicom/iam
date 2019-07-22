@@ -3,7 +3,7 @@ package okta
 import (
 	"testing"
 
-	"github.com/iam/storage"
+	"github.com/iam/internal/storage"
 	"github.com/stretchr/testify/assert"
 )
 

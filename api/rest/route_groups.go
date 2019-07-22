@@ -5,8 +5,8 @@ import (
 	"net/http"
 
 	"github.com/getsentry/raven-go"
-	"github.com/iam/services/okta"
-	"github.com/iam/storage"
+	"github.com/iam/internal/services/okta"
+	"github.com/iam/internal/storage"
 	"github.com/julienschmidt/httprouter"
 )
 

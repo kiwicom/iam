@@ -4,12 +4,11 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/julienschmidt/httprouter"
-
 	"github.com/iam/api"
-	"github.com/iam/monitoring"
-	"github.com/iam/security"
-	"github.com/iam/security/secrets"
+	"github.com/iam/internal/monitoring"
+	"github.com/iam/internal/security"
+	"github.com/iam/internal/security/secrets"
+	"github.com/julienschmidt/httprouter"
 	"gopkg.in/DataDog/dd-trace-go.v1/ddtrace/tracer"
 )
 

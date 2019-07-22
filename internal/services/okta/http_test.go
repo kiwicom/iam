@@ -6,7 +6,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	cfg "github.com/iam/config"
+	cfg "github.com/iam/configs"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
