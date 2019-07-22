@@ -72,7 +72,6 @@ func defaultFetcher(userAgent string, metrics *monitoring.Metrics) func(req Requ
 		if err != nil {
 			return nil, err
 		}
-
 		return &Response{httpRes}, nil
 	}
 }

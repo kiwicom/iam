@@ -20,36 +20,13 @@ func InitEnv() {
 	// viper.Unmarshal doesn't retrieve environment variables, unless they have a
 	// default value, or they are specified on .env.yaml. So to make sure all envs
 	// are retrieved, we set all defaults here.
-	viper.SetDefault("PORT", "8080")
-	viper.SetDefault("GRPC_PORT", "8090")
-	viper.SetDefault("SERVE_PATH", "/")
-	// Environment used for sentry, user agent, datadog. Removes user syncing if set to dev.
-	viper.SetDefault("APP_ENV", "")
-	// Uses localhost intead of 0.0.0.0, useful for OSX.
-	viper.SetDefault("USE_LOCALHOST", false)
+	setDefaults()
+}
 
-	// This is only used locally, when deployed, IAM fetches the token from Vault.
-	viper.SetDefault("OKTA_TOKEN", "")
-	viper.SetDefault("OKTA_URL", "")
-
-	viper.SetDefault("REDIS_HOST", "localhost")
-	viper.SetDefault("REDIS_PORT", "6379")
-	viper.SetDefault("REDIS_LOCK_RETRY_DELAY", "1s")
-	viper.SetDefault("REDIS_LOCK_EXPIRATION", "5s")
-
-	viper.SetDefault("SENTRY_DSN", "")
-	// This value should NEVER be set manually. It's generated during docker build,
-	// and it's used to track the version of the app. Useful for user agent
-	// generation, and for finding regressions on Sentry.
-	viper.SetDefault("SENTRY_RELEASE", "")
-
-	// Env is taken from APP_ENV.
-	viper.SetDefault("DATADOG_ADDR", "")
-	viper.SetDefault("DD_AGENT_HOST", "")
-
-	viper.SetDefault("VAULT_ADDR", "")
-	viper.SetDefault("VAULT_TOKEN", "")
-	viper.SetDefault("VAULT_NAMESPACE", "")
+func setDefaults() {
+	for k, v := range defaultValues {
+		viper.SetDefault(k, v)
+	}
 }
 
 // LoadConfigs loads environment variables into provided configStructs pointers.
@@ -107,4 +84,33 @@ type VaultConfig struct {
 	Token     string `mapstructure:"VAULT_TOKEN"`
 	Address   string `mapstructure:"VAULT_ADDR"`
 	Namespace string `mapstructure:"VAULT_NAMESPACE"`
+}
+
+var defaultValues = map[string]interface{}{
+	"PORT":       "8080",
+	"GRPC_PORT":  "8090",
+	"SERVE_PATH": "/",
+	// Environment used for sentry, user agent, datadog. Removes user syncing if set to dev.
+	"APP_ENV": "",
+	// Uses localhost intead of 0.0.0.0, useful for OSX.
+	"USE_LOCALHOST": false,
+	// The OKTA token and URL are only used locally, when deployed,
+	// IAM fetches the token from Vault.
+	"OKTA_TOKEN":             "",
+	"OKTA_URL":               "",
+	"REDIS_HOST":             "localhost",
+	"REDIS_PORT":             "6379",
+	"REDIS_LOCK_RETRY_DELAY": "1s",
+	"REDIS_LOCK_EXPIRATION":  "5s",
+	"SENTRY_DSN":             "",
+	// The SENTRY_RELEASE value should NEVER be set manually. It's generated during docker build,
+	// and it's used to track the version of the app. Useful for user agent
+	// generation, and for finding regressions on Sentry.
+	"SENTRY_RELEASE": "",
+	// Env is taken from APP_ENV.
+	"DATADOG_ADDR":    "",
+	"DD_AGENT_HOST":   "",
+	"VAULT_ADDR":      "",
+	"VAULT_TOKEN":     "",
+	"VAULT_NAMESPACE": "",
 }
