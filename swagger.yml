@@ -1,0 +1,164 @@
+---
+openapi: 3.0.0
+info:
+  description: Application for handling authorization rules in Kiwi
+  title: Kiwi IAM
+  version: 1.0.0
+components:
+  securitySchemes:
+    bearerAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: "UUID token in a request header."
+    userAgent:
+      type: apiKey
+      in: header
+      name: UserAgent
+      description: "User agent of your app in the format `Service/version (Kiwi.com environment)`"
+  schemas:
+    error:
+      type: object
+      required:
+        - message
+      properties:
+        code:
+          type: integer
+          format: int64
+        message:
+          type: string
+    user:
+      description: Single user object
+      type: object
+      properties:
+        employeeNumber:
+          description: employeeNumber in Okta
+          type: integer
+        firstName:
+          description: firstName in Okta
+          type: string
+        lastName:
+          description: lastName in Okta
+          type: string
+        position:
+          description: kb_jobPosition in Okta
+          type: string
+        department:
+          description: department
+          type: string
+        location:
+          description: kb_place_of_work in Okta
+          type: string
+        isVendor:
+          description: kb_is_vendor in Okta
+          type: boolean
+        teamMembership:
+          description: kb_team_membership in Okta
+          type: array
+          items:
+            type: string
+        manager:
+          description: manager in Okta
+          type: string
+        permissions:
+          description: Permissions from Kiwi IAM
+          type: array
+          items:
+            type: string
+      example:
+        employeeNumber: 1
+        firstName: Simon
+        lastName: The tester
+        position: Website destroyer
+        department: Devops
+        location: Prague, Mordor
+        isVendor: false
+        teamMembership: ["Engineering", "Engineering/CS Systems"]
+        manager: Satan
+        permissions: ["payment-cards:read", "comments:read", "comments:write"]
+    teams:
+      description: Team names and member count
+      type: object
+      additionalProperties:
+        description: Member count
+        type: number
+    groups:
+      description: Okta groups
+      type: array
+      items:
+        type: object
+        properties:
+          id:
+            type: string
+          name:
+            type: string
+          description:
+            type: string
+          lastMembershipUpdated:
+            type: string
+        example:
+          id: 00asdfghjkl5LI4PB0h7
+          name: Android
+          description: ""
+          lastMembershipUpdated: "2019-02-27T14:04:23Z"
+
+security:
+  - bearerAuth: []
+  - userAgent: []
+
+paths:
+  /v1/user:
+    get: &user
+      tags:
+        - Users
+      parameters:
+        - name: email
+          in: query
+          required: true
+          description: Email of user
+          schema:
+            type: string
+        - name: permissions
+          in: query
+          required: false
+          description: |
+            Whether the response will contain a list of permissions
+            for the user or not. In case it doesn't, the field will be omitted.
+          schema:
+            type: boolean
+            default: false
+      responses:
+        200:
+          description: User details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/user"
+        404:
+          description: User not found
+          content:
+            text/plain:
+              schema:
+                $ref: "#/components/schemas/error"
+  /v1/teams:
+    get:
+      tags:
+        - Teams
+      responses:
+        200:
+          description: All teams
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/teams"
+  /v1/groups:
+    get:
+      tags:
+        - Groups
+      responses:
+        200:
+          description: All Okta groups
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/groups"
