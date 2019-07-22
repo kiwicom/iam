@@ -47,12 +47,12 @@ GET <key>
 
 # Secret Manager
 
-This service uses Vault for syncing secrets to our app. The base path is `secret/governant`.
+This service uses Vault for syncing secrets to our app.
 
 The following structure is expected:
 
-- `secret/governant/{environment}/app_tokens`
-- `secret/governant/{environment}/settings`
+- `secret/{VAULT_NAMESPACE}/{environment}/app_tokens`
+- `secret/{VAULT_NAMESPACE}/{environment}/settings`
 
 ## Contributing
 
