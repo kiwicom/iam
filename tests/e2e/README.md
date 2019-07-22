@@ -4,11 +4,9 @@ These tests create the Kiwi IAM service and required services (Okta nginx, Redis
 
 ## Running locally
 
-When running locally it is important to first set up environment variables in your shell.
+To run e2e tests you will need to have `docker-compose` installed.
 
 ```sh
-export GITLAB_USERNAME=tester@kiwi.com
-export GITLAB_PASSWORD=your-access-token-from-gitlab
 make e2e
 ```
 
