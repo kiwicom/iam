@@ -1,7 +1,9 @@
 pull_request_rules:
   - name: automatic merge on CI success and review
     conditions:
-      - status-success=ci/circleci
+      - "status-success=ci/circleci: e2e-tests"
+      - "status-success=ci/circleci: nocache"
+      - "status-success=ci/circleci: test"
       - status-success=GolangCI
       - "#approved-reviews-by>=1"
     actions:
