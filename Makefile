@@ -62,11 +62,8 @@ endif
 coala:
 	docker run -v "$(shell pwd)":/app -v /tmp/coala-cache:/cache --workdir=/app coala/base:0.11 coala -a -n -j 4
 
--include ./test/e2e/e2e.mk
-
 proto:
 	protoc --go_out=plugins=grpc:. ./api/grpc/v1/iam.proto
 
-hugo:
-	# -D shows draft pages as well
-	hugo server www -D
+-include ./test/e2e/e2e.mk
+-include ./www/docs.mk
