@@ -11,9 +11,13 @@ RUN  apk add --no-cache --virtual=.run-deps ca-certificates &&\
 
 WORKDIR /app
 COPY --from=builder /app/main ./main
-COPY --from=builder /app/.env.yaml .env.yaml
-COPY --from=builder /app/.well-known .well-known/
-COPY --from=builder /app/configs config/
+
+# README.md is not used by the app, but is needed for COPY to not fail in case
+# .env.yaml or .well-known don't exist.
+COPY --from=builder /app/README.md /app/.env.yaml* ./
+COPY --from=builder /app/README.md /app/.well-known/* ./.well-known/
+RUN rm -f ./README.md ./.well-known/README.md
+
 EXPOSE 8080 8090
 
 USER nobody

@@ -26,7 +26,6 @@ jobs:
       - setup_remote_docker
       - run: |
           mkdir .well-known
-          touch .env.yaml .well-known/test.json
           make e2e
           make e2e/env-stop
 
@@ -41,7 +40,6 @@ jobs:
       - setup_remote_docker
       - run: |
           mkdir .well-known
-          touch .env.yaml .well-known/test.json
           REDIS_HOST=nocache make e2e
           make e2e/env-stop
 
