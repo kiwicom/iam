@@ -1,7 +1,13 @@
 FROM golang:1.12.7 as builder
 RUN mkdir /app
-COPY . /app/
 WORKDIR /app
+
+# This step is done separately than `COPY . /app/` in order to
+# cache dependencies.
+COPY go.mod go.sum Makefile /app/
+RUN make install_deps
+
+COPY . /app/
 ARG CI_COMMIT_SHORT_SHA
 RUN make build
 
