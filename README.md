@@ -59,3 +59,7 @@ The following structure is expected:
 - Run `make test/ci`, `make lint`, and [`make e2e`](tests/e2e/README.md) before pushing changes.
 - Commit messages should be at most 72 characters long.
 - Commit messages should start with the scope of the changes introduced by the commit.
+
+## Contributing to documentation
+
+Run `make hugo`. This will launch the hugo server for development.

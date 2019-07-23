@@ -4,6 +4,7 @@ install_deps:
 	go mod download
 	GO111MODULE=off go get github.com/cespare/reflex
 	GO111MODULE=off go get -u github.com/golang/protobuf/protoc-gen-go
+	curl -sfL https://install.goreleaser.com/github.com/gohugoio/hugo.sh | sh
 
 start:
 	go run cmd/main.go
@@ -65,3 +66,7 @@ coala:
 
 proto:
 	protoc --go_out=plugins=grpc:. ./api/grpc/v1/iam.proto
+
+hugo:
+	# -D shows draft pages as well
+	hugo server www -D

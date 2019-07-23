@@ -1,6 +1,9 @@
 .DS_Store
 .env.yaml
 
+### Hugo
+_gen
+
 ### GO
 
 # Binaries for programs and plugins

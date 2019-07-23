@@ -1,0 +1,5 @@
+baseURL = "https://kiwicom.github.io/iam/"
+languageCode = "en-us"
+title = "Kiwi IAM documentation"
+theme = "cupper-hugo-theme"
+sectionPagesMenu = "main"
