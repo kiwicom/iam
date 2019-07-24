@@ -43,6 +43,28 @@ jobs:
           REDIS_HOST=nocache make e2e
           make e2e/env-stop
 
+  publish/docs:
+    docker:
+      - image: cibuilds/hugo:latest
+    working_directory: ~/www
+    environment:
+      HUGO_BUILD_DIR: ~/www/public
+    branches:
+      only: master
+    steps:
+      - run: apk update && apk add git
+      - checkout
+      - run: git submodule sync && git submodule update --init
+      - run:
+          name: Set author of the commit
+          command: |
+            git config user.email "ci-build@kiwi.com"
+            git config user.name "ci-build"
+      - add_ssh_keys:
+          fingerprints:
+            - "9c:b5:0a:f1:d1:6f:49:34:d3:81:10:81:cd:cc:6c:d5"
+      - run: make publish
+
 workflows:
   version: 2
   build:
@@ -53,3 +75,10 @@ workflows:
       - test
       - e2e-tests
       - e2e-tests/nocache
+  deploy:
+    jobs:
+      - publish/docs:
+          filters:
+            branches:
+              only:
+                - master
