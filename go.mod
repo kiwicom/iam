@@ -14,7 +14,7 @@ require (
 	github.com/hashicorp/go-rootcerts v1.0.1 // indirect
 	github.com/hashicorp/go-sockaddr v1.0.2 // indirect
 	github.com/hashicorp/vault v1.1.3
-	github.com/json-iterator/go v1.1.6
+	github.com/json-iterator/go v1.1.7
 	github.com/julienschmidt/httprouter v1.2.0
 	github.com/kiwicom/go-useragent v0.0.0-20190712102753-95f5c5fe2ab0
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
