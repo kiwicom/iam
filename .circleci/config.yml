@@ -63,7 +63,7 @@ jobs:
       - add_ssh_keys:
           fingerprints:
             - "9c:b5:0a:f1:d1:6f:49:34:d3:81:10:81:cd:cc:6c:d5"
-      - run: make publish
+      - run: make docs/publish
 
 workflows:
   version: 2

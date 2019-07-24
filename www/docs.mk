@@ -1,4 +1,4 @@
-docs/build:
+docs/publish:
 	cd www && ./publish.sh
 
 docs/serve:
