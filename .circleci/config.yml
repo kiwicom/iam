@@ -53,7 +53,19 @@ jobs:
           curl -X POST \
                -F token=$GITLAB_CI_TOKEN \
                -F ref=master \
-               -F "variables[GIT_SHA1]=$CIRCLE_SHA1" \
+               -F "variables[DEPLOY_ENV]=sandbox" \
+               -F "variables[CI_COMMIT_SHA]=$CIRCLE_SHA1" \
+               https://gitlab.skypicker.com/api/v4/projects/1680/trigger/pipeline
+
+  deploy/production:
+    docker:
+      - image: golang:1.12.7
+    steps:
+      - run: |
+          curl -X POST \
+               -F token=$GITLAB_CI_TOKEN \
+               -F ref=master \
+               -F "variables[DEPLOY_ENV]=production" \
                -F "variables[CI_COMMIT_SHA]=$CIRCLE_SHA1" \
                https://gitlab.skypicker.com/api/v4/projects/1680/trigger/pipeline
 
@@ -89,9 +101,15 @@ workflows:
       - e2e-tests/nocache
   deploy:
     jobs:
-      - deploy/sandbox: &only-master
+      - publish/docs: &only-master
           filters:
             branches:
               only:
                 - master
-      - publish/docs: *only-master
+      - deploy/sandbox: *only-master
+      - deploy/production:
+          filters:
+            tags:
+              only: /.*/
+            branches:
+              ignore: /.*/
