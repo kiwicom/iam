@@ -96,9 +96,13 @@ workflows:
       - build
   test:
     jobs:
-      - test
-      - e2e-tests
-      - e2e-tests/nocache
+      - test: &ignore-master
+          filters:
+            branches:
+              ignore:
+                - master
+      - e2e-tests: *ignore-master
+      - e2e-tests/nocache: *ignore-master
   deploy:
     jobs:
       - publish/docs: &only-master
