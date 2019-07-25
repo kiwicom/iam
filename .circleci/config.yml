@@ -54,6 +54,7 @@ jobs:
                -F token=$GITLAB_CI_TOKEN \
                -F ref=master \
                -F "variables[GIT_SHA1]=$CIRCLE_SHA1" \
+               -F "variables[CI_COMMIT_SHA]=$CIRCLE_SHA1" \
                https://gitlab.skypicker.com/api/v4/projects/1680/trigger/pipeline
 
   publish/docs:
