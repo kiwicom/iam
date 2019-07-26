@@ -30,7 +30,7 @@ require (
 	github.com/tinylib/msgp v1.1.0 // indirect
 	golang.org/x/net v0.0.0-20190725090151-ca1201d0de80 // indirect
 	golang.org/x/sync v0.0.0-20190425150253-112230192c58
-	golang.org/x/sys v0.0.0-20190712070255-fae7ac547cb7 // indirect
+	golang.org/x/sys v0.0.0-20190726064421-94b544f455ef // indirect
 	golang.org/x/xerrors v0.0.0-20190717185122-a985d3407aa7 // indirect
 	google.golang.org/appengine v1.6.1
 	google.golang.org/genproto v0.0.0-20190716170353-c506a9f90610 // indirect
