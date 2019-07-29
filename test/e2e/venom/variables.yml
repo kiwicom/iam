@@ -1,5 +1,5 @@
 # url of the conveyance-store without slash at the end.
 url: "{{.IAM_URL}}"
-serviceName: "kiwi.iam.user.v1.KiwiIAM"
+serviceName: "kiwi.iam.user.v1.KiwiIAMAPI"
 httpPort: "8080"
 grpcPort: "8090"

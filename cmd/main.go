@@ -247,7 +247,7 @@ func main() {
 	grpcServer := grpc.NewServer(grpc.UnaryInterceptor(grpcAPI.UnarySecurityWrapper(secretManager)))
 	reflection.Register(grpcServer)
 
-	pb.RegisterKiwiIAMServer(grpcServer, s)
+	pb.RegisterKiwiIAMAPIServer(grpcServer, s)
 
 	log.Printf("🚀 GRPC server listening on %s", grpcAddress)
 

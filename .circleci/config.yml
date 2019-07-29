@@ -9,6 +9,13 @@ jobs:
       - checkout
       - run: make build
 
+  prototool-lint:
+    docker:
+      - image: uber/prototool
+    steps:
+      - checkout
+      - run: prototool lint
+
   test:
     docker:
       - image: golang:1.12.7
@@ -96,11 +103,12 @@ workflows:
       - build
   test:
     jobs:
-      - test: &ignore-master
+      - prototool-lint: &ignore-master
           filters:
             branches:
               ignore:
                 - master
+      - test: *ignore-master
       - e2e-tests: *ignore-master
       - e2e-tests/nocache: *ignore-master
   deploy:

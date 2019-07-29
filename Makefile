@@ -63,7 +63,7 @@ coala:
 	docker run -v "$(shell pwd)":/app -v /tmp/coala-cache:/cache --workdir=/app coala/base:0.11 coala -a -n -j 4
 
 proto:
-	protoc --go_out=plugins=grpc:. ./api/grpc/v1/iam.proto
+	protoc --go_out=plugins=grpc:. ./api/grpc/v1/kiwi_iamapi.proto
 
 -include ./test/e2e/e2e.mk
 -include ./www/docs.mk

@@ -1,0 +1,33 @@
+syntax = "proto3";
+package kiwi.iam.user.v1;
+
+option csharp_namespace = "Kiwi.Iam.User.V1";
+option go_package = "userv1";
+option java_multiple_files = true;
+option java_outer_classname = "KiwiIamapiProto";
+option java_package = "com.kiwi.iam.user.v1";
+option objc_class_prefix= "KIU";
+option php_namespace="Kiwi\\Iam\\User\\V1";
+
+// KiwiIAM is our main service, containing a method to obtain user credentials from OKTA.
+service KiwiIAMAPI {
+    // User retrieves a Kiwi user information from OKTA.
+    rpc User(UserRequest) returns (UserResponse);
+}
+
+message UserRequest {
+    string email = 1;
+}
+
+message UserResponse {
+    int64 employee_number = 1;
+    string email = 2;
+    string first_name = 3;
+    string last_name = 4;
+    string position = 5;
+    string department = 6;
+    string location = 7;
+    bool is_vendor = 8;
+    string manager = 9;
+    repeated string team_membership = 10;
+}

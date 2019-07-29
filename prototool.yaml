@@ -1,0 +1,9 @@
+protoc:
+  version: 3.8.0
+lint:
+  group: uber2
+  # we don't want to split our proto declarations into multiple files yet
+  ignores:
+    - id: REQUEST_RESPONSE_TYPES_ONLY_IN_FILE
+      files:
+        - api/grpc/v1/kiwi_iamapi.proto
