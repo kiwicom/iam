@@ -21,7 +21,7 @@ require (
 	github.com/modern-go/reflect2 v1.0.1 // indirect
 	github.com/opentracing/opentracing-go v1.1.0 // indirect
 	github.com/philhofer/fwd v1.0.0 // indirect
-	github.com/pierrec/lz4 v0.0.0-20190501090746-d705d4371bfc // indirect
+	github.com/pierrec/lz4/v2 v2.2.5 // indirect
 	github.com/pkg/errors v0.8.1
 	github.com/ryanuber/go-glob v1.0.0 // indirect
 	github.com/spf13/viper v1.4.0
