@@ -4,7 +4,6 @@ install_deps:
 	go mod download
 	GO111MODULE=off go get github.com/cespare/reflex
 	GO111MODULE=off go get -u github.com/golang/protobuf/protoc-gen-go
-	curl -sfL https://install.goreleaser.com/github.com/gohugoio/hugo.sh | sh
 
 start:
 	go run cmd/main.go
@@ -24,11 +23,10 @@ define log_success
 	@printf "$(color_green)$(1)$(color_off)\n"
 endef
 
-test:
-	$(call log_info,Run tests and check race conditions)
-	# https://golang.org/doc/articles/race_detector.html
-	go test -race -v ./... -cover
-	$(call log_success,All tests succeeded)
+lint:
+	$(call log_info, Running golangci-lint)
+	golangci-lint run
+	$(call log_success,Linting with golangci-lint succeeded!)
 
 go-mod-tidy:
 	$(call log_info,Check that go.mod and go.sum don't contain any unnecessary dependency)
@@ -36,10 +34,18 @@ go-mod-tidy:
 	git diff-index --quiet HEAD
 	$(call log_success,Go mod check succeeded!)
 
+test:
+	$(call log_info,Run tests and check race conditions)
+	# https://golang.org/doc/articles/race_detector.html
+	go test -race -v ./... -cover
+	$(call log_success,All tests succeeded)
+
 test/ci: test go-mod-tidy
 
 test/watch:
 	reflex --start-service -r '\.go$$' make test
+
+test/all: test go-mod-tidy lint e2e
 
 build:
 	CGO_ENABLED=0 go build cmd/main.go
@@ -49,18 +55,6 @@ else
 	@printf "${color_green}SENTRY_RELEASE: ${CI_COMMIT_SHORT_SHA}${color_off}\n"
 	@echo "SENTRY_RELEASE: ${CI_COMMIT_SHORT_SHA}" >> .env.yaml
 endif
-
-lint: ## Runs golangci-lint. It outputs to the code-climate json file in if CI is defined.
-	$(call log_info, Running golangci-lint)
-ifndef GOLANGCI_LINT
-	@echo "Can\'t find executable of the golangci-lint. Make sure it is installed. See github.com\/golangci\/golangci-lint#install"
-	@exit 1
-endif
-	golangci-lint run $(if $(CI),--out-format code-climate > gl-code-quality-report.json)
-	$(call log_success,Linting with golangci-lint succeeded!)
-
-coala:
-	docker run -v "$(shell pwd)":/app -v /tmp/coala-cache:/cache --workdir=/app coala/base:0.11 coala -a -n -j 4
 
 proto:
 	protoc --go_out=plugins=grpc:. ./api/grpc/v1/kiwi_iamapi.proto
