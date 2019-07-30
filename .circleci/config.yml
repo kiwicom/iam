@@ -9,6 +9,13 @@ jobs:
       - checkout
       - run: make build
 
+  golangci-lint:
+    docker:
+      - image: golangci/golangci-lint:v1.17.1
+    steps:
+      - checkout
+      - run: make lint
+
   prototool-lint:
     docker:
       - image: uber/prototool
@@ -103,11 +110,12 @@ workflows:
       - build
   test:
     jobs:
-      - prototool-lint: &ignore-master
+      - golangci-lint: &ignore-master
           filters:
             branches:
               ignore:
                 - master
+      - prototool-lint: *ignore-master
       - test: *ignore-master
       - e2e-tests: *ignore-master
       - e2e-tests/nocache: *ignore-master

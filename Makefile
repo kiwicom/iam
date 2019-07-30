@@ -36,6 +36,11 @@ go-mod-tidy:
 	git diff-index --quiet HEAD
 	$(call log_success,Go mod check succeeded!)
 
+lint: ## Runs golangci-lint. It outputs to the code-climate json file if CI is defined.
+	$(call log_info, Running golangci-lint)
+	golangci-lint run $(if $(CI),--out-format code-climate > gl-code-quality-report.json)
+	$(call log_success,Linting with golangci-lint succeeded!)
+
 test/ci: test go-mod-tidy
 
 test/watch:
@@ -49,15 +54,6 @@ else
 	@printf "${color_green}SENTRY_RELEASE: ${CI_COMMIT_SHORT_SHA}${color_off}\n"
 	@echo "SENTRY_RELEASE: ${CI_COMMIT_SHORT_SHA}" >> .env.yaml
 endif
-
-lint: ## Runs golangci-lint. It outputs to the code-climate json file in if CI is defined.
-	$(call log_info, Running golangci-lint)
-ifndef GOLANGCI_LINT
-	@echo "Can\'t find executable of the golangci-lint. Make sure it is installed. See github.com\/golangci\/golangci-lint#install"
-	@exit 1
-endif
-	golangci-lint run $(if $(CI),--out-format code-climate > gl-code-quality-report.json)
-	$(call log_success,Linting with golangci-lint succeeded!)
 
 coala:
 	docker run -v "$(shell pwd)":/app -v /tmp/coala-cache:/cache --workdir=/app coala/base:0.11 coala -a -n -j 4
