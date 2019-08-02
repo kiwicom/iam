@@ -56,8 +56,6 @@ make swagger-serve
 make swagger-validate
 ```
 
-
-
 # Secret Manager
 
 This service uses Vault for syncing secrets to our app.
@@ -77,3 +75,19 @@ The following structure is expected:
 
 Run `make install_hugo` to install hugo, and `make docs/serve` to launch the
 hugo server for development.
+
+## Troubleshooting
+
+### It cannot find go or some packages when executing some make commands
+
+When executing `swagger`, or `protoc`, or running `make dev` (after having run `make`), it says that those command do not exist...
+
+In golang, the main packages are installed in your go installation `bin` folder, which defaults to `usr/local/go/bin`. When installing new packages through `make`, the binaries are installed in `$GOPATH/bin`. ([How to set GOPATH](https://github.com/golang/go/wiki/SettingGOPATH)).
+
+To fix the issue you have make them accessible through the terminal, by adding both of these routes to your `$PATH` so they are known to your bash environment, i.e editing your `.bashrc` or `.zshrc`
+
+```shell
+export GOPATH=$HOME/go #example of GOPATH directory
+export PATH=$PATH:/usr/local/go/bin $PATH:$GOPATH/bin
+``
+
