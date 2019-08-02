@@ -44,6 +44,19 @@ KEYS *
 # Show value for a key
 GET <key>
 ```
+# API Documentation
+
+We use [`go-swagger`](https://github.com/go-swagger/go-swagger) for generating the API documentation based on the OpenAPI 2.0 specification which is defined on `api/swagger.yml`.
+
+```shell
+# Opens the documentation website locally (on http://localhost:51261/docs)
+make swagger-serve
+
+# Validates the swagger schema
+make swagger-validate
+```
+
+
 
 # Secret Manager
 

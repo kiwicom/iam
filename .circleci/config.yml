@@ -16,6 +16,13 @@ jobs:
       - checkout
       - run: prototool lint
 
+  validate-swagger:
+    docker:
+      - image: quay.io/goswagger/swagger
+    steps:
+      - checkout
+      - run: make swagger-validate
+
   test:
     docker:
       - image: golang:1.12.7
@@ -108,6 +115,7 @@ workflows:
             branches:
               ignore:
                 - master
+      - validate-swagger: *ignore-master
       - test: *ignore-master
       - e2e-tests: *ignore-master
       - e2e-tests/nocache: *ignore-master

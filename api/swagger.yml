@@ -1,0 +1,179 @@
+---
+swagger: "2.0"
+schemes:
+  - https
+basePath: "/v1"
+
+info:
+  description: Application for handling authorization rules in Kiwi
+  title: Kiwi IAM
+  version: 1.0.0
+  license: 
+      name: "License: MIT"
+      url: "https://github.com/kiwicom/iam/blob/master/LICENSE"
+
+externalDocs:
+  description: "Project repository"
+  url: "https://github.com/kiwicom/iam"  
+
+securityDefinitions:
+  bearerAuth:
+    type: apiKey
+    in: header
+    name: Authorization
+    description: "UUID token in a request header."
+  userAgent:
+    type: apiKey
+    in: header
+    name: UserAgent
+    description: "User agent of your app in the format `Service/version (Kiwi.com environment)`"
+
+definitions:
+  error:
+    type: object
+    required:
+      - message
+    properties:
+      code:
+        type: integer
+        format: int64
+      message:
+        type: string
+  user:
+    description: Single user object
+    type: object
+    properties:
+      employeeNumber:
+        description: employeeNumber in Okta
+        type: integer
+      firstName:
+        description: firstName in Okta
+        type: string
+      lastName:
+        description: lastName in Okta
+        type: string
+      position:
+        description: kb_jobPosition in Okta
+        type: string
+      department:
+        description: department
+        type: string
+      location:
+        description: kb_place_of_work in Okta
+        type: string
+      isVendor:
+        description: kb_is_vendor in Okta
+        type: boolean
+      teamMembership:
+        description: kb_team_membership in Okta
+        type: array
+        items:
+            type: string
+      manager:
+        description: manager in Okta
+        type: string
+      permissions:
+        description: Permissions from Kiwi IAM
+        type: array
+        items:
+          type: string
+    example:
+      employeeNumber: 1
+      firstName: Simon
+      lastName: The tester
+      position: Website destroyer
+      department: Devops
+      location: Prague, Mordor
+      isVendor: false
+      teamMembership: ["Engineering", "Engineering/CS Systems"]
+      manager: Satan
+      permissions: ["payment-cards:read", "comments:read", "comments:write"]
+  teams:
+    description: Team names and member count
+    type: object
+    additionalProperties:
+      description: Member count
+      type: number
+  groups:
+    description: Okta groups
+    type: array
+    items:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        lastMembershipUpdated:
+          type: string
+      example:
+        id: 00asdfghjkl5LI4PB0h7
+        name: Android
+        description: ""
+        lastMembershipUpdated: "2019-02-27T14:04:23Z"
+
+security:
+  - bearerAuth: []
+  - userAgent: []
+
+paths:
+  /v1/user:
+    get: &user
+      summary: "User information from OKTA"
+      description: "Get the user information for a given user in OKTA"
+      tags:
+        - Users
+      produces: 
+        - application/json
+        - text/plain
+      parameters:
+        - in: query
+          name: email
+          required: true
+          description: Email of user
+          type: string
+        - in: query
+          name: permissions
+          required: false
+          description: |
+            Whether the response will contain a list of permissions
+            for the user or not. In case it doesn't, the field will be omitted.
+          type: boolean
+          default: false
+      responses:
+        200:
+          description: User details
+          schema:
+            $ref: "#/definitions/user"
+        404:
+          description: User not found
+          schema:
+            $ref: "#/definitions/error"
+  /v1/teams:
+    get:
+      summary: "Teams that the user belongs to"
+      description: "Get the teams that a given user belongs to in OKTA"
+      tags:
+        - Teams
+      produces:
+        - application/json
+      responses:
+        200:
+          description: All teams
+          schema:
+            $ref: "#/definitions/teams"
+  /v1/groups:
+    get:
+      summary: "Groups that the user belongs to"
+      description: "Get the groups that a given user belongs to in OKTA"
+      tags:
+        - Groups
+      produces:
+        - application/json
+      responses:
+        200:
+          description: All Okta groups
+          schema:
+            $ref: "#/definitions/groups"

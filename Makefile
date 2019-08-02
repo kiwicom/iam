@@ -4,6 +4,7 @@ install_deps:
 	go mod download
 	GO111MODULE=off go get github.com/cespare/reflex
 	GO111MODULE=off go get -u github.com/golang/protobuf/protoc-gen-go
+	GO111MODULE=off go get -u github.com/go-swagger/go-swagger/cmd/swagger
 
 start:
 	go run cmd/main.go
@@ -58,6 +59,12 @@ endif
 
 proto:
 	protoc --go_out=plugins=grpc:. ./api/grpc/v1/kiwi_iamapi.proto
+
+swagger-validate:
+	swagger validate ./api/swagger.yml
+
+swagger-serve:
+	swagger serve ./api/swagger.yml
 
 -include ./test/e2e/e2e.mk
 -include ./www/docs.mk
