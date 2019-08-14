@@ -22,7 +22,7 @@ require (
 	github.com/stretchr/testify v1.3.0
 	github.com/tinylib/msgp v1.1.0 // indirect
 	golang.org/x/crypto v0.0.0-20190802133137-4def268fd1a4 // indirect
-	golang.org/x/net v0.0.0-20190725090151-ca1201d0de80 // indirect
+	golang.org/x/net v0.0.0-20190814234604-74dc4d7220e7 // indirect
 	golang.org/x/sync v0.0.0-20190425150253-112230192c58
 	golang.org/x/sys v0.0.0-20190813222908-fde4db37ae7a // indirect
 	golang.org/x/xerrors v0.0.0-20190717185122-a985d3407aa7 // indirect
