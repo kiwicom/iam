@@ -25,7 +25,7 @@ jobs:
 
   validate-commits:
     docker:
-      - image: fallion/commitsar
+      - image: commitsar/commitsar
     steps:
       - checkout
       - run: commitsar
