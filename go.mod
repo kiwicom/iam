@@ -19,7 +19,7 @@ require (
 	github.com/pkg/errors v0.8.1
 	github.com/spf13/viper v1.4.0
 	github.com/stretchr/objx v0.2.0 // indirect
-	github.com/stretchr/testify v1.3.0
+	github.com/stretchr/testify v1.4.0
 	github.com/tinylib/msgp v1.1.0 // indirect
 	golang.org/x/crypto v0.0.0-20190802133137-4def268fd1a4 // indirect
 	golang.org/x/net v0.0.0-20190814234604-74dc4d7220e7 // indirect
