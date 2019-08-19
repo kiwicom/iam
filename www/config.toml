@@ -1,5 +1,16 @@
-baseURL = "https://kiwicom.github.io/iam/"
+baseURL = "https://kiwicom.github.io/iam"
 languageCode = "en-us"
 title = "Kiwi IAM documentation"
-theme = "cupper-hugo-theme"
-sectionPagesMenu = "main"
+theme = "github.com/bep/docuapi"
+
+disableKinds = ["taxonomyTerm"]
+
+# Code higlighting settings
+pygmentsCodefences = true
+pygmentsCodeFencesGuesSsyntax = false
+pygmentsOptions = ""
+pygmentsStyle = "monokai"
+pygmentsUseClasses = false
+
+[params]
+search = true

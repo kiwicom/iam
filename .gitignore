@@ -22,3 +22,5 @@ public
 *.out
 
 .idea
+
+**/node_modules/**

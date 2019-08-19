@@ -92,14 +92,19 @@ jobs:
 
   publish/docs:
     docker:
-      - image: cibuilds/hugo:latest
+      - image: commitsar/hugo
     working_directory: ~/www
     environment:
       HUGO_BUILD_DIR: ~/www/public
     steps:
-      - run: apk update && apk add git
       - checkout
-      - run: git submodule sync && git submodule update --init
+      - run:
+          name: Install dependencies
+          command: |
+            cd www
+            npm i
+            hugo mod get
+            cd ../
       - run:
           name: Set author of the commit
           command: |
