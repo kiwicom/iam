@@ -27,7 +27,7 @@ require (
 	golang.org/x/sys v0.0.0-20190813222908-fde4db37ae7a // indirect
 	golang.org/x/xerrors v0.0.0-20190717185122-a985d3407aa7 // indirect
 	google.golang.org/appengine v1.6.1
-	google.golang.org/genproto v0.0.0-20190802125935-fa694d86fc64 // indirect
+	google.golang.org/genproto v0.0.0-20190819063108-55e96fffbd48 // indirect
 	google.golang.org/grpc v1.23.0
 	gopkg.in/DataDog/dd-trace-go.v1 v1.16.1
 )
