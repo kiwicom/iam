@@ -104,7 +104,6 @@ jobs:
             cd www
             npm i
             hugo mod get
-            cd ../
       - run:
           name: Set author of the commit
           command: |
