@@ -92,10 +92,7 @@ jobs:
 
   publish/docs:
     docker:
-      - image: commitsar/hugo
-    working_directory: ~/www
-    environment:
-      HUGO_BUILD_DIR: ~/www/public
+      - image: commitsar/hugo:0.0.1
     steps:
       - checkout
       - run:
