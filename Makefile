@@ -35,13 +35,13 @@ go-mod-tidy:
 	git diff-index --quiet HEAD
 	$(call log_success,Go mod check succeeded!)
 
-test/go:
+test:
 	$(call log_info,Run tests and check race conditions)
 	# https://golang.org/doc/articles/race_detector.html
 	go test -race -v ./... -cover
 	$(call log_success,All tests succeeded)
 
-test/ci: test/go go-mod-tidy
+test/ci: test go-mod-tidy
 
 test/watch:
 	reflex --start-service -r '\.go$$' make test
@@ -66,5 +66,5 @@ swagger-validate:
 swagger-serve:
 	swagger serve ./api/swagger.yml
 
--include ./test/e2e/e2e.mk
+-include ./tests/e2e/e2e.mk
 -include ./www/docs.mk
