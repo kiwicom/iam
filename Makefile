@@ -35,18 +35,18 @@ go-mod-tidy:
 	git diff-index --quiet HEAD
 	$(call log_success,Go mod check succeeded!)
 
-test:
+test/go:
 	$(call log_info,Run tests and check race conditions)
 	# https://golang.org/doc/articles/race_detector.html
 	go test -race -v ./... -cover
 	$(call log_success,All tests succeeded)
 
-test/ci: test go-mod-tidy
+test/ci: test/go go-mod-tidy
 
 test/watch:
 	reflex --start-service -r '\.go$$' make test
 
-test/all: test go-mod-tidy lint e2e
+test/all: test/go go-mod-tidy lint e2e
 
 build:
 	CGO_ENABLED=0 go build cmd/main.go
