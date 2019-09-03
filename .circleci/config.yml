@@ -25,7 +25,7 @@ jobs:
 
   validate-commits:
     docker:
-      - image: commitsar/commitsar:0.2.1
+      - image: commitsar/commitsar:0.3.0
     steps:
       - checkout
       - run: commitsar
@@ -100,7 +100,6 @@ jobs:
           command: |
             cd www
             npm i
-            hugo mod get
       - run:
           name: Set author of the commit
           command: |
