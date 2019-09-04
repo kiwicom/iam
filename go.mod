@@ -6,7 +6,7 @@ require (
 	github.com/DataDog/datadog-go v2.2.0+incompatible
 	github.com/certifi/gocertifi v0.0.0-20190513150117-d2eda7129713 // indirect
 	github.com/getsentry/raven-go v0.2.0
-	github.com/go-redis/redis v6.15.4+incompatible
+	github.com/go-redis/redis v6.15.5+incompatible
 	github.com/golang/protobuf v1.3.2
 	github.com/hashicorp/vault/api v1.0.5-0.20190730042357-746c0b111519
 	github.com/json-iterator/go v1.1.7
@@ -14,6 +14,8 @@ require (
 	github.com/kiwicom/go-useragent v0.0.0-20190712102753-95f5c5fe2ab0
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.1 // indirect
+	github.com/onsi/ginkgo v1.10.1 // indirect
+	github.com/onsi/gomega v1.7.0 // indirect
 	github.com/opentracing/opentracing-go v1.1.0 // indirect
 	github.com/philhofer/fwd v1.0.0 // indirect
 	github.com/pkg/errors v0.8.1
