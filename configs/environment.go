@@ -47,6 +47,8 @@ func LoadConfigs(configStructs ...interface{}) error {
 type ServiceConfig struct {
 	Port         string `mapstructure:"PORT"`
 	GRPCPort     string `mapstructure:"GRPC_PORT"`
+	GRPCCertFile string `mapstructure:"GRPC_CERT_FILE"`
+	GRPCKeyFile  string `mapstructure:"GRPC_KEY_FILE"`
 	UseLocalhost bool   `mapstructure:"USE_LOCALHOST"`
 	Environment  string `mapstructure:"APP_ENV"`
 	Release      string `mapstructure:"SENTRY_RELEASE"`
@@ -87,12 +89,15 @@ type VaultConfig struct {
 }
 
 var defaultValues = map[string]interface{}{
-	"PORT":       "8080",
-	"GRPC_PORT":  "8090",
-	"SERVE_PATH": "/",
+	"PORT":      "8080",
+	"GRPC_PORT": "8090",
+	// TLS certificates used only for GRPC (HTTP is taken care by Nginx).
+	"GRPC_CERT_FILE": "",
+	"GRPC_KEY_FILE":  "",
+	"SERVE_PATH":     "/",
 	// Environment used for sentry, user agent, datadog. Removes user syncing if set to dev.
 	"APP_ENV": "",
-	// Uses localhost intead of 0.0.0.0, useful for OSX.
+	// Uses localhost instead of 0.0.0.0, useful for OSX.
 	"USE_LOCALHOST": false,
 	// The OKTA token and URL are only used locally, when deployed,
 	// IAM fetches the token from Vault.

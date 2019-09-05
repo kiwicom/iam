@@ -30,13 +30,13 @@ func (s *Server) User(ctx context.Context, in *pb.UserRequest) (*pb.UserResponse
 	if userErr != nil {
 		return nil, userErr
 	}
-	employeNumber, intErr := strconv.ParseInt(user.EmployeeNumber, 10, 64)
+	employeeNumber, intErr := strconv.ParseInt(user.EmployeeNumber, 10, 64)
 	if intErr != nil {
 		return nil, errors.New("unexpected server error")
 	}
 
 	return &pb.UserResponse{
-		EmployeeNumber: employeNumber,
+		EmployeeNumber: employeeNumber,
 		Email:          user.Email,
 		FirstName:      user.FirstName,
 		LastName:       user.LastName,

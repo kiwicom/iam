@@ -20,6 +20,7 @@ import (
 	// https://skypicker.slack.com/archives/CA154LA5T/p1560781760024700
 	_ "google.golang.org/appengine"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/reflection"
 )
 
@@ -244,7 +245,13 @@ func main() {
 
 	s, _ := grpcAPI.CreateServer(oktaClient)
 
-	grpcServer := grpc.NewServer(grpc.UnaryInterceptor(grpcAPI.UnarySecurityWrapper(secretManager)))
+	creds, err := credentials.NewClientTLSFromFile(iamConfig.GRPCCertFile, iamConfig.GRPCKeyFile)
+	if err != nil {
+		log.Println("TLS disabled on GRPC:", err)
+		raven.CaptureError(err, nil)
+	}
+
+	grpcServer := grpc.NewServer(grpc.UnaryInterceptor(grpcAPI.UnarySecurityWrapper(secretManager)), grpc.Creds(creds))
 	reflection.Register(grpcServer)
 
 	pb.RegisterKiwiIAMAPIServer(grpcServer, s)
