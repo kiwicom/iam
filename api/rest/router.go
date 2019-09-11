@@ -4,10 +4,11 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/iam/internal/monitoring"
-	"github.com/iam/internal/security/secrets"
-	"github.com/iam/internal/services/okta"
 	"github.com/julienschmidt/httprouter"
+
+	"github.com/kiwicom/iam/internal/monitoring"
+	"github.com/kiwicom/iam/internal/security/secrets"
+	"github.com/kiwicom/iam/internal/services/okta"
 
 	tracingRouter "gopkg.in/DataDog/dd-trace-go.v1/contrib/julienschmidt/httprouter"
 )

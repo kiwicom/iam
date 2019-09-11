@@ -1,4 +1,4 @@
-module github.com/iam
+module github.com/kiwicom/iam
 
 go 1.13
 

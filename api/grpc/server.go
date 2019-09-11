@@ -5,8 +5,8 @@ import (
 	"errors"
 	"strconv"
 
-	pb "github.com/iam/api/grpc/v1"
-	"github.com/iam/internal/services/okta"
+	pb "github.com/kiwicom/iam/api/grpc/v1"
+	"github.com/kiwicom/iam/internal/services/okta"
 )
 
 type userDataService interface {

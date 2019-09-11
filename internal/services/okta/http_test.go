@@ -6,10 +6,11 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	cfg "github.com/iam/configs"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
+
+	cfg "github.com/kiwicom/iam/configs"
 )
 
 // Mock body for HTTP response. It implements the io.ReadWriter interface

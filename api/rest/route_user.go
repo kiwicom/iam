@@ -8,9 +8,10 @@ import (
 	"net/url"
 
 	"github.com/getsentry/raven-go"
-	"github.com/iam/internal/monitoring"
-	"github.com/iam/internal/security"
-	"github.com/iam/internal/services/okta"
+
+	"github.com/kiwicom/iam/internal/monitoring"
+	"github.com/kiwicom/iam/internal/security"
+	"github.com/kiwicom/iam/internal/services/okta"
 
 	jsoniter "github.com/json-iterator/go"
 	"github.com/julienschmidt/httprouter"

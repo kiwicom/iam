@@ -7,14 +7,15 @@ import (
 	"time"
 
 	"github.com/getsentry/raven-go"
-	grpcAPI "github.com/iam/api/grpc"
-	pb "github.com/iam/api/grpc/v1"
-	restAPI "github.com/iam/api/rest"
-	cfg "github.com/iam/configs"
-	"github.com/iam/internal/monitoring"
-	"github.com/iam/internal/security/secrets"
-	"github.com/iam/internal/services/okta"
-	"github.com/iam/internal/storage"
+
+	grpcAPI "github.com/kiwicom/iam/api/grpc"
+	pb "github.com/kiwicom/iam/api/grpc/v1"
+	restAPI "github.com/kiwicom/iam/api/rest"
+	cfg "github.com/kiwicom/iam/configs"
+	"github.com/kiwicom/iam/internal/monitoring"
+	"github.com/kiwicom/iam/internal/security/secrets"
+	"github.com/kiwicom/iam/internal/services/okta"
+	"github.com/kiwicom/iam/internal/storage"
 
 	// AppEngine is added manually due to issues with go.mod
 	// https://skypicker.slack.com/archives/CA154LA5T/p1560781760024700

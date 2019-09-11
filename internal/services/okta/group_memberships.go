@@ -6,8 +6,9 @@ import (
 	"strings"
 
 	"github.com/getsentry/raven-go"
-	cfg "github.com/iam/configs"
-	"github.com/iam/internal/storage"
+
+	cfg "github.com/kiwicom/iam/configs"
+	"github.com/kiwicom/iam/internal/storage"
 )
 
 // GroupMembership holds the current user ids for users who are part of a given group

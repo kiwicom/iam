@@ -4,12 +4,13 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/iam/api"
-	"github.com/iam/internal/monitoring"
-	"github.com/iam/internal/security"
-	"github.com/iam/internal/security/secrets"
 	"github.com/julienschmidt/httprouter"
 	"gopkg.in/DataDog/dd-trace-go.v1/ddtrace/tracer"
+
+	"github.com/kiwicom/iam/api"
+	"github.com/kiwicom/iam/internal/monitoring"
+	"github.com/kiwicom/iam/internal/security"
+	"github.com/kiwicom/iam/internal/security/secrets"
 )
 
 // AuthWrapper wraps a router to validate the authentication token
