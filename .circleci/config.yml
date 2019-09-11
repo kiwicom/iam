@@ -25,7 +25,7 @@ jobs:
 
   validate-commits:
     docker:
-      - image: commitsar/commitsar:0.5.0
+      - image: commitsar/commitsar:0.6.4
     steps:
       - checkout
       - run: commitsar
