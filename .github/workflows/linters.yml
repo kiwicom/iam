@@ -1,0 +1,27 @@
+name: Linters
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  protool:
+    name: Protool
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code into the Go module directory
+        uses: actions/checkout@v1
+
+      - name: Protool lint
+        uses: docker://uber/prototool
+  swagger:
+    name: Swagger
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code into the Go module directory
+        uses: actions/checkout@v1
+
+      - name: Swagger Lint
+        uses: docker://quay.io/goswagger/swagger
+        with:
+          args: validate ./api/swagger.yml
