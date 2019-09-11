@@ -1,21 +1,4 @@
 {
-  "commitMessagePrefix": "deps:",
-  "labels": [
-    "importance:low"
-  ],
-  "pipenv": {
-    "enabled": true
-  },
-  "prConcurrentLimit": 5,
-  "prHourlyLimit": 2,
-  "gitFs": "ssh",
   "postUpdateOptions": ["gomodTidy"],
-  "schedule": ["after 6am and before 10pm on every weekday"],
-  "packageRules": [
-    {
-      "packageNames": ["golang"],
-      "managers": ["dockerfile"],
-      "groupName": ["dockerfile updates"]
-    }
-  ]
+  "extends": ["config:base"]
 }
