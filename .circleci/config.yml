@@ -23,13 +23,6 @@ jobs:
       - checkout
       - run: make swagger-validate
 
-  validate-commits:
-    docker:
-      - image: commitsar/commitsar:0.5.0
-    steps:
-      - checkout
-      - run: commitsar
-
   test:
     docker:
       - image: golang:1.13.0
@@ -123,7 +116,6 @@ workflows:
               ignore:
                 - master
       - validate-swagger: *ignore-master
-      - validate-commits: *ignore-master
       - test: *ignore-master
       - e2e-tests: *ignore-master
       - e2e-tests/nocache: *ignore-master
