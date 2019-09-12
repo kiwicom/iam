@@ -3,8 +3,9 @@ package okta
 import (
 	"testing"
 
-	"github.com/iam/internal/storage"
 	"github.com/stretchr/testify/assert"
+
+	"github.com/kiwicom/iam/internal/storage"
 )
 
 func TestGroupMemberships(t *testing.T) {

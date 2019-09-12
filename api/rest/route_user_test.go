@@ -6,11 +6,12 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/iam/internal/monitoring"
-	"github.com/iam/internal/services/okta"
 	"github.com/julienschmidt/httprouter"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
+
+	"github.com/kiwicom/iam/internal/monitoring"
+	"github.com/kiwicom/iam/internal/services/okta"
 )
 
 var testUser = okta.User{

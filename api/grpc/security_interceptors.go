@@ -4,8 +4,8 @@ import (
 	"context"
 	"log"
 
-	"github.com/iam/internal/security"
-	"github.com/iam/internal/security/secrets"
+	"github.com/kiwicom/iam/internal/security"
+	"github.com/kiwicom/iam/internal/security/secrets"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"

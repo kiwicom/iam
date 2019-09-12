@@ -6,9 +6,9 @@ import (
 	"strings"
 	"time"
 
-	cfg "github.com/iam/configs"
-	"github.com/iam/internal/monitoring"
-	"github.com/iam/internal/storage"
+	cfg "github.com/kiwicom/iam/configs"
+	"github.com/kiwicom/iam/internal/monitoring"
+	"github.com/kiwicom/iam/internal/storage"
 
 	"github.com/getsentry/raven-go"
 )

@@ -9,8 +9,9 @@ import (
 	"path"
 	"time"
 
-	"github.com/iam/internal/monitoring"
 	jsoniter "github.com/json-iterator/go"
+
+	"github.com/kiwicom/iam/internal/monitoring"
 )
 
 var json = jsoniter.ConfigCompatibleWithStandardLibrary

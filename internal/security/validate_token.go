@@ -3,7 +3,7 @@ package security
 import (
 	"errors"
 
-	"github.com/iam/internal/security/secrets"
+	"github.com/kiwicom/iam/internal/security/secrets"
 )
 
 var (

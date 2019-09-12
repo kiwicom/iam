@@ -5,9 +5,10 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/iam/internal/security/secrets"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
+
+	"github.com/kiwicom/iam/internal/security/secrets"
 )
 
 type mockedSecretManager struct {

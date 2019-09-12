@@ -5,9 +5,10 @@ import (
 	"net/http"
 
 	"github.com/getsentry/raven-go"
-	"github.com/iam/internal/services/okta"
-	"github.com/iam/internal/storage"
 	"github.com/julienschmidt/httprouter"
+
+	"github.com/kiwicom/iam/internal/services/okta"
+	"github.com/kiwicom/iam/internal/storage"
 )
 
 type groupsGetter interface {

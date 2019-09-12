@@ -5,10 +5,11 @@ import (
 	"time"
 
 	"github.com/getsentry/raven-go"
-	cfg "github.com/iam/configs"
-	"github.com/iam/internal/monitoring"
-	"github.com/iam/internal/storage"
 	"github.com/kiwicom/go-useragent"
+
+	cfg "github.com/kiwicom/iam/configs"
+	"github.com/kiwicom/iam/internal/monitoring"
+	"github.com/kiwicom/iam/internal/storage"
 
 	"golang.org/x/sync/singleflight"
 )
