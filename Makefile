@@ -46,7 +46,7 @@ test/ci: test go-mod-tidy
 test/watch:
 	reflex --start-service -r '\.go$$' make test
 
-test/all: test/go go-mod-tidy lint e2e
+test/all: test go-mod-tidy lint e2e
 
 build:
 	CGO_ENABLED=0 go build cmd/main.go
