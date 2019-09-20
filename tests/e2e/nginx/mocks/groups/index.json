@@ -62,5 +62,37 @@
         "href": "https://kiwi.oktapreview.com/api/v1/groups/fakegroupid2/apps"
       }
     }
+  },
+  {
+    "id": "fakegroupid3",
+    "created": "2019-05-30T10:12:55.000Z",
+    "lastUpdated": "2019-05-30T10:12:55.000Z",
+    "lastMembershipUpdated": "2019-05-30T10:12:55.000Z",
+    "objectClass": ["okta:user_group"],
+    "type": "OKTA_GROUP",
+    "profile": {
+      "name": "iam-othergroup.access.admin",
+      "description": "Access admin panel."
+    },
+    "_links": {
+      "logo": [
+        {
+          "name": "medium",
+          "href": "https://op1static.oktacdn.com/assets/img/logos/groups/okta-medium.png",
+          "type": "image/png"
+        },
+        {
+          "name": "large",
+          "href": "https://op1static.oktacdn.com/assets/img/logos/groups/okta-large.png",
+          "type": "image/png"
+        }
+      ],
+      "users": {
+        "href": "https://kiwi.oktapreview.com/api/v1/groups/fakegroupid3/users"
+      },
+      "apps": {
+        "href": "https://kiwi.oktapreview.com/api/v1/groups/fakegroupid3/apps"
+      }
+    }
   }
 ]

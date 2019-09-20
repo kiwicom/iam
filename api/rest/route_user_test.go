@@ -35,7 +35,7 @@ func (u *userService) AddPermissions(user *okta.User, service string) error {
 	return argsToReturn.Error(0)
 }
 
-func createFakeRouter() (*httprouter.Router, *userService) {
+func mockUserRoute() (*httprouter.Router, *userService) {
 	s := &userService{}
 	tracer, _ := monitoring.CreateNewTracingService(monitoring.TracerOptions{
 		ServiceName: "kiwi-iam",
@@ -52,7 +52,7 @@ func createFakeRouter() (*httprouter.Router, *userService) {
 func TestMissingQuery(t *testing.T) {
 	request, _ := http.NewRequest("GET", "/", nil)
 	response := httptest.NewRecorder()
-	router, s := createFakeRouter()
+	router, s := mockUserRoute()
 
 	router.ServeHTTP(response, request)
 	assert.Equal(t, 400, response.Code, "Returns 400 when entering wrong email")
@@ -66,7 +66,7 @@ func TestMissingQuery(t *testing.T) {
 func TestWrongEmail(t *testing.T) {
 	request, _ := http.NewRequest("GET", "/?email=testtest", nil)
 	response := httptest.NewRecorder()
-	router, s := createFakeRouter()
+	router, s := mockUserRoute()
 	router.ServeHTTP(response, request)
 	assert.Equal(t, 400, response.Code, "Returns 400 when entering wrong email")
 
@@ -79,7 +79,7 @@ func TestWrongEmail(t *testing.T) {
 func TestMissingUserAgent(t *testing.T) {
 	request, _ := http.NewRequest("GET", "/?email=test@test.com", nil)
 	response := httptest.NewRecorder()
-	router, s := createFakeRouter()
+	router, s := mockUserRoute()
 	router.ServeHTTP(response, request)
 	assert.Equal(t, 400, response.Code, "Returns 400 when a user agent header is missing")
 
@@ -94,7 +94,7 @@ func TestHappyPathWithPermissions(t *testing.T) {
 	request, _ := http.NewRequest("GET", "/?email=test@test.com&permissions=true", nil)
 	request.Header.Set("User-Agent", "service/0 (Kiwi.com test)")
 	response := httptest.NewRecorder()
-	router, s := createFakeRouter()
+	router, s := mockUserRoute()
 	s.On("GetUser", "test@test.com").Return(testUser, nil)
 	s.On("AddPermissions", &testUser, "service").Return(nil)
 
@@ -123,7 +123,7 @@ func TestHappyPathNoPermissions(t *testing.T) {
 		request.Header.Set("User-Agent", "service/0 (Kiwi.com test)")
 		response := httptest.NewRecorder()
 
-		router, s := createFakeRouter()
+		router, s := mockUserRoute()
 		s.On("GetUser", "test@test.com").Return(testUser, nil)
 		s.On("AddPermissions", &testUser, "service").Return(nil)
 
@@ -150,7 +150,7 @@ func TestControllerFailurePath(t *testing.T) {
 	request, _ := http.NewRequest("GET", "/?email=bs@test.com", nil)
 	request.Header.Set("User-Agent", "service/0 (Kiwi.com test)")
 	response := httptest.NewRecorder()
-	router, s := createFakeRouter()
+	router, s := mockUserRoute()
 
 	s.On("GetUser", "bs@test.com").Return(okta.User{}, errors.New("boom"))
 	router.ServeHTTP(response, request)
@@ -166,7 +166,7 @@ func TestNotFoundPath(t *testing.T) {
 	request, _ := http.NewRequest("GET", "/?email=notfound@test.com", nil)
 	request.Header.Set("User-Agent", "service/0 (Kiwi.com test)")
 	response := httptest.NewRecorder()
-	router, s := createFakeRouter()
+	router, s := mockUserRoute()
 
 	s.On("GetUser", "notfound@test.com").Return(okta.User{}, okta.ErrUserNotFound)
 	router.ServeHTTP(response, request)

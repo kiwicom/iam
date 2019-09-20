@@ -123,3 +123,27 @@ testcases:
           - result.bodyjson.engineering_content_+_cs_systems ShouldEqual 1
           - result.bodyjson.engineering_utitlies ShouldEqual 1
           - result.statuscode ShouldEqual 200
+  - name: Test getting permissions for multiple services
+    steps:
+      - type: http
+        method: GET
+        url: "http://{{.url}}:{{.httpPort}}/v1/permissions?services=venom,otherservice"
+        headers:
+          User-Agent: "Venom/0 (Kiwi.com test)"
+          authorization: "Bearer testtoken"
+        assertion:
+          - result.bodyjson.venom.venom0 ShouldEqual credit-card.create
+          - result.bodyjson.otherservice.otherservice0 ShouldEqual access.admin
+          - result.statuscode ShouldEqual 200
+  - name: Test getting permissions for one service
+    steps:
+      - type: http
+        method: GET
+        url: "http://{{.url}}:{{.httpPort}}/v1/permissions?services=otherservice"
+        headers:
+          User-Agent: "Venom/0 (Kiwi.com test)"
+          authorization: "Bearer testtoken"
+        assertion:
+          - result.bodyjson ShouldNotContainKey venom
+          - result.bodyjson.otherservice.otherservice0 ShouldEqual access.admin
+          - result.statuscode ShouldEqual 200
