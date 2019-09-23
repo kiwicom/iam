@@ -30,5 +30,5 @@ require (
 	google.golang.org/appengine v1.6.3
 	google.golang.org/genproto v0.0.0-20190916214212-f660b8655731 // indirect
 	google.golang.org/grpc v1.23.1
-	gopkg.in/DataDog/dd-trace-go.v1 v1.17.0
+	gopkg.in/DataDog/dd-trace-go.v1 v1.18.0
 )
