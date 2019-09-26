@@ -8,13 +8,13 @@ info:
   description: Application for handling authorization rules in Kiwi
   title: Kiwi IAM
   version: 1.0.0
-  license: 
-      name: "License: MIT"
-      url: "https://github.com/kiwicom/iam/blob/master/LICENSE"
+  license:
+    name: "License: MIT"
+    url: "https://github.com/kiwicom/iam/blob/master/LICENSE"
 
 externalDocs:
   description: "Project repository"
-  url: "https://github.com/kiwicom/iam"  
+  url: "https://github.com/kiwicom/iam"
 
 securityDefinitions:
   bearerAuth:
@@ -25,7 +25,7 @@ securityDefinitions:
   userAgent:
     type: apiKey
     in: header
-    name: UserAgent
+    name: User-Agent
     description: "User agent of your app in the format `Service/version (Kiwi.com environment)`"
 
 definitions:
@@ -68,7 +68,7 @@ definitions:
         description: kb_team_membership in Okta
         type: array
         items:
-            type: string
+          type: string
       manager:
         description: manager in Okta
         type: string
@@ -125,7 +125,7 @@ paths:
       description: "Get the user information for a given user in OKTA"
       tags:
         - Users
-      produces: 
+      produces:
         - application/json
         - text/plain
       parameters:
