@@ -42,7 +42,7 @@ func (c *Client) fetchGroupMembership(groupID string) ([]string, error) {
 
 		users := make([]string, len(resources))
 		for i := range resources {
-			users[i] = resources[i].Profile.EmployeeNumber
+			users[i] = resources[i].Profile.Email
 		}
 
 		allUsers = append(allUsers, users...)

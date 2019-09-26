@@ -124,7 +124,7 @@ func (c *Client) AddPermissions(user *User, service string) error {
 	}
 
 	for groupName, users := range cachedGroupMemberships {
-		if users[user.EmployeeNumber] {
+		if users[user.Email] {
 			user.Permissions = append(user.Permissions, groupName)
 		}
 	}
