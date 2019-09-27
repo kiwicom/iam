@@ -1,6 +1,7 @@
 package storage
 
 import (
+	"fmt"
 	"log"
 	"net"
 	"strings"
@@ -17,8 +18,9 @@ var json = jsoniter.ConfigCompatibleWithStandardLibrary
 
 // RedisCache contains redis client
 type RedisCache struct {
-	client *redisTrace.Client
-	backup InMemoryCache
+	client  *redisTrace.Client
+	backup  InMemoryCache
+	version int
 }
 
 // ErrNotFound is returned when an item is not present in cache
@@ -31,7 +33,7 @@ func shouldUseRedisBackup(err error) bool {
 }
 
 // NewRedisCache initializes and returns a RedisCache
-func NewRedisCache(host, port string) *RedisCache {
+func NewRedisCache(host, port string, version int) *RedisCache {
 	opts := &redis.Options{Addr: net.JoinHostPort(host, port)}
 
 	return &RedisCache{
@@ -45,7 +47,7 @@ func NewRedisCache(host, port string) *RedisCache {
 // `value` is a pointer to the variable that will receive the data.
 // `error` is ErrNotFound when no value is found.
 func (c *RedisCache) Get(key string, value interface{}) error {
-	lowerKey := strings.ToLower(key)
+	lowerKey := c.cacheKey(key)
 	data, err := c.client.Get(lowerKey).Bytes()
 	if err == nil {
 		err = json.Unmarshal(data, &value)
@@ -71,7 +73,7 @@ func (c *RedisCache) Set(key string, value interface{}, ttl time.Duration) error
 		return err
 	}
 
-	lowerKey := strings.ToLower(key)
+	lowerKey := c.cacheKey(key)
 	_, err = c.client.Set(lowerKey, strVal, ttl).Result()
 	if shouldUseRedisBackup(err) {
 		log.Println("Redis down using inMemory SET")
@@ -83,7 +85,7 @@ func (c *RedisCache) Set(key string, value interface{}, ttl time.Duration) error
 
 // Del deletes an item from cache
 func (c *RedisCache) Del(key string) error {
-	lowerKey := strings.ToLower(key)
+	lowerKey := c.cacheKey(key)
 	_, err := c.client.Del(lowerKey).Result()
 	if shouldUseRedisBackup(err) {
 		log.Println("Redis down using inMemory DEL")
@@ -99,7 +101,7 @@ func (c *RedisCache) MSet(pairs map[string]interface{}, ttl time.Duration) error
 	i := 0
 
 	for key, value := range pairs {
-		args[i] = strings.ToLower(key)
+		args[i] = c.cacheKey(key)
 		strValue, err := json.Marshal(value)
 		if err != nil {
 			return err
@@ -134,4 +136,10 @@ func (c *RedisCache) MSet(pairs map[string]interface{}, ttl time.Duration) error
 	}
 
 	return err
+}
+
+func (c *RedisCache) cacheKey(key string) string {
+	lowerKey := strings.ToLower(key)
+
+	return fmt.Sprintf("%v-v%v", lowerKey, c.version)
 }
