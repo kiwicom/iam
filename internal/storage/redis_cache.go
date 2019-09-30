@@ -37,8 +37,9 @@ func NewRedisCache(host, port string, version int) *RedisCache {
 	opts := &redis.Options{Addr: net.JoinHostPort(host, port)}
 
 	return &RedisCache{
-		client: redisTrace.NewClient(opts, redisTrace.WithServiceName("kiwi-iam.redis")),
-		backup: NewInMemoryCache(),
+		client:  redisTrace.NewClient(opts, redisTrace.WithServiceName("kiwi-iam.redis")),
+		backup:  NewInMemoryCache(),
+		version: version,
 	}
 }
 
