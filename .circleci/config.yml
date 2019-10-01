@@ -71,7 +71,7 @@ jobs:
 
   publish/docs:
     docker:
-      - image: commitsar/hugo:0.0.1
+      - image: commitsar/hugo:0.58.3
     steps:
       - checkout
       - run:
