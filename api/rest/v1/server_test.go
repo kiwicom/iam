@@ -13,7 +13,8 @@ func TestProtectedRoutes(t *testing.T) {
 	srv.routes()
 
 	tests := map[string]int{
-		"/": 200,
+		"/":            200,
+		"/healthcheck": 200,
 	}
 
 	for route, code := range tests {
