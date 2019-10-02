@@ -1,6 +1,7 @@
 package okta
 
 import (
+	"errors"
 	"time"
 
 	"github.com/getsentry/raven-go"
@@ -10,6 +11,10 @@ import (
 
 // Permissions contains a map with names as keys and lists of IDs as values.
 type Permissions map[string][]string
+
+// ErrNotReady is returned when data is not ready and the client should retry
+// the request later
+var ErrNotReady = errors.New("data not ready")
 
 // GetServicePermissions retrieves permissions for the specified service.
 func (c *Client) GetServicePermissions(service string) (Permissions, error) {
@@ -31,24 +36,24 @@ func (c *Client) GetServicePermissions(service string) (Permissions, error) {
 			return permissions, nil
 		}
 
-		// This case can happen if data is lost between syncs, or if a sync fails.
-		// We try syncing groups from Okta again, and delete the sync-timestamp
-		// before doing so. This is to ensure the synced data is correct.
-		// If a request ends up here it will in most (if not all) cases timeout,
-		// not sure if a better solution would be to return nothing or an error.
-		val, err, _ := c.group.Do("resync-groups", func() (interface{}, error) {
-			err := c.cache.Del("groups-sync-timestamp")
-			if err != nil {
-				raven.CaptureError(err, nil)
-			}
-			c.SyncGroups()
-			return c.GetServicePermissions(service)
-		})
+		// This case can happen if data is lost between syncs, if a sync fails, or
+		// if the cache version is bumped and a request is received before syncing
+		// groups. We try syncing groups from Okta again, and delete the
+		// sync-timestamp before doing so. This is to ensure we retrieve all the
+		// data. An error is returned to the client, because if we would keep the
+		// connection open while syncing groups, it would timeout and fail anyway.
+		go func() {
+			_, _, _ = c.group.Do("resync-groups", func() (interface{}, error) {
+				err := c.cache.Del("groups-sync-timestamp")
+				if err != nil {
+					raven.CaptureError(err, nil)
+				}
+				c.SyncGroups()
+				return nil, nil
+			})
+		}()
 
-		if err != nil {
-			return permissions, err
-		}
-		return val.(Permissions), nil
+		return nil, ErrNotReady
 	}
 
 	for groupName, users := range cachedGroupMemberships {

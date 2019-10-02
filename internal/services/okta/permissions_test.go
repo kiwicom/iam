@@ -11,7 +11,11 @@ import (
 )
 
 func TestGetServicePermissions(t *testing.T) {
-	client := NewClient(&ClientOpts{Cache: storage.NewInMemoryCache()})
+	cache := storage.NewInMemoryCache()
+	client := NewClient(&ClientOpts{
+		Cache:       cache,
+		LockManager: storage.NewLockManager(cache, time.Second, time.Second),
+	})
 
 	cachedGroups := map[string]map[string]bool{
 		"access": {
@@ -37,4 +41,9 @@ func TestGetServicePermissions(t *testing.T) {
 	permissions, err = client.GetServicePermissions("assumed-empty")
 	assert.NoError(t, err)
 	assert.Equal(t, Permissions{}, permissions)
+
+	_ = client.cache.Set("groups-sync-timestamp", time.Time{}, 0)
+	_, err = client.GetServicePermissions("data-not-ready")
+	assert.Error(t, err)
+	assert.Equal(t, ErrNotReady, err)
 }

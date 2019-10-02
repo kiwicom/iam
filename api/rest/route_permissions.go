@@ -43,6 +43,11 @@ func getServicesPermissions(client permissionDataService, tracer *monitoring.Tra
 		}
 
 		permissions, err := getPermissions()
+		if err == okta.ErrNotReady {
+			w.Header().Add("Retry-After", "30")
+			http.Error(w, "Data not ready", http.StatusServiceUnavailable)
+			return
+		}
 		if err != nil {
 			http.Error(w, "Service unavailable", http.StatusInternalServerError)
 			return
