@@ -22,6 +22,7 @@ type server struct {
 
 func newServer() server {
 	s := server{}
+	s.routes()
 
 	return s
 }
