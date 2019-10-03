@@ -20,7 +20,7 @@ func (tg *mockTeamsGetter) GetTeams() (map[string]int, error) {
 }
 
 func TestInternalError(t *testing.T) {
-	s := server{}
+	s := Server{}
 	errMessage := "internal error that shouldn't be exposed"
 	tg := &mockTeamsGetter{}
 	s.oktaService = tg
@@ -39,7 +39,7 @@ func TestInternalError(t *testing.T) {
 }
 
 func TestGetTeams(t *testing.T) {
-	s := server{}
+	s := Server{}
 	tg := &mockTeamsGetter{}
 	tg.On("GetTeams").Return(map[string]int{"team1": 3, "team2": 1, "team3": 1}, nil)
 	s.oktaService = tg

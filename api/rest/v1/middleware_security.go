@@ -12,7 +12,7 @@ import (
 )
 
 // AuthWrapper wraps a router to validate the authentication token
-func (s *server) middlewareSecurity(h http.HandlerFunc) http.HandlerFunc {
+func (s *Server) middlewareSecurity(h http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		err := s.checkAuth(r)
 		if err != nil {
@@ -32,7 +32,7 @@ func (s *server) middlewareSecurity(h http.HandlerFunc) http.HandlerFunc {
 }
 
 // checkAuth checks if user has proper token + user agent
-func (s *server) checkAuth(r *http.Request) error {
+func (s *Server) checkAuth(r *http.Request) error {
 	requestToken, err := security.GetToken(r.Header.Get("Authorization"))
 	if err != nil {
 		return api.Error{Message: "Use the Bearer {token} authorization scheme", Code: http.StatusUnauthorized}

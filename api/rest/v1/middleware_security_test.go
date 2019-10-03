@@ -41,7 +41,7 @@ func (m *mockedMetricsService) Incr(serviceName string, tags ...string) {
 func TestUnhappyPathCheckAuth(t *testing.T) {
 	m := &mockedMetricsService{}
 	sm := createFakeManager()
-	s := server{
+	s := Server{
 		secretManager: sm,
 		metricClient:  m,
 	}
@@ -72,7 +72,7 @@ func TestUnhappyPathCheckAuth(t *testing.T) {
 func TestHappyPathCheckAuth(t *testing.T) {
 	m := &mockedMetricsService{}
 	sm := createFakeManager()
-	s := server{
+	s := Server{
 		secretManager: sm,
 		metricClient:  m,
 	}

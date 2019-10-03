@@ -9,7 +9,7 @@ import (
 )
 
 func TestHealthCheck(t *testing.T) {
-	s := server{}
+	s := Server{}
 
 	req, err := http.NewRequest("GET", "/healthcheck", nil)
 	assert.NoError(t, err)

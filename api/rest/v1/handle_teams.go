@@ -7,7 +7,7 @@ import (
 	"github.com/getsentry/raven-go"
 )
 
-func (s *server) handleTeamsGET() http.HandlerFunc {
+func (s *Server) handleTeamsGET() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		teams, err := s.oktaService.GetTeams()
 		if err != nil {

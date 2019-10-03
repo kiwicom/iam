@@ -6,7 +6,7 @@ import (
 )
 
 // handleHealthcheck is a route for healthcheck
-func (s *server) handleHealthcheck() http.HandlerFunc {
+func (s *Server) handleHealthcheck() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		var message = "Ok"
 		_, err := w.Write([]byte(message))
