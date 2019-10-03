@@ -4,7 +4,9 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
+
 	jsoniter "github.com/json-iterator/go"
+
 	"github.com/kiwicom/iam/internal/security/secrets"
 )
 
