@@ -17,6 +17,7 @@ import (
 
 type permissionDataService interface {
 	GetServicesPermissions([]string) (map[string]okta.Permissions, error)
+	GetUserPermissions(string, []string) (map[string][]string, error)
 }
 
 type permissionsParams struct {
@@ -24,8 +25,7 @@ type permissionsParams struct {
 	email    string
 }
 
-// getPermissions looks up permissions
-func getServicesPermissions(client permissionDataService, tracer *monitoring.Tracer) httprouter.Handle {
+func getPermissions(client permissionDataService, tracer *monitoring.Tracer) httprouter.Handle {
 	return func(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 		params, paramErr := validatePermissionsParams(r.URL.RawQuery)
 		if paramErr != nil {
@@ -33,16 +33,19 @@ func getServicesPermissions(client permissionDataService, tracer *monitoring.Tra
 			return
 		}
 
-		// getPermissions just wraps GetServicesPermissions in tracing
-		getPermissions := func() (map[string]okta.Permissions, error) {
-			span, _ := tracer.StartSpanWithContext(r.Context(), "permissions-data", "okta-controller", "http")
-			defer tracer.FinishSpan(span)
-			permissions, err := client.GetServicesPermissions(params.services)
+		var permissions interface{}
+		var err error
 
-			return permissions, err
+		if params.email == "" {
+			span, _ := tracer.StartSpanWithContext(r.Context(), "services-permissions", "okta-controller", "http")
+			defer tracer.FinishSpan(span)
+			permissions, err = client.GetServicesPermissions(params.services)
+		} else {
+			span, _ := tracer.StartSpanWithContext(r.Context(), "user-permissions", "okta-controller", "http")
+			defer tracer.FinishSpan(span)
+			permissions, err = client.GetUserPermissions(params.email, params.services)
 		}
 
-		permissions, err := getPermissions()
 		if err == okta.ErrNotReady {
 			w.Header().Add("Retry-After", "30")
 			http.Error(w, "Data not ready", http.StatusServiceUnavailable)

@@ -25,9 +25,9 @@ func TestGetServicePermissions(t *testing.T) {
 	}
 	actualEmptyGroups := map[string]map[string]bool{}
 
-	_ = client.cache.Set("groups-sync-timestamp", time.Now(), 0)
-	_ = client.cache.Set(groupMembershipPrefix+"cached", cachedGroups, 0)
-	_ = client.cache.Set(groupMembershipPrefix+"actual-empty", actualEmptyGroups, 0)
+	_ = cache.Set("groups-sync-timestamp", time.Now(), 0)
+	_ = cache.Set(groupMembershipPrefix+"cached", cachedGroups, 0)
+	_ = cache.Set(groupMembershipPrefix+"actual-empty", actualEmptyGroups, 0)
 
 	permissions, err := client.GetServicePermissions("cached")
 	assert.NoError(t, err)
@@ -42,8 +42,48 @@ func TestGetServicePermissions(t *testing.T) {
 	assert.NoError(t, err)
 	assert.Equal(t, Permissions{}, permissions)
 
-	_ = client.cache.Set("groups-sync-timestamp", time.Time{}, 0)
+	_ = cache.Set("groups-sync-timestamp", time.Time{}, 0)
 	_, err = client.GetServicePermissions("data-not-ready")
+	assert.Error(t, err)
+	assert.Equal(t, ErrNotReady, err)
+}
+
+func TestGetUserPermissions(t *testing.T) {
+	cache := storage.NewInMemoryCache()
+	client := NewClient(&ClientOpts{
+		Cache:       cache,
+		LockManager: storage.NewLockManager(cache, time.Second, time.Second),
+	})
+
+	cachedGroups := map[string]map[string]bool{
+		"access": {
+			"user1": true,
+			"user2": true,
+		},
+	}
+
+	actualEmptyGroups := map[string]map[string]bool{
+		"access": {
+			"user2": true,
+		},
+	}
+
+	_ = cache.Set("groups-sync-timestamp", time.Now(), 0)
+	_ = cache.Set(groupMembershipPrefix+"cached", cachedGroups, 0)
+	_ = cache.Set(groupMembershipPrefix+"actual-empty", actualEmptyGroups, 0)
+
+	expectedPermissions := map[string][]string{
+		"cached": {"access"},
+	}
+
+	services := []string{"cached", "actual-empty", "assumed-empty"}
+	permissions, err := client.GetUserPermissions("user1", services)
+
+	assert.NoError(t, err)
+	assert.Equal(t, expectedPermissions, permissions)
+
+	_ = cache.Set("groups-sync-timestamp", time.Time{}, 0)
+	_, err = client.GetUserPermissions("user1", []string{"data-not-ready"})
 	assert.Error(t, err)
 	assert.Equal(t, ErrNotReady, err)
 }

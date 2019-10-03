@@ -81,3 +81,32 @@ func (c *Client) GetServicesPermissions(services []string) (map[string]Permissio
 
 	return permissions, nil
 }
+
+func stringInSlice(str string, slice []string) bool {
+	for _, s := range slice {
+		if s == str {
+			return true
+		}
+	}
+	return false
+}
+
+// GetUserPermissions returns permissions for the specified user for the
+// requested services.
+func (c *Client) GetUserPermissions(email string, services []string) (map[string][]string, error) {
+	allPermissions, err := c.GetServicesPermissions(services)
+	if err != nil {
+		return nil, err
+	}
+
+	userPermissions := make(map[string][]string)
+	for _, service := range services {
+		for permission, users := range allPermissions[service] {
+			if stringInSlice(email, users) {
+				userPermissions[service] = append(userPermissions[service], permission)
+			}
+		}
+	}
+
+	return userPermissions, nil
+}

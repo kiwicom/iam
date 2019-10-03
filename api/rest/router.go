@@ -61,7 +61,7 @@ func CreateRouter(
 
 	addEndpoint("/v1/groups", getGroups(oktaClient))
 
-	addEndpoint("/v1/permissions", getServicesPermissions(oktaClient, tracer))
+	addEndpoint("/v1/permissions", getPermissions(oktaClient, tracer))
 
 	router.PanicHandler = panicHandler
 
