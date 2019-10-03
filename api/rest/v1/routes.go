@@ -7,4 +7,5 @@ func (s *server) routes() {
 	s.router = mux.NewRouter()
 	s.router.HandleFunc("/", s.handleHello())
 	s.router.HandleFunc("/healthcheck", s.handleHealthcheck())
+	s.router.HandleFunc("/teams", s.middlewareSecurity(s.handleTeamsGET()))
 }

@@ -9,12 +9,12 @@ import (
 )
 
 func TestProtectedRoutes(t *testing.T) {
-	srv := server{}
-	srv.routes()
+	srv := newServer()
 
 	tests := map[string]int{
-		"/":            200,
-		"/healthcheck": 200,
+		"/":            http.StatusOK,
+		"/healthcheck": http.StatusOK,
+		"/teams":       http.StatusUnauthorized,
 	}
 
 	for route, code := range tests {
@@ -26,6 +26,5 @@ func TestProtectedRoutes(t *testing.T) {
 		srv.ServeHTTP(w, req)
 
 		assert.Equal(t, code, w.Code)
-
 	}
 }
