@@ -35,3 +35,47 @@ func TestGroupMemberships(t *testing.T) {
 		}
 	}
 }
+
+func TestGroupMembershipsInvalidation(t *testing.T) {
+	cache := storage.NewInMemoryCache()
+	client := NewClient(&ClientOpts{Cache: cache})
+
+	err := client.updateGroupMemberships([]GroupMembership{
+		{"group-id", "iam-service.permission1", []string{"user1", "user2"}},
+		{"group-id", "iam-service.permission2", []string{"user1", "user2"}},
+	})
+
+	membershipsBefore := make(map[string]map[string]bool)
+	_ = cache.Get("group-membership:service", &membershipsBefore)
+
+	assert.NoError(t, err)
+	assert.Equal(t, map[string]map[string]bool{
+		"permission1": {
+			"user1": true,
+			"user2": true,
+		},
+		"permission2": {
+			"user1": true,
+			"user2": true,
+		},
+	}, membershipsBefore, "Group memberships are added correctly")
+
+	err = client.updateGroupMemberships([]GroupMembership{
+		{"group-id", "iam-service.permission1", []string{"user2"}},
+		{"group-id", "iam-service.permission2", []string{"user1", "user2"}},
+	})
+
+	membershipsAfter := make(map[string]map[string]bool)
+	_ = cache.Get("group-membership:service", &membershipsAfter)
+
+	assert.NoError(t, err)
+	assert.Equal(t, map[string]map[string]bool{
+		"permission1": {
+			"user2": true,
+		},
+		"permission2": {
+			"user1": true,
+			"user2": true,
+		},
+	}, membershipsAfter, "Group membership is invalidated correctly")
+}

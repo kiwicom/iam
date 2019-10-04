@@ -92,9 +92,7 @@ func (c *Client) updateGroupMemberships(memberships []GroupMembership) error {
 			}
 		}
 
-		if _, ok := cachedGroupMemberships[groupParts[1]]; !ok {
-			cachedGroupMemberships[groupParts[1]] = make(map[string]bool)
-		}
+		cachedGroupMemberships[groupParts[1]] = make(map[string]bool)
 
 		for _, userid := range membership.Users {
 			cachedGroupMemberships[groupParts[1]][userid] = true
