@@ -7,13 +7,17 @@ import (
 
 	jsoniter "github.com/json-iterator/go"
 
+	"github.com/kiwicom/iam/internal/monitoring"
 	"github.com/kiwicom/iam/internal/security/secrets"
+	"github.com/kiwicom/iam/internal/services/okta"
 )
 
 var json = jsoniter.ConfigCompatibleWithStandardLibrary
 
 type oktaService interface {
 	GetTeams() (map[string]int, error)
+	GetUser(string) (okta.User, error)
+	AddPermissions(*okta.User, string) error
 }
 
 type metricService interface {
@@ -28,6 +32,7 @@ type Server struct {
 	secretManager secrets.SecretManager
 	metricClient  metricService
 	oktaService   oktaService
+	tracer        *monitoring.Tracer
 }
 
 // NewServer creates a new instance of server and sets up routes
