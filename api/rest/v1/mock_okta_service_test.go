@@ -1,8 +1,9 @@
 package rest
 
 import (
-	"github.com/kiwicom/iam/internal/services/okta"
 	"github.com/stretchr/testify/mock"
+
+	"github.com/kiwicom/iam/internal/services/okta"
 )
 
 type mockOktaService struct {

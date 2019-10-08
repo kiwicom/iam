@@ -15,6 +15,7 @@ func TestProtectedRoutes(t *testing.T) {
 		"/":            http.StatusOK,
 		"/healthcheck": http.StatusOK,
 		"/teams":       http.StatusUnauthorized,
+		"/user":        http.StatusUnauthorized,
 	}
 
 	for route, code := range tests {

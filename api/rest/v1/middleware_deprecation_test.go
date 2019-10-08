@@ -16,5 +16,5 @@ func TestDeprecationWrapper(t *testing.T) {
 	request, _ := http.NewRequest("GET", "/", nil)
 	response := httptest.NewRecorder()
 	handler.ServeHTTP(response, request)
-	assert.Equal(t, "true", response.Header().Get("Deprecated"), "True is expected")
+	assert.Equal(t, "true", response.Header().Get("Deprecated"), "Deprecated header should be in response")
 }
