@@ -8,4 +8,5 @@ func (s *Server) routes() {
 	s.router.HandleFunc("/", s.handleHello())
 	s.router.HandleFunc("/healthcheck", s.handleHealthcheck())
 	s.router.HandleFunc("/teams", s.middlewareSecurity(s.handleTeamsGET()))
+	s.router.HandleFunc("/user", s.middlewareSecurity(s.handleUserGET()))
 }
