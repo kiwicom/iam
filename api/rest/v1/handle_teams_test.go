@@ -7,22 +7,12 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/stretchr/testify/mock"
 )
-
-type mockTeamsGetter struct {
-	mock.Mock
-}
-
-func (tg *mockTeamsGetter) GetTeams() (map[string]int, error) {
-	args := tg.Called()
-	return args.Get(0).(map[string]int), args.Error(1)
-}
 
 func TestInternalError(t *testing.T) {
 	s := Server{}
 	errMessage := "internal error that shouldn't be exposed"
-	tg := &mockTeamsGetter{}
+	tg := &mockOktaService{}
 	s.oktaService = tg
 	tg.On("GetTeams").Return(map[string]int{}, errors.New(errMessage))
 
@@ -40,7 +30,7 @@ func TestInternalError(t *testing.T) {
 
 func TestGetTeams(t *testing.T) {
 	s := Server{}
-	tg := &mockTeamsGetter{}
+	tg := &mockOktaService{}
 	tg.On("GetTeams").Return(map[string]int{"team1": 3, "team2": 1, "team3": 1}, nil)
 	s.oktaService = tg
 
