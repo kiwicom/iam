@@ -25,7 +25,7 @@ func CreateServer(userServiceClient userDataService) (*Server, error) {
 }
 
 // User returns a single user based on email
-func (s *Server) User(ctx context.Context, in *pb.UserRequest) (*pb.UserResponse, error) {
+func (s *Server) User(_ context.Context, in *pb.UserRequest) (*pb.UserResponse, error) {
 	user, userErr := s.userService.GetUser(in.Email)
 	if userErr != nil {
 		return nil, userErr

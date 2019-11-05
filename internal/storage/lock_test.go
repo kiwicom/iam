@@ -22,10 +22,9 @@ type mockCache struct {
 // nolint: staticcheck
 func (c *mockCache) Get(key string, value interface{}) error {
 	v, ok := c.data[key]
-	if ok == false || time.Since(v.expiration) > 0 {
+	if !ok || time.Since(v.expiration) > 0 {
 		delete(c.data, key)
 		return ErrNotFound
-
 	}
 	// ineffective assignment of `value`
 	// nolint: ineffassign

@@ -41,6 +41,7 @@ func mockPermissionsRoute() (*httprouter.Router, *permissionService) {
 	return router, s
 }
 
+// nolint:unparam // even though method is currently always "GET" we might decide to use other methods in the future
 func mockPermissionsRequest(router http.Handler, method, path string) *httptest.ResponseRecorder {
 	response := httptest.NewRecorder()
 	request, _ := http.NewRequest(method, path, nil)

@@ -10,7 +10,7 @@ import (
 )
 
 // panicHandler prevents the server crashing due to unhandled panics
-func panicHandler(w http.ResponseWriter, r *http.Request, err interface{}) {
+func panicHandler(w http.ResponseWriter, _ *http.Request, err interface{}) {
 	apiError, castingOk := err.(api.Error)
 	if castingOk {
 		raven.CaptureError(apiError, nil)
@@ -22,5 +22,5 @@ func panicHandler(w http.ResponseWriter, r *http.Request, err interface{}) {
 	if errorType, castingOk := err.(error); castingOk {
 		raven.CaptureError(errorType, nil)
 	}
-	log.Panic(err)
+	log.Println("[ERROR]", err)
 }

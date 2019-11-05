@@ -22,6 +22,7 @@ type metricService interface {
 }
 
 // CreateRouter creates a new router instance
+//revive:disable:confusing-naming createRouter is for testing
 func CreateRouter(
 	serviceName string,
 	oktaClient *okta.Client,

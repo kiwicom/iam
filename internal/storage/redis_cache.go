@@ -133,7 +133,6 @@ func (c *RedisCache) MSet(pairs map[string]interface{}, ttl time.Duration) error
 			log.Println("Error setting keys expiration")
 			raven.CaptureError(expErr, nil)
 		}
-
 	}
 
 	return err

@@ -8,7 +8,7 @@ import (
 )
 
 // sayHello is a route for HelloWorld
-func sayHello(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
+func sayHello(w http.ResponseWriter, _ *http.Request, _ httprouter.Params) {
 	message := "42"
 	_, err := w.Write([]byte(message))
 	if err != nil {

@@ -22,7 +22,7 @@ func (s *mockedSecretManager) GetAppToken(app, environment string) (string, erro
 	return "", errors.New("wrong token bro")
 }
 
-func (s *mockedSecretManager) GetSetting(app string) (string, error) {
+func (s *mockedSecretManager) GetSetting(_ string) (string, error) {
 	return "", nil
 }
 

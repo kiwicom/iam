@@ -9,6 +9,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+//revive:disable // for testing purposes
 func createRouter() *httprouter.Router {
 	router := httprouter.New()
 	router.GET("/", addDeprecationWarning(sayHello))

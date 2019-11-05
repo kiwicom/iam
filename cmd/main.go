@@ -152,6 +152,7 @@ func capturePanic(f func()) {
 	f()
 }
 
+//nolint:funlen // might need some refactoring in the future but is otherwise is readable
 func main() {
 	cfg.InitEnv()
 

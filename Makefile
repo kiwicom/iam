@@ -24,9 +24,16 @@ define log_success
 	@printf "$(color_green)$(1)$(color_off)\n"
 endef
 
-lint:
+lint: revive-lint golangci-lint
+
+revive-lint:
+	$(call log_info, Running revive linter)
+	revive -config .revive.toml ./...
+	$(call log_success,Linting with revive linter succeeded!)
+
+golangci-lint:
 	$(call log_info, Running golangci-lint)
-	golangci-lint run internal/...
+	golangci-lint run ./...
 	$(call log_success,Linting with golangci-lint succeeded!)
 
 go-mod-tidy:

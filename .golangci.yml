@@ -34,6 +34,9 @@ linters-settings:
     suggest-new: true
   misspell:
     locale: US
+  funlen: # be little bit more permissive then the default values
+    lines: 70
+    statements: 60
 
 linters:
   enable-all: true
@@ -41,6 +44,7 @@ linters:
     # prealloc is not recommended by `golangci-lint` developers.
     - prealloc
     - gochecknoglobals
+    - wsl
 
 issues:
   exclude-rules:

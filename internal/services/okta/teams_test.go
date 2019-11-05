@@ -13,7 +13,7 @@ type mockCache struct {
 	data map[string]interface{}
 }
 
-func (c *mockCache) Set(key string, value interface{}, ttl time.Duration) error {
+func (c *mockCache) Set(key string, value interface{}, _ time.Duration) error {
 	c.data[key] = value
 	return nil
 }
