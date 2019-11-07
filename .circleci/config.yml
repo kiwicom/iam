@@ -4,21 +4,21 @@ jobs:
   # Test Jobs
   build:
     docker:
-      - image: golang:1.13.1
+      - image: golang:1.13.4
     steps:
       - checkout
       - run: make build
 
   test:
     docker:
-      - image: golang:1.13.1
+      - image: golang:1.13.4
     steps:
       - checkout
       - run: make test/ci
 
   e2e-tests:
     docker:
-      - image: golang:1.13.1
+      - image: golang:1.13.4
     steps:
       - checkout
       - run: |
@@ -32,7 +32,7 @@ jobs:
 
   e2e-tests/nocache:
     docker:
-      - image: golang:1.13.1
+      - image: golang:1.13.4
     steps:
       - checkout
       - run: |
@@ -47,7 +47,7 @@ jobs:
   # Deploy Jobs
   deploy/sandbox:
     docker:
-      - image: golang:1.13.1
+      - image: golang:1.13.4
     steps:
       - run: |
           curl -X POST \
@@ -59,7 +59,7 @@ jobs:
 
   deploy/production:
     docker:
-      - image: golang:1.13.1
+      - image: golang:1.13.4
     steps:
       - run: |
           curl -X POST \
