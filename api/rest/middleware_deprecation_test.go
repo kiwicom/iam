@@ -9,7 +9,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-//revive:disable // for testing purposes
+// revive:disable:confusing-naming createRouter is for testing, CreateRouter is used normally
 func createRouter() *httprouter.Router {
 	router := httprouter.New()
 	router.GET("/", addDeprecationWarning(sayHello))

@@ -24,7 +24,7 @@ type VaultManager struct {
 	namespace string
 }
 
-var requiredPrefix = "/secret"
+const requiredPrefix = "/secret"
 
 // CreateNewVaultClient create a new client to connect to Vault
 func CreateNewVaultClient(address, token, namespace string) (*VaultManager, error) {
