@@ -3,7 +3,7 @@ module github.com/kiwicom/iam
 go 1.13
 
 require (
-	github.com/DataDog/datadog-go v2.3.0+incompatible
+	github.com/DataDog/datadog-go v3.2.0+incompatible
 	github.com/certifi/gocertifi v0.0.0-20190905060710-a5e0173ced67 // indirect
 	github.com/getsentry/raven-go v0.2.0
 	github.com/go-redis/redis v6.15.6+incompatible
