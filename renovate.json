@@ -1,4 +1,7 @@
 {
   "postUpdateOptions": ["gomodTidy"],
-  "extends": ["config:base"]
+  "extends": ["config:base"],
+  "encrypted": {
+    "token": "whoz8HnlcjHuF7itspNQxbvqKe3ujnUOsDEtFEdI2nk6e1GvBt1czFbWLZSSBF/efPEcAm1Meoa4j5cyYNvogqtpFgYf+HJeSEoYbSQlfkKB47vdGppT6EBXpPC6sCPEfgK1kkuGCMC7HmhRguycfFBTu3gDkP0tyhkxCROpFhBJqCONd12Iiu+uSJF58v/Ey/PlIHQEIxY9Y/zhfR6YvLu0M4a4TRNArrqzNj42e3WiGMhKyHZXuSWytcgPGWlnr45LvgLMspBzGi4KVgpoJTbuEUa8WQ2Y+hVpilc40WZRcz5JWLqJjaf7G0SCUhkE5XUJeBzCF3cWVEbkBnyCVg=="
+  }
 }
