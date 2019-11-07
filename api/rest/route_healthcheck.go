@@ -8,7 +8,7 @@ import (
 )
 
 // healthcheck is a route for healthcheck
-func healthcheck(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
+func healthcheck(w http.ResponseWriter, _ *http.Request, _ httprouter.Params) {
 	var message = "Ok"
 	_, err := w.Write([]byte(message))
 

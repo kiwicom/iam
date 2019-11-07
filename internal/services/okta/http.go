@@ -69,7 +69,7 @@ func defaultFetcher(userAgent string, metrics *monitoring.Metrics) func(req Requ
 		httpReq.Header.Set("Authorization", req.Token)
 
 		metrics.Incr("outgoing.requests", monitoring.Tag("url", req.URL))
-		httpRes, err := httpClient.Do(httpReq)
+		httpRes, err := httpClient.Do(httpReq) //nolint:bodyclose // body is closed on reading either to string or JSON
 		if err != nil {
 			return nil, err
 		}

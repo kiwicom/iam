@@ -219,7 +219,6 @@ func (c *Client) SyncGroups() {
 			raven.CaptureError(err, nil)
 			return
 		}
-
 	}
 
 	if err = c.cache.Set("groups-sync-timestamp", syncStart, cfg.Expirations.GroupsLastSync); err != nil {

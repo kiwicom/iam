@@ -116,6 +116,8 @@ func validateUsersParams(rawQuery string) (map[string]string, error) {
 	return params, nil
 }
 
+//revive:disable:flag-parameter
+
 // formatUser converts the given user to map and keeps or removes the
 // permissions field based on the withPermissions parameter.
 func formatUser(s *okta.User, withPermissions bool) (map[string]interface{}, error) {

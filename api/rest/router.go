@@ -22,7 +22,7 @@ type metricService interface {
 }
 
 // CreateRouter creates a new router instance
-func CreateRouter(
+func CreateRouter( // revive:disable-line:confusing-naming createRouter is for testing
 	serviceName string,
 	oktaClient *okta.Client,
 	secretManager secrets.SecretManager,

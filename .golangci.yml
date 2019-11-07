@@ -34,13 +34,19 @@ linters-settings:
     suggest-new: true
   misspell:
     locale: US
+  funlen: # be little bit more permissive then the default values
+    lines: 70
+    statements: 60
 
 linters:
   enable-all: true
   disable:
     # prealloc is not recommended by `golangci-lint` developers.
     - prealloc
+    # global values are used on many places but meaningfully, this makes more sense then adding multiple ignore comments
     - gochecknoglobals
+    # wsl *forces* you to use spaces on many places and makes the code very very long (unnecessarily)
+    - wsl
 
 issues:
   exclude-rules:
