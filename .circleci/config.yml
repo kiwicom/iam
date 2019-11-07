@@ -1,21 +1,6 @@
 version: 2
 
 jobs:
-  # Test Jobs
-  build:
-    docker:
-      - image: golang:1.13.4
-    steps:
-      - checkout
-      - run: make build
-
-  test:
-    docker:
-      - image: golang:1.13.4
-    steps:
-      - checkout
-      - run: make test/ci
-
   e2e-tests:
     docker:
       - image: golang:1.13.4
@@ -91,17 +76,13 @@ jobs:
 
 workflows:
   version: 2
-  build:
-    jobs:
-      - build
   test:
     jobs:
-      - test: &ignore-master
+      - e2e-tests: &ignore-master
           filters:
             branches:
               ignore:
                 - master
-      - e2e-tests: *ignore-master
       - e2e-tests/nocache: *ignore-master
   deploy:
     jobs:
