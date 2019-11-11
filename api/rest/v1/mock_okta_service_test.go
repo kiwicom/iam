@@ -24,3 +24,13 @@ func (o *mockOktaService) GetUser(email string) (okta.User, error) {
 	argsToReturn := o.Called(email)
 	return argsToReturn.Get(0).(okta.User), argsToReturn.Error(1)
 }
+
+func (o *mockOktaService) GetServicesPermissions(services []string) (map[string]okta.Permissions, error) {
+	argsToReturn := o.Called(services)
+	return argsToReturn.Get(0).(map[string]okta.Permissions), argsToReturn.Error(1)
+}
+
+func (o *mockOktaService) GetUserPermissions(email string, services []string) (map[string][]string, error) {
+	argsToReturn := o.Called(email, services)
+	return argsToReturn.Get(0).(map[string][]string), argsToReturn.Error(1)
+}

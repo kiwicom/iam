@@ -14,9 +14,11 @@ import (
 var json = jsoniter.ConfigCompatibleWithStandardLibrary
 
 type oktaService interface {
+	AddPermissions(*okta.User, string) error
 	GetTeams() (map[string]int, error)
 	GetUser(string) (okta.User, error)
-	AddPermissions(*okta.User, string) error
+	GetServicesPermissions([]string) (map[string]okta.Permissions, error)
+	GetUserPermissions(string, []string) (map[string][]string, error)
 }
 
 type metricService interface {
