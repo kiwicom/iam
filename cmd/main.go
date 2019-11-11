@@ -10,7 +10,7 @@ import (
 
 	grpcAPI "github.com/kiwicom/iam/api/grpc"
 	pb "github.com/kiwicom/iam/api/grpc/v1"
-	restAPI "github.com/kiwicom/iam/api/rest"
+	restAPI "github.com/kiwicom/iam/api/rest/v1"
 	cfg "github.com/kiwicom/iam/configs"
 	"github.com/kiwicom/iam/internal/monitoring"
 	"github.com/kiwicom/iam/internal/security/secrets"
@@ -213,7 +213,11 @@ func main() {
 		Metrics:     metricClient,
 	})
 
-	router := restAPI.CreateRouter("kiwi-iam.http.router", oktaClient, secretManager, metricClient, tracer)
+	restServer := restAPI.NewServer()
+	restServer.OktaService = oktaClient
+	restServer.SecretManager = secretManager
+	restServer.MetricClient = metricClient
+	restServer.Tracer = tracer
 
 	// 0.0.0.0 is specified to allow listening in Docker
 	var address = "0.0.0.0"
@@ -223,7 +227,7 @@ func main() {
 
 	var serveAddr = net.JoinHostPort(address, iamConfig.Port)
 	server := &http.Server{
-		Handler:      router,
+		Handler:      restServer.Router,
 		Addr:         serveAddr,
 		ReadTimeout:  10 * time.Second,
 		WriteTimeout: 10 * time.Second,
