@@ -4,11 +4,10 @@ import (
 	"log"
 	"net/http"
 
-	"gopkg.in/DataDog/dd-trace-go.v1/ddtrace/tracer"
-
 	"github.com/kiwicom/iam/api"
 	"github.com/kiwicom/iam/internal/monitoring"
 	"github.com/kiwicom/iam/internal/security"
+	"gopkg.in/DataDog/dd-trace-go.v1/ddtrace/tracer"
 )
 
 // AuthWrapper wraps a router to validate the authentication token
@@ -49,13 +48,13 @@ func (s *Server) checkAuth(r *http.Request) error {
 		span.SetTag("service-name", service.Name)
 	}
 
-	tokenErr := security.VerifyToken(s.secretManager, service, requestToken)
+	tokenErr := security.VerifyToken(s.SecretManager, service, requestToken)
 
 	if tokenErr != nil {
 		return api.Error{Message: "Unauthorized: " + tokenErr.Error(), Code: http.StatusUnauthorized}
 	}
 
-	s.metricClient.Incr(
+	s.MetricClient.Incr(
 		"incoming.requests",
 		monitoring.Tag("service-name", service.Name),
 		monitoring.Tag("service-environment", service.Environment),

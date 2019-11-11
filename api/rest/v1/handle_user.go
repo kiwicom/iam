@@ -32,9 +32,9 @@ func (s *Server) handleUserGET() http.HandlerFunc {
 
 		// getUser just wraps GetUser in tracing
 		getUser := func() (*okta.User, error) {
-			span, _ := s.tracer.StartSpanWithContext(r.Context(), "user-data", "okta-controller", "http")
-			defer s.tracer.FinishSpan(span)
-			oktaUser, err := s.oktaService.GetUser(email)
+			span, _ := s.Tracer.StartSpanWithContext(r.Context(), "user-data", "okta-controller", "http")
+			defer s.Tracer.FinishSpan(span)
+			oktaUser, err := s.OktaService.GetUser(email)
 
 			return &oktaUser, err
 		}
@@ -50,9 +50,9 @@ func (s *Server) handleUserGET() http.HandlerFunc {
 
 		// addPermissions just wraps AddPermissions with tracing
 		addPermissions := func() error {
-			span, _ := s.tracer.StartSpanWithContext(r.Context(), "permissions", "okta-controller", "http")
-			defer s.tracer.FinishSpan(span)
-			permErr := s.oktaService.AddPermissions(oktaUser, service.Name)
+			span, _ := s.Tracer.StartSpanWithContext(r.Context(), "permissions", "okta-controller", "http")
+			defer s.Tracer.FinishSpan(span)
+			permErr := s.OktaService.AddPermissions(oktaUser, service.Name)
 
 			return permErr
 		}

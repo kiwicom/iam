@@ -42,8 +42,8 @@ func TestUnhappyPathCheckAuth(t *testing.T) {
 	m := &mockedMetricsService{}
 	sm := createFakeManager()
 	s := Server{
-		secretManager: sm,
-		metricClient:  m,
+		SecretManager: sm,
+		MetricClient:  m,
 	}
 
 	req, _ := http.NewRequest("GET", "http://example.com/", nil)
@@ -73,8 +73,8 @@ func TestHappyPathCheckAuth(t *testing.T) {
 	m := &mockedMetricsService{}
 	sm := createFakeManager()
 	s := Server{
-		secretManager: sm,
-		metricClient:  m,
+		SecretManager: sm,
+		MetricClient:  m,
 	}
 
 	req, _ := http.NewRequest("GET", "http://example.com/?email=email@example.com", nil)

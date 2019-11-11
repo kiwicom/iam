@@ -28,11 +28,11 @@ type metricService interface {
 
 // Server houses all dependencies and routing of the server
 type Server struct {
-	router        *mux.Router
-	secretManager secrets.SecretManager
-	metricClient  metricService
-	oktaService   oktaService
-	tracer        *monitoring.Tracer
+	Router        *mux.Router
+	SecretManager secrets.SecretManager
+	MetricClient  metricService
+	OktaService   oktaService
+	Tracer        *monitoring.Tracer
 }
 
 // NewServer creates a new instance of server and sets up routes
@@ -44,5 +44,5 @@ func NewServer() *Server {
 }
 
 func (s *Server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	s.router.ServeHTTP(w, r)
+	s.Router.ServeHTTP(w, r)
 }

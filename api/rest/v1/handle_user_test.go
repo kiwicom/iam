@@ -21,14 +21,14 @@ var testUser = okta.User{
 
 func setupServer() *Server {
 	s := &Server{}
-	tracer, _ := monitoring.CreateNewTracingService(monitoring.TracerOptions{
+	Tracer, _ := monitoring.CreateNewTracingService(monitoring.TracerOptions{
 		ServiceName: "kiwi-iam",
 		Environment: "test",
 		Port:        "8126",
 		Host:        "test",
 	})
 
-	s.tracer = tracer
+	s.Tracer = Tracer
 
 	return s
 }
@@ -38,7 +38,7 @@ func TestMissingQuery(t *testing.T) {
 	request, _ := http.NewRequest("GET", "/", nil)
 	response := httptest.NewRecorder()
 	server := setupServer()
-	server.oktaService = userService
+	server.OktaService = userService
 
 	handler := server.handleUserGET()
 
@@ -56,7 +56,7 @@ func TestWrongEmail(t *testing.T) {
 	request, _ := http.NewRequest("GET", "/?email=testest", nil)
 	response := httptest.NewRecorder()
 	server := setupServer()
-	server.oktaService = userService
+	server.OktaService = userService
 
 	handler := server.handleUserGET()
 
@@ -74,7 +74,7 @@ func TestMissingUserAgent(t *testing.T) {
 	request, _ := http.NewRequest("GET", "/?email=test@test.com", nil)
 	response := httptest.NewRecorder()
 	server := setupServer()
-	server.oktaService = userService
+	server.OktaService = userService
 
 	handler := server.handleUserGET()
 	handler.ServeHTTP(response, request)
@@ -93,7 +93,7 @@ func TestHappyPathWithPermissions(t *testing.T) {
 	request.Header.Set("User-Agent", "service/0 (Kiwi.com test)")
 	response := httptest.NewRecorder()
 	server := setupServer()
-	server.oktaService = userService
+	server.OktaService = userService
 
 	handler := server.handleUserGET()
 	userService.On("GetUser", "test@test.com").Return(testUser, nil)
@@ -126,7 +126,7 @@ func TestHappyPathNoPermissions(t *testing.T) {
 
 		userService := &mockOktaService{}
 		server := setupServer()
-		server.oktaService = userService
+		server.OktaService = userService
 
 		handler := server.handleUserGET()
 		userService.On("GetUser", "test@test.com").Return(testUser, nil)
@@ -158,7 +158,7 @@ func TestControllerFailurePath(t *testing.T) {
 
 	userService := &mockOktaService{}
 	server := setupServer()
-	server.oktaService = userService
+	server.OktaService = userService
 
 	handler := server.handleUserGET()
 	userService.On("GetUser", "bs@test.com").Return(okta.User{}, errors.New("boom"))
@@ -178,7 +178,7 @@ func TestNotFoundPath(t *testing.T) {
 
 	userService := &mockOktaService{}
 	server := setupServer()
-	server.oktaService = userService
+	server.OktaService = userService
 
 	handler := server.handleUserGET()
 	userService.On("GetUser", "notfound@test.com").Return(okta.User{}, okta.ErrUserNotFound)

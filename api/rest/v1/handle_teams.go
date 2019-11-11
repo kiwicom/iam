@@ -9,7 +9,7 @@ import (
 
 func (s *Server) handleTeamsGET() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		teams, err := s.oktaService.GetTeams()
+		teams, err := s.OktaService.GetTeams()
 		if err != nil {
 			http.Error(w, "Service unavailable", http.StatusInternalServerError)
 			return

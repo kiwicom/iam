@@ -13,7 +13,7 @@ func TestInternalError(t *testing.T) {
 	s := Server{}
 	errMessage := "internal error that shouldn't be exposed"
 	tg := &mockOktaService{}
-	s.oktaService = tg
+	s.OktaService = tg
 	tg.On("GetTeams").Return(map[string]int{}, errors.New(errMessage))
 
 	request, _ := http.NewRequest("GET", "/", nil)
@@ -32,7 +32,7 @@ func TestGetTeams(t *testing.T) {
 	s := Server{}
 	tg := &mockOktaService{}
 	tg.On("GetTeams").Return(map[string]int{"team1": 3, "team2": 1, "team3": 1}, nil)
-	s.oktaService = tg
+	s.OktaService = tg
 
 	request, _ := http.NewRequest("GET", "/", nil)
 
