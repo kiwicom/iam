@@ -3,9 +3,8 @@ package rest
 import (
 	"net/http"
 
-	"github.com/gorilla/mux"
-
 	jsoniter "github.com/json-iterator/go"
+	tracingRouter "gopkg.in/DataDog/dd-trace-go.v1/contrib/gorilla/mux"
 
 	"github.com/kiwicom/iam/internal/monitoring"
 	"github.com/kiwicom/iam/internal/security/secrets"
@@ -28,11 +27,13 @@ type metricService interface {
 
 // Server houses all dependencies and routing of the server
 type Server struct {
-	Router        *mux.Router
+	Router        *tracingRouter.Router
 	SecretManager secrets.SecretManager
 	MetricClient  metricService
 	OktaService   oktaService
 	Tracer        *monitoring.Tracer
+	// ServiceName is used for tracing purposes
+	ServiceName string
 }
 
 // NewServer creates a new instance of server and sets up routes
