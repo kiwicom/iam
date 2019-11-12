@@ -16,12 +16,8 @@ func VerifyToken(secretManager secrets.SecretManager, service Service, requestTo
 		return errUnathorised
 	}
 
-	token, err := secretManager.GetAppToken(service.Name, service.Environment)
-	if err != nil {
-		return err
-	}
-
-	if token != requestToken {
+	exists := secretManager.DoesTokenExist(requestToken)
+	if !exists {
 		return errUnathorised
 	}
 

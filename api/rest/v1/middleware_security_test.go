@@ -1,7 +1,6 @@
 package rest
 
 import (
-	"errors"
 	"net/http"
 	"testing"
 
@@ -15,11 +14,11 @@ type mockedSecretManager struct {
 	mock.Mock
 }
 
-func (s *mockedSecretManager) GetAppToken(app, environment string) (string, error) {
-	if app == "serviceName" && environment == "environment" {
-		return "valid token", nil
+func (s *mockedSecretManager) DoesTokenExist(token string) bool {
+	if token == "valid token" {
+		return true
 	}
-	return "", errors.New("wrong token bro")
+	return false
 }
 
 func (s *mockedSecretManager) GetSetting(_ string) (string, error) {

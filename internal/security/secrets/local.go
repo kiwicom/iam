@@ -2,7 +2,6 @@ package secrets
 
 import (
 	"errors"
-	"strings"
 
 	"github.com/spf13/viper"
 )
@@ -15,16 +14,10 @@ func CreateNewLocalSecretManager() *LocalSecretManager {
 	return &LocalSecretManager{}
 }
 
-// GetAppToken gets the token from Viper
-func (s LocalSecretManager) GetAppToken(app, environment string) (string, error) {
-	tokenName := strings.ToUpper(app) + "_" + strings.ToUpper(environment)
-	token := viper.GetString("TOKEN_" + tokenName)
-
-	if token == "" {
-		return "", errors.New("token '" + tokenName + "' not found")
-	}
-
-	return token, nil
+// DoesTokenExist checks if a token is present in the secret manager
+func (s LocalSecretManager) DoesTokenExist(reqToken string) bool {
+	token := viper.GetString("TOKEN")
+	return reqToken == token
 }
 
 // GetSetting gets a setting from Viper

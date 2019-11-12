@@ -4,14 +4,13 @@ import (
 	"errors"
 	"fmt"
 	"log"
-	"strings"
 
 	vault "github.com/hashicorp/vault/api"
 )
 
 type localStorage struct {
 	// Tokens for apps integrating with IAM
-	tokens map[string]string
+	tokens map[string]bool
 
 	// Settings for IAM
 	settings map[string]string
@@ -59,14 +58,14 @@ func (s *VaultManager) SyncAppTokens() error {
 		return err
 	}
 
-	mappedTokens := make(map[string]string, len(data))
+	mappedTokens := make(map[string]bool, len(data))
 
-	for key, value := range data {
+	for _, value := range data {
 		v, ok := value.(string)
 		if !ok {
 			return fmt.Errorf("invalid conversion to string for value <%v> of type <%T>", v, v)
 		}
-		mappedTokens[key] = v
+		mappedTokens[v] = true
 	}
 
 	s.storage.tokens = mappedTokens
@@ -74,16 +73,9 @@ func (s *VaultManager) SyncAppTokens() error {
 	return nil
 }
 
-// GetAppToken gets a token used by an outside service
-func (s *VaultManager) GetAppToken(app, environment string) (string, error) {
-	tokenName := strings.ToUpper(app) + "_" + strings.ToUpper(environment)
-	data := s.storage.tokens[tokenName]
-
-	if data == "" {
-		return "", errors.New("token '" + tokenName + "' not found in SecretManager")
-	}
-
-	return data, nil
+// DoesTokenExist checks if a token is present in the secret manager
+func (s *VaultManager) DoesTokenExist(token string) bool {
+	return s.storage.tokens[token]
 }
 
 // SyncAppSettings syncs all application settings from Vault and saves them locally
