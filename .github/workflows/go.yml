@@ -25,4 +25,5 @@ jobs:
         run: |
           go get -v -d ./...
       - name: Test
-        run: make test/ci
+        run: |
+          go test -race ./... -cover

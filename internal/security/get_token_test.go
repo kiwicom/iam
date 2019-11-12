@@ -29,7 +29,7 @@ func TestGetToken(t *testing.T) {
 		},
 		"unexpected Bearer token": {
 			token:  "",
-			errors: true,
+			errors: false,
 		},
 	}
 
@@ -39,6 +39,8 @@ func TestGetToken(t *testing.T) {
 
 		if result.errors {
 			assert.Error(t, err)
+		} else {
+			assert.NoError(t, err)
 		}
 	}
 }
