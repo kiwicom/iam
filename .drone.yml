@@ -21,6 +21,14 @@ steps:
     when:
       event: [pull_request]
 
+  - name: e2e
+    image: docker
+    commands:
+      - docker run -v /var/run/docker.sock:/var/run/docker.sock -ti docker
+    depends_on: [clone]
+    when:
+      event: [pull_request]
+
   - name: validate commits
     image: commitsar/commitsar:0.8.0
     depends_on: [clone]
