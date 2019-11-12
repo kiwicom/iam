@@ -1,0 +1,42 @@
+kind: pipeline
+name: default
+
+steps:
+  - name: fetch
+    image: docker:git
+    commands:
+      - git fetch origin master
+      - git fetch --tags
+    when:
+      event: [tag]
+
+  - name: test
+    image: golang
+    volumes:
+      - name: deps
+        path: /go
+    commands:
+      - make test/ci
+    depends_on: [clone]
+    when:
+      event: [pull_request]
+
+  - name: validate commits
+    image: commitsar/commitsar:0.8.0
+    depends_on: [clone]
+    when:
+      event: [pull_request]
+
+  - name: release notes
+    image: commitsar/release-notary:0.4.2
+    environment:
+      GITHUB_TOKEN:
+        from_secret: github_token
+      GITHUB_REPOSITORY: ${CI_REPO}
+    when:
+      event: tag
+    depends_on: [fetch]
+
+volumes:
+  - name: deps
+    temp: {}
