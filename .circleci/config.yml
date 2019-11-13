@@ -18,12 +18,11 @@ jobs:
 
   e2e-tests:
     docker:
-      - image: golang:1.13.4
+      - image: docker:19.03.4
     steps:
       - checkout
       - run: |
-          curl -L https://github.com/docker/compose/releases/download/1.19.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
-          chmod +x /usr/local/bin/docker-compose
+          apk add make docker-compose
       - setup_remote_docker
       - run: |
           mkdir .well-known
@@ -32,12 +31,11 @@ jobs:
 
   e2e-tests/nocache:
     docker:
-      - image: golang:1.13.4
+      - image: docker:19.03.4
     steps:
       - checkout
       - run: |
-          curl -L https://github.com/docker/compose/releases/download/1.19.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
-          chmod +x /usr/local/bin/docker-compose
+          apk add make docker-compose
       - setup_remote_docker
       - run: |
           mkdir .well-known
