@@ -12,10 +12,11 @@ func TestProtectedRoutes(t *testing.T) {
 	srv := NewServer()
 
 	tests := map[string]int{
-		"/":            http.StatusOK,
-		"/healthcheck": http.StatusOK,
-		"/teams":       http.StatusUnauthorized,
-		"/user":        http.StatusUnauthorized,
+		"/":               http.StatusOK,
+		"/healthcheck":    http.StatusOK,
+		"/v1/teams":       http.StatusUnauthorized,
+		"/v1/user":        http.StatusUnauthorized,
+		"/v1/permissions": http.StatusUnauthorized,
 	}
 
 	for route, code := range tests {
