@@ -22,7 +22,7 @@ steps:
       event: [pull_request]
 
   - name: validate commits
-    image: commitsar/commitsar:0.8.0
+    image: commitsar/commitsar:0.9.0
     depends_on: [clone]
     when:
       event: [pull_request]
