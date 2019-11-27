@@ -28,7 +28,7 @@ steps:
       event: [pull_request]
 
   - name: release notes
-    image: commitsar/release-notary:0.4.2
+    image: commitsar/release-notary:0.5.1
     environment:
       GITHUB_TOKEN:
         from_secret: github_token
