@@ -9,7 +9,7 @@ require (
 	github.com/go-redis/redis v6.15.6+incompatible
 	github.com/golang/protobuf v1.3.2
 	github.com/gorilla/mux v1.7.3 // indirect
-	github.com/hashicorp/vault/api v1.0.5-0.20190730042357-746c0b111519
+	github.com/hashicorp/vault/api v1.3.0
 	github.com/json-iterator/go v1.1.8
 	github.com/julienschmidt/httprouter v1.3.0
 	github.com/kiwicom/go-useragent v0.0.0-20190712102753-95f5c5fe2ab0
