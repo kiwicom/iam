@@ -48,7 +48,8 @@ func TestGroupMembershipsWithInvalidNames(t *testing.T) {
 	assert.NoError(t, err)
 	permissions, err := client.GetServicePermissions("service")
 	assert.NoError(t, err)
-	assert.Equal(t, Permissions(Permissions{"valid.permission": []string{"user1", "user2"}}), permissions)
+	assert.Contains(t, permissions["valid.permission"], "user1")
+	assert.Contains(t, permissions["valid.permission"], "user2")
 }
 
 func TestGroupMembershipsInvalidation(t *testing.T) {
