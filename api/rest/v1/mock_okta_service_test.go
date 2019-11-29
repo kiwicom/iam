@@ -34,3 +34,8 @@ func (o *mockOktaService) GetUserPermissions(email string, services []string) (m
 	argsToReturn := o.Called(email, services)
 	return argsToReturn.Get(0).(map[string][]string), argsToReturn.Error(1)
 }
+
+func (o *mockOktaService) GetGroups() ([]okta.Group, error) {
+	argsToReturn := o.Called()
+	return argsToReturn.Get(0).([]okta.Group), argsToReturn.Error(1)
+}
