@@ -19,8 +19,8 @@ func TestGroupMemberships(t *testing.T) {
 	}{
 		{"iam-service.valid.permission", false},
 		{"iam-long-service-name.with-long.permission", false},
-		{"iam-service:invalid:permission", true},
-		{"service", true},
+		{"iam-service:invalid:permission", false},
+		{"service", false},
 	}
 
 	for _, test := range tests {
@@ -34,6 +34,21 @@ func TestGroupMemberships(t *testing.T) {
 			assert.NoError(t, err)
 		}
 	}
+}
+
+func TestGroupMembershipsWithInvalidNames(t *testing.T) {
+	client := NewClient(&ClientOpts{
+		Cache: storage.NewInMemoryCache(),
+	})
+	err := client.updateGroupMemberships([]GroupMembership{
+		{"group-id", "service", []string{"user1", "user2"}},
+		{"group-id", "iam-service.valid.permission", []string{"user1", "user2"}},
+	})
+
+	assert.NoError(t, err)
+	permissions, err := client.GetServicePermissions("service")
+	assert.NoError(t, err)
+	assert.Equal(t, Permissions(Permissions{"valid.permission": []string{"user1", "user2"}}), permissions)
 }
 
 func TestGroupMembershipsInvalidation(t *testing.T) {

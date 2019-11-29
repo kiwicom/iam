@@ -78,7 +78,7 @@ func (c *Client) updateGroupMemberships(memberships []GroupMembership) error {
 		if !groupPattern.Match([]byte(membership.GroupName)) {
 			formatErr := errors.New("group name has incorrect format: " + membership.GroupName)
 			raven.CaptureError(formatErr, nil)
-			return formatErr
+			continue
 		}
 
 		// iam-serviceName:rule
