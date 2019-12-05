@@ -13,21 +13,36 @@ import (
 	"github.com/getsentry/raven-go"
 )
 
+// BoocsekAttributes contains formatted Boocsek attributes provided by Okta
+type BoocsekAttributes struct {
+	Site        string `json:"site"`
+	Position    string `json:"position"`
+	Channel     string `json:"channel"`
+	Tier        string `json:"tier"`
+	Team        string `json:"team"`
+	TeamManager string `json:"teamManager"`
+	Staff       string `json:"staff"`
+	State       string `json:"state"`
+	KiwibaseID  int32  `json:"kiwibaseId"`
+	Substate    string `json:"substate"`
+}
+
 // User contains formatted user data provided by Okta
 type User struct {
-	OktaID          string   `json:"oktaId,omitempty"` // Exported to be cache-able
-	EmployeeNumber  string   `json:"employeeNumber"`
-	FirstName       string   `json:"firstName"`
-	LastName        string   `json:"lastName"`
-	Position        string   `json:"position"`
-	Department      string   `json:"department"`
-	Email           string   `json:"email"`
-	Location        string   `json:"location"`
-	IsVendor        bool     `json:"isVendor"`
-	TeamMembership  []string `json:"teamMembership"`
-	GroupMembership []Group  `json:"groupMembership,omitempty"`
-	Manager         string   `json:"manager"`
-	Permissions     []string `json:"permissions"`
+	OktaID            string            `json:"oktaId,omitempty"` // Exported to be cache-able
+	EmployeeNumber    string            `json:"employeeNumber"`
+	FirstName         string            `json:"firstName"`
+	LastName          string            `json:"lastName"`
+	Position          string            `json:"position"`
+	Department        string            `json:"department"`
+	Email             string            `json:"email"`
+	Location          string            `json:"location"`
+	IsVendor          bool              `json:"isVendor"`
+	TeamMembership    []string          `json:"teamMembership"`
+	GroupMembership   []Group           `json:"groupMembership,omitempty"`
+	Manager           string            `json:"manager"`
+	Permissions       []string          `json:"permissions"`
+	BoocsekAttributes BoocsekAttributes `json:"boocsek"`
 }
 
 const groupMembershipPrefix = "group-membership:"

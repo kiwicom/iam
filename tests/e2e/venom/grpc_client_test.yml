@@ -60,6 +60,9 @@ testcases:
           - result.code ShouldEqual 0
           - result.systemoutjson.email ShouldEqual cached@tester.kiwi
           - result.systemoutjson.lastname ShouldEqual Cached
+          - result.systemoutjson.boocsek.site ShouldEqual Site
+          - result.systemoutjson.boocsek.kiwibaseid ShouldEqual 123456
+          - result.systemoutjson.boocsek.teammanager ShouldEqual cached@test.manager.kiwi
   - name: Returns error for missing user
     steps:
       - type: grpc

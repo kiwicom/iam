@@ -27,7 +27,17 @@
     "firstName": "Test",
     "mobilePhone": "",
     "department": "Engineering/Content + CS Systems/CS systems/CS Systems Frontend",
-    "email": "fetched@tester.kiwi"
+    "email": "fetched@tester.kiwi",
+    "boocsek_site": "Site",
+    "boocsek_channel": "Channel",
+    "boocsek_staff": "Staff",
+    "boocsek_tier": "T0",
+    "boocsek_team": "The Best ONE",
+    "boocsek_state": "active",
+    "boocsek_team_manager": "fetched@test.manager.kiwi",
+    "boocsek_kiwibase_id": 123456,
+    "boocsek_position": "BoocsekJanitor", 
+    "boocsek_substate": ""
   },
   "credentials": {
     "password": {},

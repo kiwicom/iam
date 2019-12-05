@@ -19,7 +19,17 @@
       "kb_team_membership": ["Automotive", "Toys"],
       "manager": "Jasen Koepp",
       "kb_jobPositionLevel": "Legacy Paradigm Supervisor",
-      "department": "Games"
+      "department": "Games",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -49,7 +59,17 @@
       "kb_team_membership": ["Music"],
       "manager": "Lupe Jacobson",
       "kb_jobPositionLevel": "District Assurance Technician",
-      "department": "Grocery"
+      "department": "Grocery",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -79,7 +99,17 @@
       "kb_team_membership": ["Grocery", "Kids", "Jewelery", "Beauty", "Books"],
       "manager": "Ariane McCullough",
       "kb_jobPositionLevel": "Dynamic Intranet Facilitator",
-      "department": "Automotive"
+      "department": "Automotive",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -109,7 +139,17 @@
       "kb_team_membership": [],
       "manager": "Tavares Gerhold",
       "kb_jobPositionLevel": "Global Metrics Officer",
-      "department": "Music"
+      "department": "Music",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -139,7 +179,17 @@
       "kb_team_membership": ["Movies", "Tools"],
       "manager": "Gabriella Walker",
       "kb_jobPositionLevel": "Global Directives Representative",
-      "department": "Music"
+      "department": "Music",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -169,7 +219,17 @@
       "kb_team_membership": [],
       "manager": "Everett Crooks",
       "kb_jobPositionLevel": "Investor Security Manager",
-      "department": "Sports"
+      "department": "Sports",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -199,7 +259,17 @@
       "kb_team_membership": [],
       "manager": "Hollie MacGyver",
       "kb_jobPositionLevel": "Global Functionality Facilitator",
-      "department": "Electronics"
+      "department": "Electronics",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -229,7 +299,17 @@
       "kb_team_membership": [],
       "manager": "Dax Eichmann",
       "kb_jobPositionLevel": "Customer Data Director",
-      "department": "Movies"
+      "department": "Movies",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -259,7 +339,17 @@
       "kb_team_membership": [],
       "manager": "Lesly Haley",
       "kb_jobPositionLevel": "Legacy Communications Developer",
-      "department": "Automotive"
+      "department": "Automotive",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -289,7 +379,17 @@
       "kb_team_membership": ["Movies", "Industrial", "Garden", "Automotive"],
       "manager": "Tamia Altenwerth",
       "kb_jobPositionLevel": "Legacy Integration Consultant",
-      "department": "Home"
+      "department": "Home",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -319,7 +419,17 @@
       "kb_team_membership": ["Jewelery", "Clothing"],
       "manager": "Vernice Wunsch",
       "kb_jobPositionLevel": "Product Accounts Liaison",
-      "department": "Movies"
+      "department": "Movies",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -349,7 +459,17 @@
       "kb_team_membership": ["Movies"],
       "manager": "Hoyt Waelchi",
       "kb_jobPositionLevel": "Lead Usability Consultant",
-      "department": "Baby"
+      "department": "Baby",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -379,7 +499,17 @@
       "kb_team_membership": ["Baby", "Industrial"],
       "manager": "Dorris Toy",
       "kb_jobPositionLevel": "Dynamic Configuration Liaison",
-      "department": "Beauty"
+      "department": "Beauty",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -409,7 +539,17 @@
       "kb_team_membership": ["Toys", "Kids", "Outdoors", "Health"],
       "manager": "Lilian Schowalter",
       "kb_jobPositionLevel": "Chief Tactics Analyst",
-      "department": "Shoes"
+      "department": "Shoes",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -445,7 +585,17 @@
       ],
       "manager": "Maurice Russel",
       "kb_jobPositionLevel": "Central Web Engineer",
-      "department": "Health"
+      "department": "Health",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -475,7 +625,17 @@
       "kb_team_membership": ["Books", "Jewelery", "Sports", "Shoes", "Grocery"],
       "manager": "Conrad Terry",
       "kb_jobPositionLevel": "Senior Tactics Engineer",
-      "department": "Outdoors"
+      "department": "Outdoors",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -505,7 +665,17 @@
       "kb_team_membership": ["Shoes"],
       "manager": "Bennett King",
       "kb_jobPositionLevel": "Senior Brand Associate",
-      "department": "Books"
+      "department": "Books",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -541,7 +711,17 @@
       ],
       "manager": "Briana Heidenreich",
       "kb_jobPositionLevel": "Product Research Coordinator",
-      "department": "Electronics"
+      "department": "Electronics",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -571,7 +751,17 @@
       "kb_team_membership": ["Computers", "Outdoors"],
       "manager": "Casper Schowalter",
       "kb_jobPositionLevel": "Human Security Analyst",
-      "department": "Electronics"
+      "department": "Electronics",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -601,7 +791,17 @@
       "kb_team_membership": ["Garden", "Music"],
       "manager": "Adrienne McKenzie",
       "kb_jobPositionLevel": "Product Assurance Administrator",
-      "department": "Health"
+      "department": "Health",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -631,7 +831,17 @@
       "kb_team_membership": ["Movies"],
       "manager": "Wellington Corkery",
       "kb_jobPositionLevel": "Regional Branding Analyst",
-      "department": "Outdoors"
+      "department": "Outdoors",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -661,7 +871,17 @@
       "kb_team_membership": ["Computers", "Outdoors", "Computers", "Music"],
       "manager": "Arthur Nolan",
       "kb_jobPositionLevel": "Lead Branding Facilitator",
-      "department": "Music"
+      "department": "Music",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -691,7 +911,17 @@
       "kb_team_membership": ["Kids", "Beauty", "Books", "Computers"],
       "manager": "Vada Ledner",
       "kb_jobPositionLevel": "Global Security Designer",
-      "department": "Beauty"
+      "department": "Beauty",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -721,7 +951,17 @@
       "kb_team_membership": ["Shoes"],
       "manager": "Nico Brakus",
       "kb_jobPositionLevel": "Direct Response Associate",
-      "department": "Books"
+      "department": "Books",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -751,7 +991,17 @@
       "kb_team_membership": [],
       "manager": "Paige Howell",
       "kb_jobPositionLevel": "Internal Tactics Producer",
-      "department": "Beauty"
+      "department": "Beauty",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -781,7 +1031,17 @@
       "kb_team_membership": ["Home", "Shoes", "Automotive", "Baby"],
       "manager": "Sharon Runolfsdottir",
       "kb_jobPositionLevel": "Global Web Designer",
-      "department": "Tools"
+      "department": "Tools",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -811,7 +1071,17 @@
       "kb_team_membership": ["Grocery", "Industrial", "Shoes"],
       "manager": "Dina Rowe",
       "kb_jobPositionLevel": "Central Division Coordinator",
-      "department": "Automotive"
+      "department": "Automotive",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -841,7 +1111,17 @@
       "kb_team_membership": ["Clothing", "Shoes", "Outdoors", "Garden"],
       "manager": "Rex Reilly",
       "kb_jobPositionLevel": "District Interactions Director",
-      "department": "Electronics"
+      "department": "Electronics",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -871,7 +1151,17 @@
       "kb_team_membership": ["Books", "Health"],
       "manager": "Mariah Turcotte",
       "kb_jobPositionLevel": "Global Paradigm Coordinator",
-      "department": "Outdoors"
+      "department": "Outdoors",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -901,7 +1191,17 @@
       "kb_team_membership": ["Shoes"],
       "manager": "Elvie Leffler",
       "kb_jobPositionLevel": "Human Directives Associate",
-      "department": "Kids"
+      "department": "Kids",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -931,7 +1231,17 @@
       "kb_team_membership": ["Shoes", "Industrial"],
       "manager": "Dayton Hudson",
       "kb_jobPositionLevel": "Forward Operations Engineer",
-      "department": "Games"
+      "department": "Games",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -961,7 +1271,17 @@
       "kb_team_membership": ["Books", "Toys"],
       "manager": "Roel McClure",
       "kb_jobPositionLevel": "Forward Tactics Consultant",
-      "department": "Movies"
+      "department": "Movies",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -991,7 +1311,17 @@
       "kb_team_membership": ["Computers"],
       "manager": "Hillary Balistreri",
       "kb_jobPositionLevel": "International Factors Technician",
-      "department": "Books"
+      "department": "Books",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -1027,7 +1357,17 @@
       ],
       "manager": "Clarabelle Herzog",
       "kb_jobPositionLevel": "Internal Infrastructure Architect",
-      "department": "Tools"
+      "department": "Tools",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -1057,7 +1397,17 @@
       "kb_team_membership": ["Home"],
       "manager": "Damian Daniel",
       "kb_jobPositionLevel": "Investor Infrastructure Orchestrator",
-      "department": "Home"
+      "department": "Home",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -1092,7 +1442,17 @@
       ],
       "manager": "Ulices Jast",
       "kb_jobPositionLevel": "Principal Security Technician",
-      "department": "Sports"
+      "department": "Sports",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -1122,7 +1482,17 @@
       "kb_team_membership": ["Home", "Grocery"],
       "manager": "Lemuel Farrell",
       "kb_jobPositionLevel": "Central Security Designer",
-      "department": "Tools"
+      "department": "Tools",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -1152,7 +1522,17 @@
       "kb_team_membership": ["Movies", "Industrial", "Baby", "Garden"],
       "manager": "Giovani Pacocha",
       "kb_jobPositionLevel": "Direct Brand Facilitator",
-      "department": "Automotive"
+      "department": "Automotive",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -1182,7 +1562,17 @@
       "kb_team_membership": [],
       "manager": "Angelica Krajcik",
       "kb_jobPositionLevel": "Forward Interactions Producer",
-      "department": "Electronics"
+      "department": "Electronics",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -1212,7 +1602,17 @@
       "kb_team_membership": ["Beauty"],
       "manager": "Caroline Prosacco",
       "kb_jobPositionLevel": "Dynamic Infrastructure Technician",
-      "department": "Movies"
+      "department": "Movies",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -1242,7 +1642,17 @@
       "kb_team_membership": ["Toys", "Beauty", "Kids"],
       "manager": "Annetta Luettgen",
       "kb_jobPositionLevel": "Chief Research Supervisor",
-      "department": "Home"
+      "department": "Home",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -1278,7 +1688,17 @@
       ],
       "manager": "Hunter Abernathy",
       "kb_jobPositionLevel": "National Data Facilitator",
-      "department": "Jewelery"
+      "department": "Jewelery",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -1308,7 +1728,17 @@
       "kb_team_membership": ["Beauty", "Computers"],
       "manager": "Julia Ullrich",
       "kb_jobPositionLevel": "Chief Assurance Agent",
-      "department": "Industrial"
+      "department": "Industrial",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -1338,7 +1768,17 @@
       "kb_team_membership": ["Sports", "Movies"],
       "manager": "Chad Blanda",
       "kb_jobPositionLevel": "International Mobility Director",
-      "department": "Tools"
+      "department": "Tools",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -1368,7 +1808,17 @@
       "kb_team_membership": ["Baby", "Health"],
       "manager": "Estella Leuschke",
       "kb_jobPositionLevel": "Forward Intranet Developer",
-      "department": "Toys"
+      "department": "Toys",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -1398,7 +1848,17 @@
       "kb_team_membership": ["Clothing", "Clothing", "Grocery", "Toys"],
       "manager": "Oleta King",
       "kb_jobPositionLevel": "Corporate Brand Associate",
-      "department": "Toys"
+      "department": "Toys",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -1428,7 +1888,17 @@
       "kb_team_membership": ["Automotive", "Jewelery", "Baby"],
       "manager": "Eldred Swift",
       "kb_jobPositionLevel": "Internal Factors Developer",
-      "department": "Outdoors"
+      "department": "Outdoors",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -1458,7 +1928,17 @@
       "kb_team_membership": ["Baby", "Toys"],
       "manager": "Greyson Bruen",
       "kb_jobPositionLevel": "Dynamic Operations Administrator",
-      "department": "Beauty"
+      "department": "Beauty",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -1488,7 +1968,17 @@
       "kb_team_membership": [],
       "manager": "Jakayla Harris",
       "kb_jobPositionLevel": "Direct Markets Designer",
-      "department": "Beauty"
+      "department": "Beauty",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -1518,7 +2008,17 @@
       "kb_team_membership": ["Shoes", "Jewelery", "Health"],
       "manager": "Kathleen Prohaska",
       "kb_jobPositionLevel": "Corporate Data Producer",
-      "department": "Home"
+      "department": "Home",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -1548,7 +2048,17 @@
       "kb_team_membership": ["Home", "Health", "Outdoors", "Automotive"],
       "manager": "Ignatius Ritchie",
       "kb_jobPositionLevel": "Customer Branding Manager",
-      "department": "Beauty"
+      "department": "Beauty",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -1578,7 +2088,17 @@
       "kb_team_membership": ["Games"],
       "manager": "Lula Johns",
       "kb_jobPositionLevel": "International Quality Agent",
-      "department": "Toys"
+      "department": "Toys",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -1608,7 +2128,17 @@
       "kb_team_membership": ["Baby", "Outdoors", "Beauty", "Home"],
       "manager": "Darron Senger",
       "kb_jobPositionLevel": "Legacy Quality Planner",
-      "department": "Shoes"
+      "department": "Shoes",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -1638,7 +2168,17 @@
       "kb_team_membership": ["Home", "Toys", "Grocery", "Kids", "Automotive"],
       "manager": "Alanis DuBuque",
       "kb_jobPositionLevel": "International Solutions Developer",
-      "department": "Games"
+      "department": "Games",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -1668,7 +2208,17 @@
       "kb_team_membership": ["Health", "Music"],
       "manager": "Desiree Ullrich",
       "kb_jobPositionLevel": "Human Implementation Engineer",
-      "department": "Books"
+      "department": "Books",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -1704,7 +2254,17 @@
       ],
       "manager": "Demetrius Gusikowski",
       "kb_jobPositionLevel": "Forward Data Orchestrator",
-      "department": "Toys"
+      "department": "Toys",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -1734,7 +2294,17 @@
       "kb_team_membership": ["Games", "Beauty", "Grocery"],
       "manager": "Darwin DuBuque",
       "kb_jobPositionLevel": "Central Mobility Director",
-      "department": "Toys"
+      "department": "Toys",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -1764,7 +2334,17 @@
       "kb_team_membership": ["Shoes", "Books", "Computers"],
       "manager": "Greyson Huel",
       "kb_jobPositionLevel": "Regional Directives Analyst",
-      "department": "Electronics"
+      "department": "Electronics",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -1794,7 +2374,17 @@
       "kb_team_membership": [],
       "manager": "Tremayne Hessel",
       "kb_jobPositionLevel": "Human Web Orchestrator",
-      "department": "Toys"
+      "department": "Toys",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -1824,7 +2414,17 @@
       "kb_team_membership": ["Jewelery", "Games", "Music"],
       "manager": "Dino Orn",
       "kb_jobPositionLevel": "National Solutions Manager",
-      "department": "Games"
+      "department": "Games",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -1854,7 +2454,17 @@
       "kb_team_membership": ["Toys", "Shoes"],
       "manager": "Guiseppe Quigley",
       "kb_jobPositionLevel": "Human Marketing Strategist",
-      "department": "Grocery"
+      "department": "Grocery",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -1884,7 +2494,17 @@
       "kb_team_membership": ["Tools"],
       "manager": "Julie Heidenreich",
       "kb_jobPositionLevel": "Central Infrastructure Coordinator",
-      "department": "Outdoors"
+      "department": "Outdoors",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -1914,7 +2534,17 @@
       "kb_team_membership": ["Outdoors", "Electronics", "Grocery"],
       "manager": "Danielle Hegmann",
       "kb_jobPositionLevel": "Investor Security Manager",
-      "department": "Kids"
+      "department": "Kids",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -1944,7 +2574,17 @@
       "kb_team_membership": ["Music", "Jewelery", "Grocery", "Beauty"],
       "manager": "Adell Zboncak",
       "kb_jobPositionLevel": "Global Accountability Officer",
-      "department": "Jewelery"
+      "department": "Jewelery",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -1980,7 +2620,17 @@
       ],
       "manager": "Roderick Zemlak",
       "kb_jobPositionLevel": "Product Metrics Analyst",
-      "department": "Outdoors"
+      "department": "Outdoors",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -2010,7 +2660,17 @@
       "kb_team_membership": ["Jewelery"],
       "manager": "Raul Gleichner",
       "kb_jobPositionLevel": "Legacy Division Strategist",
-      "department": "Jewelery"
+      "department": "Jewelery",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -2040,7 +2700,17 @@
       "kb_team_membership": [],
       "manager": "Anderson Kertzmann",
       "kb_jobPositionLevel": "Chief Web Developer",
-      "department": "Games"
+      "department": "Games",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -2070,7 +2740,17 @@
       "kb_team_membership": [],
       "manager": "Drew White",
       "kb_jobPositionLevel": "Lead Paradigm Strategist",
-      "department": "Outdoors"
+      "department": "Outdoors",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -2100,7 +2780,17 @@
       "kb_team_membership": ["Automotive", "Outdoors"],
       "manager": "Arvilla Dickens",
       "kb_jobPositionLevel": "Forward Creative Strategist",
-      "department": "Jewelery"
+      "department": "Jewelery",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -2130,7 +2820,17 @@
       "kb_team_membership": ["Outdoors", "Games"],
       "manager": "Jany Torphy",
       "kb_jobPositionLevel": "Product Security Developer",
-      "department": "Shoes"
+      "department": "Shoes",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -2166,7 +2866,17 @@
       ],
       "manager": "Vada Schoen",
       "kb_jobPositionLevel": "Regional Accounts Manager",
-      "department": "Automotive"
+      "department": "Automotive",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -2202,7 +2912,17 @@
       ],
       "manager": "Watson Sawayn",
       "kb_jobPositionLevel": "Regional Data Director",
-      "department": "Jewelery"
+      "department": "Jewelery",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -2232,7 +2952,17 @@
       "kb_team_membership": ["Sports", "Electronics"],
       "manager": "Jamarcus McKenzie",
       "kb_jobPositionLevel": "Forward Optimization Associate",
-      "department": "Clothing"
+      "department": "Clothing",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -2262,7 +2992,17 @@
       "kb_team_membership": ["Toys"],
       "manager": "June Herman",
       "kb_jobPositionLevel": "Product Implementation Liaison",
-      "department": "Tools"
+      "department": "Tools",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -2298,7 +3038,17 @@
       ],
       "manager": "Dorthy Lindgren",
       "kb_jobPositionLevel": "Investor Security Engineer",
-      "department": "Automotive"
+      "department": "Automotive",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -2328,7 +3078,17 @@
       "kb_team_membership": ["Garden", "Computers"],
       "manager": "Martina Lindgren",
       "kb_jobPositionLevel": "Regional Accounts Orchestrator",
-      "department": "Tools"
+      "department": "Tools",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -2358,7 +3118,17 @@
       "kb_team_membership": ["Kids", "Health", "Outdoors"],
       "manager": "Genevieve Hermiston",
       "kb_jobPositionLevel": "Direct Web Technician",
-      "department": "Music"
+      "department": "Music",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -2388,7 +3158,17 @@
       "kb_team_membership": [],
       "manager": "Abdul Rempel",
       "kb_jobPositionLevel": "Future Security Liaison",
-      "department": "Grocery"
+      "department": "Grocery",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -2418,7 +3198,17 @@
       "kb_team_membership": ["Sports", "Beauty"],
       "manager": "Fredrick Spencer",
       "kb_jobPositionLevel": "Dynamic Web Agent",
-      "department": "Garden"
+      "department": "Garden",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -2448,7 +3238,17 @@
       "kb_team_membership": ["Garden", "Movies", "Computers"],
       "manager": "Luella Gleichner",
       "kb_jobPositionLevel": "National Applications Associate",
-      "department": "Garden"
+      "department": "Garden",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -2478,7 +3278,17 @@
       "kb_team_membership": [],
       "manager": "Adeline Langosh",
       "kb_jobPositionLevel": "National Research Designer",
-      "department": "Grocery"
+      "department": "Grocery",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -2508,7 +3318,17 @@
       "kb_team_membership": [],
       "manager": "Ray Hammes",
       "kb_jobPositionLevel": "National Intranet Technician",
-      "department": "Movies"
+      "department": "Movies",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -2538,7 +3358,17 @@
       "kb_team_membership": ["Kids", "Toys", "Kids"],
       "manager": "Hettie Hirthe",
       "kb_jobPositionLevel": "Central Program Officer",
-      "department": "Outdoors"
+      "department": "Outdoors",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -2568,7 +3398,17 @@
       "kb_team_membership": [],
       "manager": "Maribel Welch",
       "kb_jobPositionLevel": "Forward Web Director",
-      "department": "Electronics"
+      "department": "Electronics",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -2598,7 +3438,17 @@
       "kb_team_membership": ["Baby", "Grocery", "Beauty", "Outdoors"],
       "manager": "Ebony Bogan",
       "kb_jobPositionLevel": "Future Configuration Strategist",
-      "department": "Outdoors"
+      "department": "Outdoors",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -2628,7 +3478,17 @@
       "kb_team_membership": ["Grocery"],
       "manager": "Velda Corwin",
       "kb_jobPositionLevel": "Product Operations Agent",
-      "department": "Electronics"
+      "department": "Electronics",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -2658,7 +3518,17 @@
       "kb_team_membership": ["Music", "Jewelery", "Shoes"],
       "manager": "Hank Gutkowski",
       "kb_jobPositionLevel": "Senior Markets Technician",
-      "department": "Health"
+      "department": "Health",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -2688,7 +3558,17 @@
       "kb_team_membership": ["Jewelery", "Computers"],
       "manager": "Freddy Padberg",
       "kb_jobPositionLevel": "Regional Factors Coordinator",
-      "department": "Shoes"
+      "department": "Shoes",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -2718,7 +3598,17 @@
       "kb_team_membership": ["Kids"],
       "manager": "Trevor Mayert",
       "kb_jobPositionLevel": "Direct Program Facilitator",
-      "department": "Movies"
+      "department": "Movies",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -2754,7 +3644,17 @@
       ],
       "manager": "Alia Sanford",
       "kb_jobPositionLevel": "Principal Applications Technician",
-      "department": "Tools"
+      "department": "Tools",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -2790,7 +3690,17 @@
       ],
       "manager": "Beverly Rempel",
       "kb_jobPositionLevel": "Corporate Branding Developer",
-      "department": "Baby"
+      "department": "Baby",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -2820,7 +3730,17 @@
       "kb_team_membership": ["Garden", "Electronics", "Beauty"],
       "manager": "Kendra Kuhn",
       "kb_jobPositionLevel": "Internal Solutions Manager",
-      "department": "Books"
+      "department": "Books",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -2850,7 +3770,17 @@
       "kb_team_membership": ["Grocery", "Baby", "Kids"],
       "manager": "Waino Okuneva",
       "kb_jobPositionLevel": "National Tactics Assistant",
-      "department": "Music"
+      "department": "Music",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -2880,7 +3810,17 @@
       "kb_team_membership": ["Tools", "Shoes", "Clothing", "Shoes"],
       "manager": "Lilliana Carroll",
       "kb_jobPositionLevel": "Regional Mobility Producer",
-      "department": "Grocery"
+      "department": "Grocery",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -2910,7 +3850,17 @@
       "kb_team_membership": ["Movies"],
       "manager": "Monserrat Price",
       "kb_jobPositionLevel": "Investor Group Assistant",
-      "department": "Industrial"
+      "department": "Industrial",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -2946,7 +3896,17 @@
       ],
       "manager": "Carlo Bernhard",
       "kb_jobPositionLevel": "Senior Operations Developer",
-      "department": "Computers"
+      "department": "Computers",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -2976,7 +3936,17 @@
       "kb_team_membership": ["Baby"],
       "manager": "Hilton D'Amore",
       "kb_jobPositionLevel": "Dynamic Metrics Engineer",
-      "department": "Games"
+      "department": "Games",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -3006,7 +3976,17 @@
       "kb_team_membership": ["Baby"],
       "manager": "Jeffrey Satterfield",
       "kb_jobPositionLevel": "Investor Research Agent",
-      "department": "Grocery"
+      "department": "Grocery",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -3042,7 +4022,17 @@
       ],
       "manager": "Vidal Langosh",
       "kb_jobPositionLevel": "Customer Accounts Manager",
-      "department": "Jewelery"
+      "department": "Jewelery",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -3072,7 +4062,17 @@
       "kb_team_membership": ["Home", "Outdoors", "Movies", "Music"],
       "manager": "Tara Bauch",
       "kb_jobPositionLevel": "Senior Program Designer",
-      "department": "Garden"
+      "department": "Garden",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -3102,7 +4102,17 @@
       "kb_team_membership": ["Garden", "Music", "Jewelery"],
       "manager": "Billy Kuhn",
       "kb_jobPositionLevel": "Customer Operations Officer",
-      "department": "Jewelery"
+      "department": "Jewelery",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -3132,7 +4142,17 @@
       "kb_team_membership": [],
       "manager": "Reina Glover",
       "kb_jobPositionLevel": "Chief Directives Strategist",
-      "department": "Kids"
+      "department": "Kids",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -3162,7 +4182,17 @@
       "kb_team_membership": ["Kids", "Outdoors", "Movies"],
       "manager": "Maye Wunsch",
       "kb_jobPositionLevel": "Legacy Applications Liaison",
-      "department": "Computers"
+      "department": "Computers",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -3192,7 +4222,17 @@
       "kb_team_membership": ["Games", "Clothing", "Computers"],
       "manager": "Emma O'Hara",
       "kb_jobPositionLevel": "Lead Research Engineer",
-      "department": "Toys"
+      "department": "Toys",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -3222,7 +4262,17 @@
       "kb_team_membership": ["Computers", "Books", "Shoes"],
       "manager": "Francisca Goodwin",
       "kb_jobPositionLevel": "Lead Response Architect",
-      "department": "Jewelery"
+      "department": "Jewelery",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -3252,7 +4302,17 @@
       "kb_team_membership": ["Clothing", "Health", "Industrial", "Clothing"],
       "manager": "Benedict Miller",
       "kb_jobPositionLevel": "Lead Research Engineer",
-      "department": "Kids"
+      "department": "Kids",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -3282,7 +4342,17 @@
       "kb_team_membership": ["Outdoors", "Outdoors", "Home", "Outdoors"],
       "manager": "Cecile Runolfsdottir",
       "kb_jobPositionLevel": "Investor Response Strategist",
-      "department": "Sports"
+      "department": "Sports",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -3312,7 +4382,17 @@
       "kb_team_membership": ["Computers", "Grocery", "Kids"],
       "manager": "Enid Leannon",
       "kb_jobPositionLevel": "International Mobility Developer",
-      "department": "Automotive"
+      "department": "Automotive",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -3342,7 +4422,17 @@
       "kb_team_membership": ["Home", "Beauty"],
       "manager": "Felix Wiza",
       "kb_jobPositionLevel": "Direct Creative Developer",
-      "department": "Garden"
+      "department": "Garden",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -3372,7 +4462,17 @@
       "kb_team_membership": ["Garden", "Home", "Health", "Health", "Jewelery"],
       "manager": "Alberta Bradtke",
       "kb_jobPositionLevel": "Internal Research Planner",
-      "department": "Health"
+      "department": "Health",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -3402,7 +4502,17 @@
       "kb_team_membership": ["Computers"],
       "manager": "Raina Bartoletti",
       "kb_jobPositionLevel": "Principal Configuration Assistant",
-      "department": "Books"
+      "department": "Books",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -3438,7 +4548,17 @@
       ],
       "manager": "Brennon Rutherford",
       "kb_jobPositionLevel": "Central Brand Manager",
-      "department": "Electronics"
+      "department": "Electronics",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -3474,7 +4594,17 @@
       ],
       "manager": "Francesca Labadie",
       "kb_jobPositionLevel": "Product Quality Director",
-      "department": "Garden"
+      "department": "Garden",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -3504,7 +4634,17 @@
       "kb_team_membership": ["Games", "Music", "Health"],
       "manager": "Colin Upton",
       "kb_jobPositionLevel": "Lead Solutions Consultant",
-      "department": "Tools"
+      "department": "Tools",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -3534,7 +4674,17 @@
       "kb_team_membership": ["Jewelery", "Outdoors", "Tools"],
       "manager": "Mabel Nikolaus",
       "kb_jobPositionLevel": "Global Metrics Associate",
-      "department": "Clothing"
+      "department": "Clothing",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -3564,7 +4714,17 @@
       "kb_team_membership": ["Shoes", "Kids", "Automotive", "Jewelery", "Kids"],
       "manager": "Trevor Erdman",
       "kb_jobPositionLevel": "Forward Usability Facilitator",
-      "department": "Music"
+      "department": "Music",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -3594,7 +4754,17 @@
       "kb_team_membership": ["Grocery", "Jewelery"],
       "manager": "Candice Hamill",
       "kb_jobPositionLevel": "Human Optimization Planner",
-      "department": "Kids"
+      "department": "Kids",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -3630,7 +4800,17 @@
       ],
       "manager": "Liliane Stark",
       "kb_jobPositionLevel": "Direct Program Engineer",
-      "department": "Industrial"
+      "department": "Industrial",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -3660,7 +4840,17 @@
       "kb_team_membership": ["Computers", "Grocery", "Industrial"],
       "manager": "Kira Streich",
       "kb_jobPositionLevel": "Lead Functionality Representative",
-      "department": "Clothing"
+      "department": "Clothing",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -3690,7 +4880,17 @@
       "kb_team_membership": ["Beauty", "Shoes"],
       "manager": "Robyn Bauch",
       "kb_jobPositionLevel": "Product Applications Liaison",
-      "department": "Clothing"
+      "department": "Clothing",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -3726,7 +4926,17 @@
       ],
       "manager": "Asa Spinka",
       "kb_jobPositionLevel": "Corporate Security Officer",
-      "department": "Games"
+      "department": "Games",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -3762,7 +4972,17 @@
       ],
       "manager": "Norberto Pacocha",
       "kb_jobPositionLevel": "Investor Paradigm Supervisor",
-      "department": "Kids"
+      "department": "Kids",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -3792,7 +5012,17 @@
       "kb_team_membership": ["Outdoors", "Home", "Clothing", "Tools"],
       "manager": "Norene Bayer",
       "kb_jobPositionLevel": "District Response Associate",
-      "department": "Kids"
+      "department": "Kids",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -3822,7 +5052,17 @@
       "kb_team_membership": ["Garden", "Garden", "Tools", "Home"],
       "manager": "Drew Beer",
       "kb_jobPositionLevel": "National Integration Architect",
-      "department": "Toys"
+      "department": "Toys",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -3858,7 +5098,17 @@
       ],
       "manager": "Marcelle Quitzon",
       "kb_jobPositionLevel": "District Implementation Representative",
-      "department": "Health"
+      "department": "Health",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -3888,7 +5138,17 @@
       "kb_team_membership": ["Outdoors", "Movies", "Health"],
       "manager": "Jerrell Bauch",
       "kb_jobPositionLevel": "Future Operations Representative",
-      "department": "Grocery"
+      "department": "Grocery",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -3923,7 +5183,17 @@
       ],
       "manager": "Dedrick Conn",
       "kb_jobPositionLevel": "Future Accounts Architect",
-      "department": "Toys"
+      "department": "Toys",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -3953,7 +5223,17 @@
       "kb_team_membership": [],
       "manager": "Arden Miller",
       "kb_jobPositionLevel": "Senior Program Administrator",
-      "department": "Industrial"
+      "department": "Industrial",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -3983,7 +5263,17 @@
       "kb_team_membership": ["Health", "Kids", "Computers", "Music"],
       "manager": "Laurence Kemmer",
       "kb_jobPositionLevel": "Lead Marketing Engineer",
-      "department": "Games"
+      "department": "Games",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -4013,7 +5303,17 @@
       "kb_team_membership": ["Clothing"],
       "manager": "Wilma Von",
       "kb_jobPositionLevel": "Dynamic Response Agent",
-      "department": "Electronics"
+      "department": "Electronics",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -4043,7 +5343,17 @@
       "kb_team_membership": ["Games", "Garden"],
       "manager": "Phyllis Towne",
       "kb_jobPositionLevel": "Human Configuration Manager",
-      "department": "Baby"
+      "department": "Baby",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -4073,7 +5383,17 @@
       "kb_team_membership": ["Shoes", "Health", "Games", "Home"],
       "manager": "Fleta Hamill",
       "kb_jobPositionLevel": "International Program Producer",
-      "department": "Shoes"
+      "department": "Shoes",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -4103,7 +5423,17 @@
       "kb_team_membership": ["Grocery", "Grocery"],
       "manager": "Shane Von",
       "kb_jobPositionLevel": "Dynamic Brand Planner",
-      "department": "Industrial"
+      "department": "Industrial",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -4133,7 +5463,17 @@
       "kb_team_membership": ["Beauty", "Health", "Jewelery"],
       "manager": "Napoleon Feest",
       "kb_jobPositionLevel": "Investor Assurance Planner",
-      "department": "Shoes"
+      "department": "Shoes",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -4163,7 +5503,17 @@
       "kb_team_membership": ["Garden", "Beauty", "Games", "Home", "Music"],
       "manager": "Garrison Brakus",
       "kb_jobPositionLevel": "Central Assurance Officer",
-      "department": "Outdoors"
+      "department": "Outdoors",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -4193,7 +5543,17 @@
       "kb_team_membership": ["Movies"],
       "manager": "Eladio Yost",
       "kb_jobPositionLevel": "Central Identity Coordinator",
-      "department": "Health"
+      "department": "Health",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -4223,7 +5583,17 @@
       "kb_team_membership": [],
       "manager": "Wilhelm Dach",
       "kb_jobPositionLevel": "Future Integration Associate",
-      "department": "Jewelery"
+      "department": "Jewelery",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -4253,7 +5623,17 @@
       "kb_team_membership": ["Industrial", "Shoes", "Outdoors"],
       "manager": "Jeff Gutmann",
       "kb_jobPositionLevel": "Central Security Agent",
-      "department": "Tools"
+      "department": "Tools",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -4283,7 +5663,17 @@
       "kb_team_membership": ["Games", "Clothing", "Home", "Beauty", "Outdoors"],
       "manager": "Nadia Johns",
       "kb_jobPositionLevel": "Central Functionality Orchestrator",
-      "department": "Tools"
+      "department": "Tools",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -4313,7 +5703,17 @@
       "kb_team_membership": ["Music", "Home", "Shoes"],
       "manager": "Eladio Klein",
       "kb_jobPositionLevel": "Human Factors Administrator",
-      "department": "Music"
+      "department": "Music",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -4343,7 +5743,17 @@
       "kb_team_membership": ["Games", "Grocery", "Toys", "Tools", "Beauty"],
       "manager": "Maxwell Erdman",
       "kb_jobPositionLevel": "Forward Implementation Technician",
-      "department": "Music"
+      "department": "Music",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -4373,7 +5783,17 @@
       "kb_team_membership": ["Grocery", "Clothing"],
       "manager": "Joelle Davis",
       "kb_jobPositionLevel": "Human Optimization Orchestrator",
-      "department": "Toys"
+      "department": "Toys",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -4403,7 +5823,17 @@
       "kb_team_membership": ["Music", "Shoes"],
       "manager": "Uriah Frami",
       "kb_jobPositionLevel": "Senior Factors Producer",
-      "department": "Grocery"
+      "department": "Grocery",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -4433,7 +5863,17 @@
       "kb_team_membership": ["Health", "Tools", "Tools", "Kids"],
       "manager": "Lizeth Ratke",
       "kb_jobPositionLevel": "Internal Factors Developer",
-      "department": "Music"
+      "department": "Music",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -4463,7 +5903,17 @@
       "kb_team_membership": ["Computers", "Music", "Tools", "Beauty"],
       "manager": "Tiara Fahey",
       "kb_jobPositionLevel": "Legacy Identity Associate",
-      "department": "Music"
+      "department": "Music",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -4499,7 +5949,17 @@
       ],
       "manager": "Savanna Bogan",
       "kb_jobPositionLevel": "District Tactics Consultant",
-      "department": "Books"
+      "department": "Books",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -4529,7 +5989,17 @@
       "kb_team_membership": ["Toys", "Music"],
       "manager": "Dana Sanford",
       "kb_jobPositionLevel": "Dynamic Research Orchestrator",
-      "department": "Kids"
+      "department": "Kids",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -4559,7 +6029,17 @@
       "kb_team_membership": ["Books"],
       "manager": "Luigi Nitzsche",
       "kb_jobPositionLevel": "Lead Markets Administrator",
-      "department": "Books"
+      "department": "Books",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -4589,7 +6069,17 @@
       "kb_team_membership": ["Home", "Games"],
       "manager": "Madalyn Muller",
       "kb_jobPositionLevel": "Future Communications Orchestrator",
-      "department": "Baby"
+      "department": "Baby",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -4619,7 +6109,17 @@
       "kb_team_membership": ["Sports", "Baby", "Kids", "Beauty"],
       "manager": "Matt Rohan",
       "kb_jobPositionLevel": "Investor Division Technician",
-      "department": "Shoes"
+      "department": "Shoes",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -4655,7 +6155,17 @@
       ],
       "manager": "Tressa Schimmel",
       "kb_jobPositionLevel": "Investor Integration Strategist",
-      "department": "Outdoors"
+      "department": "Outdoors",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -4691,7 +6201,17 @@
       ],
       "manager": "Jacques Johnston",
       "kb_jobPositionLevel": "Product Interactions Manager",
-      "department": "Books"
+      "department": "Books",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -4721,7 +6241,17 @@
       "kb_team_membership": [],
       "manager": "Gladys Daniel",
       "kb_jobPositionLevel": "Corporate Response Associate",
-      "department": "Toys"
+      "department": "Toys",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -4751,7 +6281,17 @@
       "kb_team_membership": ["Shoes", "Home", "Grocery"],
       "manager": "Zoe Paucek",
       "kb_jobPositionLevel": "Legacy Markets Facilitator",
-      "department": "Music"
+      "department": "Music",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -4781,7 +6321,17 @@
       "kb_team_membership": ["Garden"],
       "manager": "Ruth Schinner",
       "kb_jobPositionLevel": "Regional Operations Manager",
-      "department": "Toys"
+      "department": "Toys",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -4811,7 +6361,17 @@
       "kb_team_membership": ["Health", "Tools", "Books", "Computers"],
       "manager": "Isadore Conroy",
       "kb_jobPositionLevel": "Product Paradigm Liaison",
-      "department": "Beauty"
+      "department": "Beauty",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -4847,7 +6407,17 @@
       ],
       "manager": "Crawford Bednar",
       "kb_jobPositionLevel": "Chief Solutions Strategist",
-      "department": "Books"
+      "department": "Books",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -4877,7 +6447,17 @@
       "kb_team_membership": [],
       "manager": "Kian Crist",
       "kb_jobPositionLevel": "International Operations Assistant",
-      "department": "Automotive"
+      "department": "Automotive",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -4907,7 +6487,17 @@
       "kb_team_membership": [],
       "manager": "Clemens Lynch",
       "kb_jobPositionLevel": "Dynamic Functionality Designer",
-      "department": "Clothing"
+      "department": "Clothing",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -4937,7 +6527,17 @@
       "kb_team_membership": ["Outdoors"],
       "manager": "Esperanza Kohler",
       "kb_jobPositionLevel": "Corporate Creative Consultant",
-      "department": "Automotive"
+      "department": "Automotive",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -4967,7 +6567,17 @@
       "kb_team_membership": ["Beauty", "Computers"],
       "manager": "Tobin Jacobson",
       "kb_jobPositionLevel": "Central Accounts Orchestrator",
-      "department": "Tools"
+      "department": "Tools",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -4997,7 +6607,17 @@
       "kb_team_membership": ["Home", "Clothing", "Shoes"],
       "manager": "Marcelina Friesen",
       "kb_jobPositionLevel": "Direct Accountability Strategist",
-      "department": "Grocery"
+      "department": "Grocery",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -5027,7 +6647,17 @@
       "kb_team_membership": ["Kids", "Music"],
       "manager": "Claud McClure",
       "kb_jobPositionLevel": "Direct Division Analyst",
-      "department": "Home"
+      "department": "Home",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -5057,7 +6687,17 @@
       "kb_team_membership": [],
       "manager": "Nico Jenkins",
       "kb_jobPositionLevel": "Dynamic Program Director",
-      "department": "Sports"
+      "department": "Sports",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -5087,7 +6727,17 @@
       "kb_team_membership": ["Kids"],
       "manager": "Sylvia Murphy",
       "kb_jobPositionLevel": "Direct Mobility Technician",
-      "department": "Electronics"
+      "department": "Electronics",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -5117,7 +6767,17 @@
       "kb_team_membership": ["Garden"],
       "manager": "Taya Gutkowski",
       "kb_jobPositionLevel": "Direct Group Engineer",
-      "department": "Shoes"
+      "department": "Shoes",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -5147,7 +6807,17 @@
       "kb_team_membership": ["Outdoors"],
       "manager": "Carmel Green",
       "kb_jobPositionLevel": "Principal Functionality Designer",
-      "department": "Electronics"
+      "department": "Electronics",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -5177,7 +6847,17 @@
       "kb_team_membership": ["Automotive", "Kids", "Jewelery"],
       "manager": "Alec Donnelly",
       "kb_jobPositionLevel": "Lead Security Architect",
-      "department": "Tools"
+      "department": "Tools",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -5207,7 +6887,17 @@
       "kb_team_membership": ["Movies", "Home", "Tools", "Movies"],
       "manager": "Damaris Rippin",
       "kb_jobPositionLevel": "National Brand Consultant",
-      "department": "Automotive"
+      "department": "Automotive",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -5237,7 +6927,17 @@
       "kb_team_membership": ["Industrial", "Toys", "Sports"],
       "manager": "Brannon Weissnat",
       "kb_jobPositionLevel": "Human Communications Associate",
-      "department": "Grocery"
+      "department": "Grocery",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -5273,7 +6973,17 @@
       ],
       "manager": "Carlo Renner",
       "kb_jobPositionLevel": "National Communications Liaison",
-      "department": "Health"
+      "department": "Health",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -5303,7 +7013,17 @@
       "kb_team_membership": ["Shoes", "Music", "Health"],
       "manager": "Evans Farrell",
       "kb_jobPositionLevel": "Legacy Interactions Executive",
-      "department": "Health"
+      "department": "Health",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -5333,7 +7053,17 @@
       "kb_team_membership": ["Health", "Garden", "Baby"],
       "manager": "Dayne Ledner",
       "kb_jobPositionLevel": "Human Factors Assistant",
-      "department": "Home"
+      "department": "Home",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -5363,7 +7093,17 @@
       "kb_team_membership": [],
       "manager": "Rosanna Hane",
       "kb_jobPositionLevel": "Internal Functionality Analyst",
-      "department": "Movies"
+      "department": "Movies",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -5393,7 +7133,17 @@
       "kb_team_membership": ["Baby", "Music"],
       "manager": "Aylin Gottlieb",
       "kb_jobPositionLevel": "Dynamic Creative Designer",
-      "department": "Games"
+      "department": "Games",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -5423,7 +7173,17 @@
       "kb_team_membership": ["Baby", "Computers", "Grocery"],
       "manager": "Susan Wuckert",
       "kb_jobPositionLevel": "Investor Creative Facilitator",
-      "department": "Music"
+      "department": "Music",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -5453,7 +7213,17 @@
       "kb_team_membership": ["Baby", "Jewelery"],
       "manager": "Martine Goyette",
       "kb_jobPositionLevel": "Principal Paradigm Analyst",
-      "department": "Books"
+      "department": "Books",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -5483,7 +7253,17 @@
       "kb_team_membership": ["Books", "Books", "Electronics", "Games"],
       "manager": "Princess Jerde",
       "kb_jobPositionLevel": "Forward Group Architect",
-      "department": "Books"
+      "department": "Books",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -5519,7 +7299,17 @@
       ],
       "manager": "Allison Yost",
       "kb_jobPositionLevel": "Central Optimization Administrator",
-      "department": "Grocery"
+      "department": "Grocery",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -5549,7 +7339,17 @@
       "kb_team_membership": [],
       "manager": "Maia Blick",
       "kb_jobPositionLevel": "International Communications Assistant",
-      "department": "Home"
+      "department": "Home",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -5579,7 +7379,17 @@
       "kb_team_membership": ["Clothing", "Electronics", "Beauty"],
       "manager": "Wanda Gorczany",
       "kb_jobPositionLevel": "Dynamic Markets Agent",
-      "department": "Sports"
+      "department": "Sports",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -5609,7 +7419,17 @@
       "kb_team_membership": ["Garden"],
       "manager": "Marlen Crona",
       "kb_jobPositionLevel": "Future Operations Supervisor",
-      "department": "Movies"
+      "department": "Movies",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -5639,7 +7459,17 @@
       "kb_team_membership": ["Kids", "Garden"],
       "manager": "Reinhold Renner",
       "kb_jobPositionLevel": "National Division Agent",
-      "department": "Grocery"
+      "department": "Grocery",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -5669,7 +7499,17 @@
       "kb_team_membership": ["Home", "Garden", "Outdoors"],
       "manager": "Marcelle Nolan",
       "kb_jobPositionLevel": "Legacy Infrastructure Planner",
-      "department": "Tools"
+      "department": "Tools",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -5699,7 +7539,17 @@
       "kb_team_membership": [],
       "manager": "Tamara Vandervort",
       "kb_jobPositionLevel": "Corporate Assurance Manager",
-      "department": "Kids"
+      "department": "Kids",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -5729,7 +7579,17 @@
       "kb_team_membership": ["Shoes"],
       "manager": "Wilber Lockman",
       "kb_jobPositionLevel": "Lead Branding Assistant",
-      "department": "Music"
+      "department": "Music",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -5765,7 +7625,17 @@
       ],
       "manager": "Luella Flatley",
       "kb_jobPositionLevel": "Central Communications Executive",
-      "department": "Shoes"
+      "department": "Shoes",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -5795,7 +7665,17 @@
       "kb_team_membership": ["Outdoors", "Books", "Computers", "Books", "Kids"],
       "manager": "Enola Osinski",
       "kb_jobPositionLevel": "Dynamic Response Developer",
-      "department": "Kids"
+      "department": "Kids",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -5825,7 +7705,17 @@
       "kb_team_membership": ["Garden", "Jewelery"],
       "manager": "Pink Murray",
       "kb_jobPositionLevel": "Customer Applications Architect",
-      "department": "Industrial"
+      "department": "Industrial",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -5855,7 +7745,17 @@
       "kb_team_membership": [],
       "manager": "Marilyne Feest",
       "kb_jobPositionLevel": "Senior Applications Architect",
-      "department": "Tools"
+      "department": "Tools",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -5885,7 +7785,17 @@
       "kb_team_membership": [],
       "manager": "Wilfred Goyette",
       "kb_jobPositionLevel": "Lead Configuration Representative",
-      "department": "Computers"
+      "department": "Computers",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -5915,7 +7825,17 @@
       "kb_team_membership": ["Sports", "Movies", "Home", "Toys"],
       "manager": "Micah Howell",
       "kb_jobPositionLevel": "Global Intranet Producer",
-      "department": "Tools"
+      "department": "Tools",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -5951,7 +7871,17 @@
       ],
       "manager": "Horace Bartoletti",
       "kb_jobPositionLevel": "Regional Optimization Technician",
-      "department": "Games"
+      "department": "Games",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -5981,7 +7911,17 @@
       "kb_team_membership": ["Outdoors", "Movies", "Jewelery", "Games"],
       "manager": "Stanton Zieme",
       "kb_jobPositionLevel": "Customer Functionality Strategist",
-      "department": "Grocery"
+      "department": "Grocery",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -6011,7 +7951,17 @@
       "kb_team_membership": [],
       "manager": "Ford Nicolas",
       "kb_jobPositionLevel": "Investor Division Officer",
-      "department": "Outdoors"
+      "department": "Outdoors",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -6041,7 +7991,17 @@
       "kb_team_membership": [],
       "manager": "Morgan Glover",
       "kb_jobPositionLevel": "Human Metrics Architect",
-      "department": "Automotive"
+      "department": "Automotive",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -6071,7 +8031,17 @@
       "kb_team_membership": [],
       "manager": "Marcus Metz",
       "kb_jobPositionLevel": "District Interactions Facilitator",
-      "department": "Outdoors"
+      "department": "Outdoors",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -6101,7 +8071,17 @@
       "kb_team_membership": ["Books", "Grocery"],
       "manager": "Valentine Rau",
       "kb_jobPositionLevel": "Human Factors Executive",
-      "department": "Outdoors"
+      "department": "Outdoors",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -6131,7 +8111,17 @@
       "kb_team_membership": ["Tools", "Beauty"],
       "manager": "Jedediah Kertzmann",
       "kb_jobPositionLevel": "Global Solutions Engineer",
-      "department": "Shoes"
+      "department": "Shoes",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -6161,7 +8151,17 @@
       "kb_team_membership": ["Movies", "Garden", "Home", "Movies", "Baby"],
       "manager": "Ross Gleichner",
       "kb_jobPositionLevel": "Principal Communications Developer",
-      "department": "Sports"
+      "department": "Sports",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "Team",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "manager@example.com",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "Position", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},

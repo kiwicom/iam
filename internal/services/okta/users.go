@@ -7,33 +7,57 @@ import (
 )
 
 type oktaUserProfile struct {
-	EmployeeNumber   string
-	FirstName        string
-	LastName         string
-	Department       string
-	Email            string
-	KbJobPosition    string   `json:"kb_jobPosition"`
-	KbPlaceOfWork    string   `json:"kb_place_of_work"`
-	KbIsVendor       bool     `json:"kb_is_vendor"`
-	KbTeamMembership []string `json:"kb_team_membership"`
-	Manager          string
+	EmployeeNumber     string
+	FirstName          string
+	LastName           string
+	Department         string
+	Email              string
+	KbJobPosition      string   `json:"kb_jobPosition"`
+	KbPlaceOfWork      string   `json:"kb_place_of_work"`
+	KbIsVendor         bool     `json:"kb_is_vendor"`
+	KbTeamMembership   []string `json:"kb_team_membership"`
+	Manager            string
+	BoocsekSite        string `json:"boocsek_site"`
+	BoocsekPosition    string `json:"boocsek_position"`
+	BoocsekChannel     string `json:"boocsek_channel"`
+	BoocsekTier        string `json:"boocsek_tier"`
+	BoocsekTeam        string `json:"boocsek_team"`
+	BoocsekTeamManager string `json:"boocsek_team_manager"`
+	BoocsekStaff       string `json:"boocsek_staff"`
+	BoocsekState       string `json:"boocsek_state"`
+	BoocsekKiwibaseID  int32  `json:"boocsek_kiwibase_id"`
+	BoocsekSubstate    string `json:"boocsek_substate"`
 }
 
 func formatUser(oktaID string, user *oktaUserProfile) User {
 	teamMembership := append(user.KbTeamMembership[:0:0], user.KbTeamMembership...)
 
+	boocsekAttributes := BoocsekAttributes{
+		Site:        user.BoocsekSite,
+		Position:    user.BoocsekPosition,
+		Channel:     user.BoocsekChannel,
+		Tier:        user.BoocsekTier,
+		Team:        user.BoocsekTeam,
+		TeamManager: user.BoocsekTeamManager,
+		Staff:       user.BoocsekStaff,
+		State:       user.BoocsekState,
+		KiwibaseID:  user.BoocsekKiwibaseID,
+		Substate:    user.BoocsekSubstate,
+	}
+
 	return User{
-		OktaID:         oktaID,
-		EmployeeNumber: user.EmployeeNumber,
-		FirstName:      user.FirstName,
-		LastName:       user.LastName,
-		Department:     user.Department,
-		Email:          user.Email,
-		Position:       user.KbJobPosition,
-		Location:       user.KbPlaceOfWork,
-		IsVendor:       user.KbIsVendor,
-		TeamMembership: teamMembership,
-		Manager:        user.Manager,
+		OktaID:            oktaID,
+		EmployeeNumber:    user.EmployeeNumber,
+		FirstName:         user.FirstName,
+		LastName:          user.LastName,
+		Department:        user.Department,
+		Email:             user.Email,
+		Position:          user.KbJobPosition,
+		Location:          user.KbPlaceOfWork,
+		IsVendor:          user.KbIsVendor,
+		TeamMembership:    teamMembership,
+		Manager:           user.Manager,
+		BoocsekAttributes: boocsekAttributes,
 	}
 }
 
@@ -72,7 +96,6 @@ func (c *Client) fetchUser(email string) (User, error) {
 	}
 
 	jsonErr := httpResponse.JSON(&response)
-
 	if jsonErr != nil {
 		return User{}, jsonErr
 	}

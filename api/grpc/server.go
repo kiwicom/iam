@@ -35,6 +35,19 @@ func (s *Server) User(_ context.Context, in *pb.UserRequest) (*pb.UserResponse, 
 		return nil, errors.New("unexpected server error")
 	}
 
+	attributes := pb.BoocsekAttributes{
+		Site:        user.BoocsekAttributes.Site,
+		Position:    user.BoocsekAttributes.Position,
+		Channel:     user.BoocsekAttributes.Channel,
+		Tier:        user.BoocsekAttributes.Tier,
+		Team:        user.BoocsekAttributes.Team,
+		TeamManager: user.BoocsekAttributes.TeamManager,
+		Staff:       user.BoocsekAttributes.Staff,
+		State:       user.BoocsekAttributes.State,
+		KiwibaseId:  user.BoocsekAttributes.KiwibaseID,
+		Substate:    user.BoocsekAttributes.Substate,
+	}
+
 	return &pb.UserResponse{
 		EmployeeNumber: employeeNumber,
 		Email:          user.Email,
@@ -45,5 +58,6 @@ func (s *Server) User(_ context.Context, in *pb.UserRequest) (*pb.UserResponse, 
 		Location:       user.Location,
 		Manager:        user.Manager,
 		TeamMembership: user.TeamMembership,
+		Boocsek:        &attributes,
 	}, nil
 }

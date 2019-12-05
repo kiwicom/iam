@@ -28,7 +28,17 @@
       "firstName": "Test",
       "mobilePhone": "",
       "department": "Engineering/Content + CS Systems/CS systems/CS Systems Frontend",
-      "email": "cached@tester.kiwi"
+      "email": "cached@tester.kiwi",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "The Best ONE",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "cached@test.manager.kiwi",
+      "boocsek_kiwibase_id": 123456,
+      "boocsek_position": "BoocsekJanitor", 
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
@@ -61,7 +71,18 @@
       "firstName": "Test2",
       "mobilePhone": "",
       "department": "Engineering/Utilities",
-      "email": "cached2@tester.kiwi"
+      "email": "cached2@tester.kiwi",
+      "boocsek_site": "Site",
+      "boocsek_channel": "Channel",
+      "boocsek_staff": "Staff",
+      "boocsek_tier": "T0",
+      "boocsek_team": "The Best ONE",
+      "boocsek_state": "active",
+      "boocsek_team_manager": "cached2@test.manager.kiwi",
+      "boocsek_kiwibase_id": 123457,
+      "boocsek_position": "BoocsekJanitor", 
+      "boocsek_last_update": "2019-09-19 01:01:01.917911+00:00",
+      "boocsek_substate": ""
     },
     "credentials": {
       "password": {},
