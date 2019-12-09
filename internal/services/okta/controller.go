@@ -15,16 +15,17 @@ import (
 
 // BoocsekAttributes contains formatted Boocsek attributes provided by Okta
 type BoocsekAttributes struct {
-	Site        string `json:"site"`
-	Position    string `json:"position"`
-	Channel     string `json:"channel"`
-	Tier        string `json:"tier"`
-	Team        string `json:"team"`
-	TeamManager string `json:"teamManager"`
-	Staff       string `json:"staff"`
-	State       string `json:"state"`
-	KiwibaseID  int32  `json:"kiwibaseId"`
-	Substate    string `json:"substate"`
+	Site        string   `json:"site"`
+	Position    string   `json:"position"`
+	Channel     string   `json:"channel"`
+	Tier        string   `json:"tier"`
+	Team        string   `json:"team"`
+	TeamManager string   `json:"teamManager"`
+	Staff       string   `json:"staff"`
+	State       string   `json:"state"`
+	KiwibaseID  int32    `json:"kiwibaseId"`
+	Substate    string   `json:"substate"`
+	Skills      []string `json:"skills"`
 }
 
 // User contains formatted user data provided by Okta

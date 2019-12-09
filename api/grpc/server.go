@@ -46,6 +46,7 @@ func (s *Server) User(_ context.Context, in *pb.UserRequest) (*pb.UserResponse, 
 		State:       user.BoocsekAttributes.State,
 		KiwibaseId:  user.BoocsekAttributes.KiwibaseID,
 		Substate:    user.BoocsekAttributes.Substate,
+		Skills:      user.BoocsekAttributes.Skills,
 	}
 
 	return &pb.UserResponse{

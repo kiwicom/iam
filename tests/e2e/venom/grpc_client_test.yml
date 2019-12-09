@@ -63,6 +63,8 @@ testcases:
           - result.systemoutjson.boocsek.site ShouldEqual Site
           - result.systemoutjson.boocsek.kiwibaseid ShouldEqual 123456
           - result.systemoutjson.boocsek.teammanager ShouldEqual cached@test.manager.kiwi
+          - result.systemoutjson.boocsek.skills.skills0 ShouldEqual skill1
+          - result.systemoutjson.boocsek.skills.skills1 ShouldEqual skill2
   - name: Returns error for missing user
     steps:
       - type: grpc

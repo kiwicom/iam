@@ -17,20 +17,22 @@ type oktaUserProfile struct {
 	KbIsVendor         bool     `json:"kb_is_vendor"`
 	KbTeamMembership   []string `json:"kb_team_membership"`
 	Manager            string
-	BoocsekSite        string `json:"boocsek_site"`
-	BoocsekPosition    string `json:"boocsek_position"`
-	BoocsekChannel     string `json:"boocsek_channel"`
-	BoocsekTier        string `json:"boocsek_tier"`
-	BoocsekTeam        string `json:"boocsek_team"`
-	BoocsekTeamManager string `json:"boocsek_team_manager"`
-	BoocsekStaff       string `json:"boocsek_staff"`
-	BoocsekState       string `json:"boocsek_state"`
-	BoocsekKiwibaseID  int32  `json:"boocsek_kiwibase_id"`
-	BoocsekSubstate    string `json:"boocsek_substate"`
+	BoocsekSite        string   `json:"boocsek_site"`
+	BoocsekPosition    string   `json:"boocsek_position"`
+	BoocsekChannel     string   `json:"boocsek_channel"`
+	BoocsekTier        string   `json:"boocsek_tier"`
+	BoocsekTeam        string   `json:"boocsek_team"`
+	BoocsekTeamManager string   `json:"boocsek_team_manager"`
+	BoocsekStaff       string   `json:"boocsek_staff"`
+	BoocsekState       string   `json:"boocsek_state"`
+	BoocsekKiwibaseID  int32    `json:"boocsek_kiwibase_id"`
+	BoocsekSubstate    string   `json:"boocsek_substate"`
+	BoocsekSkills      []string `json:"boocsek_skills"`
 }
 
 func formatUser(oktaID string, user *oktaUserProfile) User {
 	teamMembership := append(user.KbTeamMembership[:0:0], user.KbTeamMembership...)
+	skills := append(make([]string, 0), user.BoocsekSkills...)
 
 	boocsekAttributes := BoocsekAttributes{
 		Site:        user.BoocsekSite,
@@ -43,6 +45,7 @@ func formatUser(oktaID string, user *oktaUserProfile) User {
 		State:       user.BoocsekState,
 		KiwibaseID:  user.BoocsekKiwibaseID,
 		Substate:    user.BoocsekSubstate,
+		Skills:      skills,
 	}
 
 	return User{

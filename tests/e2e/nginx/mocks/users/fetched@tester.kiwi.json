@@ -37,7 +37,8 @@
     "boocsek_team_manager": "fetched@test.manager.kiwi",
     "boocsek_kiwibase_id": 123456,
     "boocsek_position": "BoocsekJanitor", 
-    "boocsek_substate": ""
+    "boocsek_substate": "",
+    "boocsek_skills": ["skill1", "skill2"]
   },
   "credentials": {
     "password": {},

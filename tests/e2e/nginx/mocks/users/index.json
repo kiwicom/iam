@@ -38,7 +38,8 @@
       "boocsek_team_manager": "cached@test.manager.kiwi",
       "boocsek_kiwibase_id": 123456,
       "boocsek_position": "BoocsekJanitor", 
-      "boocsek_substate": ""
+      "boocsek_substate": "",
+      "boocsek_skills": ["skill1", "skill2"]
     },
     "credentials": {
       "password": {},
@@ -82,7 +83,8 @@
       "boocsek_kiwibase_id": 123457,
       "boocsek_position": "BoocsekJanitor", 
       "boocsek_last_update": "2019-09-19 01:01:01.917911+00:00",
-      "boocsek_substate": ""
+      "boocsek_substate": "",
+      "boocsek_skills": ["skill1", "skill2"]
     },
     "credentials": {
       "password": {},

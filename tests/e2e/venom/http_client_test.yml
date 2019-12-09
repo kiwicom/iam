@@ -55,6 +55,8 @@ testcases:
           - result.bodyjson.boocsek.position ShouldEqual BoocsekJanitor
           - result.bodyjson.boocsek.kiwibaseid ShouldEqual 123456
           - result.bodyjson.boocsek.substate ShouldEqual ""
+          - result.bodyjson.boocsek.skills.skills0 ShouldEqual skill1
+          - result.bodyjson.boocsek.skills.skills1 ShouldEqual skill2
           - result.bodyjson.boocsek.teammanager ShouldEqual cached@test.manager.kiwi
           - result.bodyjson.department ShouldEqual "Engineering/Content + CS Systems/CS systems/CS Systems Frontend"
           - result.bodyjson.teammembership.teammembership1 ShouldEqual "Engineering"
@@ -79,6 +81,8 @@ testcases:
           - result.bodyjson.boocsek.position ShouldEqual BoocsekJanitor
           - result.bodyjson.boocsek.kiwibaseid ShouldEqual 123456
           - result.bodyjson.boocsek.substate ShouldEqual ""
+          - result.bodyjson.boocsek.skills.skills0 ShouldEqual skill1
+          - result.bodyjson.boocsek.skills.skills1 ShouldEqual skill2
           - result.bodyjson.boocsek.teammanager ShouldEqual cached@test.manager.kiwi
           - result.bodyjson.department ShouldEqual "Engineering/Content + CS Systems/CS systems/CS Systems Frontend"
           - result.bodyjson.teammembership.teammembership1 ShouldEqual "Engineering"
@@ -114,6 +118,8 @@ testcases:
           - result.bodyjson.boocsek.position ShouldEqual BoocsekJanitor
           - result.bodyjson.boocsek.kiwibaseid ShouldEqual 123456
           - result.bodyjson.boocsek.substate ShouldEqual ""
+          - result.bodyjson.boocsek.skills.skills0 ShouldEqual skill1
+          - result.bodyjson.boocsek.skills.skills1 ShouldEqual skill2
           - result.bodyjson.boocsek.teammanager ShouldEqual fetched@test.manager.kiwi
           - result.bodyjson.department ShouldEqual "Engineering/Content + CS Systems/CS systems/CS Systems Frontend"
           - result.bodyjson.teammembership.teammembership1 ShouldEqual "Engineering"

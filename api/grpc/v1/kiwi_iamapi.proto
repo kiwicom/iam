@@ -21,15 +21,16 @@ message UserRequest {
 
 message BoocsekAttributes {
     string site = 1;
-	string position = 2;
-	string channel = 3;
-	string tier = 4;
-	string team = 5;
-	string team_manager = 6;
+    string position = 2;
+    string channel = 3;
+    string tier = 4;
+    string team = 5;
+    string team_manager = 6;
     string staff = 7;
-	string state = 8;
-	int32 kiwibase_id = 9;
-    string substate = 11;
+    string state = 8;
+    int32 kiwibase_id = 9;
+    string substate = 10;
+    repeated string skills = 11;
 }
 
 message UserResponse {
