@@ -40,8 +40,10 @@ type Server struct {
 }
 
 // NewServer creates a new instance of server and sets up routes
-func NewServer() *Server {
-	s := Server{}
+func NewServer(serviceName string) *Server {
+	s := Server{
+		ServiceName: serviceName,
+	}
 	s.routes()
 
 	return &s

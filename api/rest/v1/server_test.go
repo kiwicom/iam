@@ -9,7 +9,7 @@ import (
 )
 
 func TestProtectedRoutes(t *testing.T) {
-	srv := NewServer()
+	srv := NewServer("test")
 
 	tests := map[string]int{
 		"/":               http.StatusOK,

@@ -213,7 +213,7 @@ func main() {
 		Metrics:     metricClient,
 	})
 
-	restServer := restAPI.NewServer()
+	restServer := restAPI.NewServer("kiwi-iam.http.router")
 	restServer.OktaService = oktaClient
 	restServer.SecretManager = secretManager
 	restServer.MetricClient = metricClient
