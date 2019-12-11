@@ -102,7 +102,33 @@ testcases:
         assertions:
           - "result.body ShouldEqual 'Use the Bearer {token} authorization scheme\n'"
           - result.statuscode ShouldEqual 401
-  - name: Test getting existing non-cached user
+  - name: Test getting user with boocsek attributes
+    steps:
+      - type: http
+        method: GET
+        url: "http://{{.url}}:{{.httpPort}}/v1/user?email=boocsek@tester.kiwi"
+        headers:
+          User-Agent: "Venom/0 (Kiwi.com test)"
+          authorization: "Bearer testtoken"
+        assertions:
+          - result.bodyjson.firstname ShouldEqual Test
+          - result.bodyjson.lastname ShouldEqual Boocsek
+          - result.bodyjson.location ShouldEqual Praha
+          - result.bodyjson.position ShouldEqual Janitor
+          - result.bodyjson.boocsek.position ShouldEqual BoocsekJanitor
+          - result.bodyjson.boocsek.kiwibaseid ShouldEqual 123456
+          - result.bodyjson.boocsek.substate ShouldEqual ""
+          - result.bodyjson.boocsek.skills.skills0 ShouldEqual skill1
+          - result.bodyjson.boocsek.skills.skills1 ShouldEqual skill2
+          - result.bodyjson.boocsek.teammanager ShouldEqual boocsek@test.manager.kiwi
+          - result.bodyjson.department ShouldEqual "Engineering/Content + CS Systems/CS systems/CS Systems Frontend"
+          - result.bodyjson.teammembership.teammembership1 ShouldEqual "Engineering"
+          - result.bodyjson.teammembership.teammembership2 ShouldEqual "Engineering/Content + CS Systems"
+          - result.bodyjson.teammembership.teammembership3 ShouldEqual "Engineering/Content + CS Systems/CS systems"
+          - result.bodyjson.teammembership.teammembership4 ShouldEqual "Engineering/Content + CS Systems/CS systems/CS Systems Frontend"
+          - result.bodyjson ShouldNotContainKey permissions
+          - result.statuscode ShouldEqual 200
+  - name: Test getting existing non-cached user (without boocsek attributes)
     steps:
       - type: http
         method: GET
@@ -115,12 +141,10 @@ testcases:
           - result.bodyjson.lastname ShouldEqual Fetched
           - result.bodyjson.location ShouldEqual Praha
           - result.bodyjson.position ShouldEqual Janitor
-          - result.bodyjson.boocsek.position ShouldEqual BoocsekJanitor
-          - result.bodyjson.boocsek.kiwibaseid ShouldEqual 123456
+          - result.bodyjson.boocsek.position ShouldEqual ""
+          - result.bodyjson.boocsek.kiwibaseid ShouldEqual 0
           - result.bodyjson.boocsek.substate ShouldEqual ""
-          - result.bodyjson.boocsek.skills.skills0 ShouldEqual skill1
-          - result.bodyjson.boocsek.skills.skills1 ShouldEqual skill2
-          - result.bodyjson.boocsek.teammanager ShouldEqual fetched@test.manager.kiwi
+          - result.bodyjson.boocsek.teammanager ShouldEqual ""
           - result.bodyjson.department ShouldEqual "Engineering/Content + CS Systems/CS systems/CS Systems Frontend"
           - result.bodyjson.teammembership.teammembership1 ShouldEqual "Engineering"
           - result.bodyjson.teammembership.teammembership2 ShouldEqual "Engineering/Content + CS Systems"

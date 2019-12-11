@@ -1,0 +1,50 @@
+{
+  "id": "fakeid-boocsek",
+  "status": "ACTIVE",
+  "created": "2018-10-28T23:01:44.000Z",
+  "activated": "2018-11-12T08:58:26.000Z",
+  "statusChanged": "2018-11-16T14:33:52.000Z",
+  "lastLogin": "2019-04-23T11:04:04.000Z",
+  "lastUpdated": "2019-01-14T17:10:20.000Z",
+  "passwordChanged": "1992-11-16T14:33:52.000Z",
+  "profile": {
+    "kb_is_vendor": false,
+    "lastName": "Boocsek",
+    "kb_place_of_work": "Praha",
+    "kb_team_membership": [
+      "",
+      "Engineering",
+      "Engineering/Content + CS Systems",
+      "Engineering/Content + CS Systems/CS systems",
+      "Engineering/Content + CS Systems/CS systems/CS Systems Frontend"
+    ],
+    "manager": "The Boss",
+    "kb_jobPositionLevel": "None",
+    "secondEmail": "boocsek@tester.kiwi",
+    "login": "boocsek@tester.kiwi",
+    "kb_jobPosition": "Janitor",
+    "employeeNumber": "74981356543567654",
+    "firstName": "Test",
+    "mobilePhone": "",
+    "department": "Engineering/Content + CS Systems/CS systems/CS Systems Frontend",
+    "email": "boocsek@tester.kiwi",
+    "boocsek_site": "Site",
+    "boocsek_channel": "Channel",
+    "boocsek_staff": "Staff",
+    "boocsek_tier": "T0",
+    "boocsek_team": "The Best ONE",
+    "boocsek_state": "active",
+    "boocsek_team_manager": "boocsek@test.manager.kiwi",
+    "boocsek_kiwibase_id": 123456,
+    "boocsek_position": "BoocsekJanitor", 
+    "boocsek_substate": "",
+    "boocsek_skills": ["skill1", "skill2"]
+  },
+  "credentials": {
+    "password": {},
+    "provider": {
+      "type": "OKTA",
+      "name": "OKTA"
+    }
+  }
+}

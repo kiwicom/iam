@@ -116,23 +116,23 @@ func (c *Client) fetchAllUsers() ([]User, error) {
 		return nil, err
 	}
 
-	var resources []struct {
-		ID      string
-		Profile oktaUserProfile
-	}
-
 	responses, err := c.fetchPagedResource(url)
 	if err != nil {
 		return nil, err
 	}
 
 	for _, response := range responses {
+		var resources []struct {
+			ID      string
+			Profile oktaUserProfile
+		}
+
 		jsonErr := json.UnmarshalFromString(response, &resources)
 		if jsonErr != nil {
 			return nil, jsonErr
 		}
 
-		var users = make([]User, len(resources))
+		users := make([]User, len(resources))
 		for i := range resources {
 			user := &resources[i]
 			users[i] = formatUser(user.ID, &user.Profile)
