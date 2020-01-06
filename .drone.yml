@@ -28,7 +28,7 @@ steps:
       event: [pull_request]
 
   - name: release notes
-    image: outillage/release-notary:0.5.3
+    image: outillage/release-notary:0.6.0
     environment:
       GITHUB_TOKEN:
         from_secret: github_token
