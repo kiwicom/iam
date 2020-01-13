@@ -65,6 +65,7 @@ testcases:
           - result.systemoutjson.boocsek.teammanager ShouldEqual cached@test.manager.kiwi
           - result.systemoutjson.boocsek.skills.skills0 ShouldEqual skill1
           - result.systemoutjson.boocsek.skills.skills1 ShouldEqual skill2
+          - result.systemoutjson.permissions.permissions0 ShouldEqual credit-card.create
   - name: Returns error for missing user
     steps:
       - type: grpc
