@@ -7,7 +7,6 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/kiwicom/iam/api"
 	"github.com/kiwicom/iam/internal/services/okta"
 )
 
@@ -20,7 +19,7 @@ func mockPermissionsRequest(handler http.HandlerFunc, method, path string) *http
 }
 
 func TestServicePermissions(t *testing.T) {
-	userService := &api.MockOktaService{}
+	userService := &mockOktaService{}
 	server := setupServer()
 	server.OktaService = userService
 
@@ -57,7 +56,7 @@ func TestServicePermissions(t *testing.T) {
 }
 
 func TestUserPermissions(t *testing.T) {
-	userService := &api.MockOktaService{}
+	userService := &mockOktaService{}
 	server := setupServer()
 	server.OktaService = userService
 

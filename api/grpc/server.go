@@ -10,6 +10,7 @@ import (
 	"google.golang.org/grpc/metadata"
 
 	pb "github.com/kiwicom/iam/api/grpc/v1"
+	"github.com/kiwicom/iam/internal/security"
 	"github.com/kiwicom/iam/internal/services/okta"
 )
 
@@ -45,7 +46,12 @@ func (s *Server) User(ctx context.Context, in *pb.UserRequest) (*pb.UserResponse
 		return nil, errBadUA
 	}
 
-	permErr := s.userService.AddPermissions(&user, md[metadataUserAgent][0])
+	service, getServiceErr := security.GetService(md[metadataUserAgent][0])
+	if getServiceErr != nil {
+		return nil, errBadUA
+	}
+
+	permErr := s.userService.AddPermissions(&user, service.Name)
 	if permErr != nil {
 		log.Println("[ERROR]", permErr.Error())
 		raven.CaptureError(permErr, nil)

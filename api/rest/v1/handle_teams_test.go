@@ -7,14 +7,12 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-
-	"github.com/kiwicom/iam/api"
 )
 
 func TestInternalError(t *testing.T) {
 	s := Server{}
 	errMessage := "internal error that shouldn't be exposed"
-	tg := &api.MockOktaService{}
+	tg := &mockOktaService{}
 	s.OktaService = tg
 	tg.On("GetTeams").Return(map[string]int{}, errors.New(errMessage))
 
@@ -32,7 +30,7 @@ func TestInternalError(t *testing.T) {
 
 func TestGetTeams(t *testing.T) {
 	s := Server{}
-	tg := &api.MockOktaService{}
+	tg := &mockOktaService{}
 	tg.On("GetTeams").Return(map[string]int{"team1": 3, "team2": 1, "team3": 1}, nil)
 	s.OktaService = tg
 

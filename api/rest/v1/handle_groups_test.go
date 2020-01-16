@@ -8,13 +8,12 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/kiwicom/iam/api"
 	"github.com/kiwicom/iam/internal/services/okta"
 	"github.com/kiwicom/iam/internal/storage"
 )
 
 func TestGetGroupsErrors(t *testing.T) {
-	g := &api.MockOktaService{}
+	g := &mockOktaService{}
 	server := setupServer()
 	server.OktaService = g
 
@@ -41,7 +40,7 @@ func TestGetGroupsErrors(t *testing.T) {
 }
 
 func TestGetGroups(t *testing.T) {
-	g := &api.MockOktaService{}
+	g := &mockOktaService{}
 	server := setupServer()
 	server.OktaService = g
 
