@@ -8,6 +8,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
+	"github.com/kiwicom/iam/api"
 	"github.com/kiwicom/iam/internal/monitoring"
 	"github.com/kiwicom/iam/internal/services/okta"
 )
@@ -34,7 +35,7 @@ func setupServer() *Server {
 }
 
 func TestMissingQuery(t *testing.T) {
-	userService := &mockOktaService{}
+	userService := &api.MockOktaService{}
 	request, _ := http.NewRequest("GET", "/", nil)
 	response := httptest.NewRecorder()
 	server := setupServer()
@@ -52,7 +53,7 @@ func TestMissingQuery(t *testing.T) {
 }
 
 func TestWrongEmail(t *testing.T) {
-	userService := &mockOktaService{}
+	userService := &api.MockOktaService{}
 	request, _ := http.NewRequest("GET", "/?email=testest", nil)
 	response := httptest.NewRecorder()
 	server := setupServer()
@@ -70,7 +71,7 @@ func TestWrongEmail(t *testing.T) {
 }
 
 func TestMissingUserAgent(t *testing.T) {
-	userService := &mockOktaService{}
+	userService := &api.MockOktaService{}
 	request, _ := http.NewRequest("GET", "/?email=test@test.com", nil)
 	response := httptest.NewRecorder()
 	server := setupServer()
@@ -88,7 +89,7 @@ func TestMissingUserAgent(t *testing.T) {
 
 func TestHappyPathWithPermissions(t *testing.T) {
 	// Success response
-	userService := &mockOktaService{}
+	userService := &api.MockOktaService{}
 	request, _ := http.NewRequest("GET", "/?email=test@test.com&permissions=true", nil)
 	request.Header.Set("User-Agent", "service/0 (Kiwi.com test)")
 	response := httptest.NewRecorder()
@@ -124,7 +125,7 @@ func TestHappyPathNoPermissions(t *testing.T) {
 		request.Header.Set("User-Agent", "service/0 (Kiwi.com test)")
 		response := httptest.NewRecorder()
 
-		userService := &mockOktaService{}
+		userService := &api.MockOktaService{}
 		server := setupServer()
 		server.OktaService = userService
 
@@ -156,7 +157,7 @@ func TestControllerFailurePath(t *testing.T) {
 	request.Header.Set("User-Agent", "service/0 (Kiwi.com test)")
 	response := httptest.NewRecorder()
 
-	userService := &mockOktaService{}
+	userService := &api.MockOktaService{}
 	server := setupServer()
 	server.OktaService = userService
 
@@ -176,7 +177,7 @@ func TestNotFoundPath(t *testing.T) {
 	request.Header.Set("User-Agent", "service/0 (Kiwi.com test)")
 	response := httptest.NewRecorder()
 
-	userService := &mockOktaService{}
+	userService := &api.MockOktaService{}
 	server := setupServer()
 	server.OktaService = userService
 

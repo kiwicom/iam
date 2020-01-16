@@ -5,8 +5,10 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/kiwicom/iam/internal/services/okta"
 	"github.com/stretchr/testify/assert"
+
+	"github.com/kiwicom/iam/api"
+	"github.com/kiwicom/iam/internal/services/okta"
 )
 
 // nolint:unparam // even though method is currently always "GET" we might decide to use other methods in the future
@@ -18,7 +20,7 @@ func mockPermissionsRequest(handler http.HandlerFunc, method, path string) *http
 }
 
 func TestServicePermissions(t *testing.T) {
-	userService := &mockOktaService{}
+	userService := &api.MockOktaService{}
 	server := setupServer()
 	server.OktaService = userService
 
@@ -55,7 +57,7 @@ func TestServicePermissions(t *testing.T) {
 }
 
 func TestUserPermissions(t *testing.T) {
-	userService := &mockOktaService{}
+	userService := &api.MockOktaService{}
 	server := setupServer()
 	server.OktaService = userService
 
