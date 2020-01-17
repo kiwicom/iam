@@ -9,7 +9,6 @@ var Expirations = struct {
 	User             time.Duration
 	GroupMemberships time.Duration
 	GroupsLastSync   time.Duration
-	Teams            time.Duration
 }{
 	User:             time.Hour * 24,
 	GroupMemberships: time.Hour * 24,
@@ -19,5 +18,4 @@ var Expirations = struct {
 	// if there is a value for it, it's used to fetch only the changes since the
 	// last sync instead of all groups.
 	GroupsLastSync: 0,
-	Teams:          0,
 }

@@ -89,5 +89,6 @@ func (s *Server) User(ctx context.Context, in *pb.UserRequest) (*pb.UserResponse
 		TeamMembership: user.TeamMembership,
 		Permissions:    user.Permissions,
 		Boocsek:        &attributes,
+		OrgStructure:   user.OrganizationStructure,
 	}, nil
 }

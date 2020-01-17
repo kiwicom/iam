@@ -15,7 +15,6 @@ func (s *Server) routes() {
 
 	s.Router.HandleFunc("/", s.handleHello())
 	s.Router.HandleFunc("/healthcheck", s.handleHealthcheck())
-	s.Router.HandleFunc("/v1/teams", s.middlewareSecurity(s.handleTeamsGET()))
 	s.Router.HandleFunc("/v1/user", s.middlewareSecurity(s.handleUserGET()))
 	s.Router.HandleFunc("/v1/permissions", s.middlewareSecurity(s.handlePermissionsGET()))
 	s.Router.HandleFunc("/v1/groups", s.middlewareSecurity(s.handleGroupsGET()))

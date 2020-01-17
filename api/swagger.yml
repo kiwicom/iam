@@ -53,22 +53,20 @@ definitions:
         description: lastName in Okta
         type: string
       position:
-        description: kb_jobPosition in Okta
+        description: SF_jobTitle in Okta
         type: string
       department:
         description: department
         type: string
       location:
-        description: kb_place_of_work in Okta
+        description: SF_location in Okta
         type: string
       isVendor:
-        description: kb_is_vendor in Okta
+        description: based on userType in Okta
         type: boolean
-      teamMembership:
-        description: kb_team_membership in Okta
-        type: array
-        items:
-          type: string
+      orgStructure:
+        decription: SF_orgStructure in Okta
+        type: string
       manager:
         description: manager in Okta
         type: string
@@ -88,12 +86,6 @@ definitions:
       teamMembership: ["Engineering", "Engineering/CS Systems"]
       manager: Satan
       permissions: ["payment-cards:read", "comments:read", "comments:write"]
-  teams:
-    description: Team names and member count
-    type: object
-    additionalProperties:
-      description: Member count
-      type: number
   groups:
     description: Okta groups
     type: array
@@ -151,19 +143,6 @@ paths:
           description: User not found
           schema:
             $ref: "#/definitions/error"
-  /v1/teams:
-    get:
-      summary: "Teams that the user belongs to"
-      description: "Get the teams that a given user belongs to in OKTA"
-      tags:
-        - Teams
-      produces:
-        - application/json
-      responses:
-        200:
-          description: All teams
-          schema:
-            $ref: "#/definitions/teams"
   /v1/groups:
     get:
       summary: "Groups that the user belongs to"

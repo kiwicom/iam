@@ -14,7 +14,6 @@ func TestProtectedRoutes(t *testing.T) {
 	tests := map[string]int{
 		"/":               http.StatusOK,
 		"/healthcheck":    http.StatusOK,
-		"/v1/teams":       http.StatusUnauthorized,
 		"/v1/user":        http.StatusUnauthorized,
 		"/v1/permissions": http.StatusUnauthorized,
 		"/v1/groups":      http.StatusUnauthorized,

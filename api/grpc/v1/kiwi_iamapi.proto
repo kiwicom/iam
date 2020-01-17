@@ -44,6 +44,7 @@ message UserResponse {
     bool is_vendor = 8;
     string manager = 9;
     repeated string team_membership = 10;
-    BoocsekAttributes boocsek = 11;
+    string org_structure = 11;
     repeated string permissions = 12;
+    BoocsekAttributes boocsek = 13;
 }

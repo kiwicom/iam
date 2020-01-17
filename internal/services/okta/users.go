@@ -12,10 +12,10 @@ type oktaUserProfile struct {
 	LastName           string
 	Department         string
 	Email              string
-	KbJobPosition      string   `json:"kb_jobPosition"`
-	KbPlaceOfWork      string   `json:"kb_place_of_work"`
-	KbIsVendor         bool     `json:"kb_is_vendor"`
-	KbTeamMembership   []string `json:"kb_team_membership"`
+	UserType           string
+	SfOrgStructure     string `json:"SF_orgStructure"`
+	SfJobTitle         string `json:"SF_jobTitle"`
+	SfLocation         string `json:"SF_location"`
 	Manager            string
 	BoocsekSite        string   `json:"boocsek_site"`
 	BoocsekPosition    string   `json:"boocsek_position"`
@@ -31,7 +31,7 @@ type oktaUserProfile struct {
 }
 
 func formatUser(oktaID string, user *oktaUserProfile) User {
-	teamMembership := append(user.KbTeamMembership[:0:0], user.KbTeamMembership...)
+	teamMembership := append(make([]string, 0), user.SfOrgStructure) // Deprecated
 	skills := append(make([]string, 0), user.BoocsekSkills...)
 
 	boocsekAttributes := BoocsekAttributes{
@@ -49,18 +49,19 @@ func formatUser(oktaID string, user *oktaUserProfile) User {
 	}
 
 	return User{
-		OktaID:            oktaID,
-		EmployeeNumber:    user.EmployeeNumber,
-		FirstName:         user.FirstName,
-		LastName:          user.LastName,
-		Department:        user.Department,
-		Email:             user.Email,
-		Position:          user.KbJobPosition,
-		Location:          user.KbPlaceOfWork,
-		IsVendor:          user.KbIsVendor,
-		TeamMembership:    teamMembership,
-		Manager:           user.Manager,
-		BoocsekAttributes: boocsekAttributes,
+		OktaID:                oktaID,
+		EmployeeNumber:        user.EmployeeNumber,
+		FirstName:             user.FirstName,
+		LastName:              user.LastName,
+		Department:            user.Department,
+		Email:                 user.Email,
+		Position:              user.SfJobTitle,
+		Location:              user.SfLocation,
+		IsVendor:              user.UserType != "Regular Employee",
+		TeamMembership:        teamMembership,
+		OrganizationStructure: user.SfOrgStructure,
+		Manager:               user.Manager,
+		BoocsekAttributes:     boocsekAttributes,
 	}
 }
 

@@ -30,20 +30,21 @@ type BoocsekAttributes struct {
 
 // User contains formatted user data provided by Okta
 type User struct {
-	OktaID            string            `json:"oktaId,omitempty"` // Exported to be cache-able
-	EmployeeNumber    string            `json:"employeeNumber"`
-	FirstName         string            `json:"firstName"`
-	LastName          string            `json:"lastName"`
-	Position          string            `json:"position"`
-	Department        string            `json:"department"`
-	Email             string            `json:"email"`
-	Location          string            `json:"location"`
-	IsVendor          bool              `json:"isVendor"`
-	TeamMembership    []string          `json:"teamMembership"`
-	GroupMembership   []Group           `json:"groupMembership,omitempty"`
-	Manager           string            `json:"manager"`
-	Permissions       []string          `json:"permissions"`
-	BoocsekAttributes BoocsekAttributes `json:"boocsek"`
+	OktaID                string            `json:"oktaId,omitempty"` // Exported to be cache-able
+	EmployeeNumber        string            `json:"employeeNumber"`
+	FirstName             string            `json:"firstName"`
+	LastName              string            `json:"lastName"`
+	Position              string            `json:"position"`
+	Department            string            `json:"department"`
+	Email                 string            `json:"email"`
+	Location              string            `json:"location"`
+	IsVendor              bool              `json:"isVendor"`
+	TeamMembership        []string          `json:"teamMembership"` // Deprecated
+	OrganizationStructure string            `json:"orgStructure"`
+	GroupMembership       []Group           `json:"groupMembership,omitempty"`
+	Manager               string            `json:"manager"`
+	Permissions           []string          `json:"permissions"`
+	BoocsekAttributes     BoocsekAttributes `json:"boocsek"`
 }
 
 const groupMembershipPrefix = "group-membership:"
@@ -148,13 +149,6 @@ func (c *Client) AddPermissions(user *User, service string) error {
 	return nil
 }
 
-// GetTeams retrieves from cache a map of all teams and their member count.
-func (c *Client) GetTeams() (map[string]int, error) {
-	var teams map[string]int
-	err := c.cache.Get("teams", &teams)
-	return teams, err
-}
-
 // GetGroups retrieves Okta groups
 func (c *Client) GetGroups() ([]Group, error) {
 	var groups []Group
@@ -162,9 +156,7 @@ func (c *Client) GetGroups() ([]Group, error) {
 	return groups, err
 }
 
-// SyncUsers gets all users from Okta and saves them into cache. Also generates
-// a map of all possible teams and the number of users in them, and saves them
-// into cache.
+// SyncUsers gets all users from Okta and saves them into cache.
 func (c *Client) SyncUsers() {
 	lockErr := c.lock.Create("sync_users")
 	if lockErr == storage.ErrLockExists {
@@ -194,13 +186,6 @@ func (c *Client) SyncUsers() {
 	}
 	log.Println("Cached", len(users), "users")
 
-	nTeams, err := cacheTeams(c.cache, users)
-	if err != nil {
-		log.Println("Error caching teams", err)
-		raven.CaptureError(err, nil)
-		return
-	}
-	log.Println("Cached", nTeams, "teams")
 	c.metrics.Incr("successful.sync", monitoring.Tag("type", "users"))
 }
 

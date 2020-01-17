@@ -59,10 +59,8 @@ testcases:
           - result.bodyjson.boocsek.skills.skills1 ShouldEqual skill2
           - result.bodyjson.boocsek.teammanager ShouldEqual cached@test.manager.kiwi
           - result.bodyjson.department ShouldEqual "Engineering/Content + CS Systems/CS systems/CS Systems Frontend"
-          - result.bodyjson.teammembership.teammembership1 ShouldEqual "Engineering"
-          - result.bodyjson.teammembership.teammembership2 ShouldEqual "Engineering/Content + CS Systems"
-          - result.bodyjson.teammembership.teammembership3 ShouldEqual "Engineering/Content + CS Systems/CS systems"
-          - result.bodyjson.teammembership.teammembership4 ShouldEqual "Engineering/Content + CS Systems/CS systems/CS Systems Frontend"
+          - result.bodyjson.orgstructure ShouldEqual "Engineering/Regular/Test"
+          - result.bodyjson.teammembership.teammembership0 ShouldEqual "Engineering/Regular/Test"
           - result.bodyjson ShouldNotContainKey permissions
           - result.statuscode ShouldEqual 200
   - name: Test getting existing user with permissions
@@ -85,10 +83,9 @@ testcases:
           - result.bodyjson.boocsek.skills.skills1 ShouldEqual skill2
           - result.bodyjson.boocsek.teammanager ShouldEqual cached@test.manager.kiwi
           - result.bodyjson.department ShouldEqual "Engineering/Content + CS Systems/CS systems/CS Systems Frontend"
-          - result.bodyjson.teammembership.teammembership1 ShouldEqual "Engineering"
-          - result.bodyjson.teammembership.teammembership2 ShouldEqual "Engineering/Content + CS Systems"
-          - result.bodyjson.teammembership.teammembership3 ShouldEqual "Engineering/Content + CS Systems/CS systems"
-          - result.bodyjson.teammembership.teammembership4 ShouldEqual "Engineering/Content + CS Systems/CS systems/CS Systems Frontend"
+          - result.bodyjson.orgstructure ShouldEqual "Engineering/Regular/Test"
+          - result.bodyjson.teammembership.teammembership0 ShouldEqual "Engineering/Regular/Test"
+
           - result.bodyjson.permissions.permissions0 ShouldEqual credit-card.create
           - result.statuscode ShouldEqual 200
   - name: Test getting existing user with deprecated token scheme
@@ -122,10 +119,9 @@ testcases:
           - result.bodyjson.boocsek.skills.skills1 ShouldEqual skill2
           - result.bodyjson.boocsek.teammanager ShouldEqual boocsek@test.manager.kiwi
           - result.bodyjson.department ShouldEqual "Engineering/Content + CS Systems/CS systems/CS Systems Frontend"
-          - result.bodyjson.teammembership.teammembership1 ShouldEqual "Engineering"
-          - result.bodyjson.teammembership.teammembership2 ShouldEqual "Engineering/Content + CS Systems"
-          - result.bodyjson.teammembership.teammembership3 ShouldEqual "Engineering/Content + CS Systems/CS systems"
-          - result.bodyjson.teammembership.teammembership4 ShouldEqual "Engineering/Content + CS Systems/CS systems/CS Systems Frontend"
+          - result.bodyjson.orgstructure ShouldEqual Engineering/Test/Test
+          - result.bodyjson.teammembership.teammembership0 ShouldEqual "Engineering/Test/Test"
+          - result.bodyjson.isvendor ShouldBeTrue
           - result.bodyjson ShouldNotContainKey permissions
           - result.statuscode ShouldEqual 200
   - name: Test getting existing non-cached user (without boocsek attributes)
@@ -146,24 +142,10 @@ testcases:
           - result.bodyjson.boocsek.substate ShouldEqual ""
           - result.bodyjson.boocsek.teammanager ShouldEqual ""
           - result.bodyjson.department ShouldEqual "Engineering/Content + CS Systems/CS systems/CS Systems Frontend"
-          - result.bodyjson.teammembership.teammembership1 ShouldEqual "Engineering"
-          - result.bodyjson.teammembership.teammembership2 ShouldEqual "Engineering/Content + CS Systems"
-          - result.bodyjson.teammembership.teammembership3 ShouldEqual "Engineering/Content + CS Systems/CS systems"
-          - result.bodyjson.teammembership.teammembership4 ShouldEqual "Engineering/Content + CS Systems/CS systems/CS Systems Frontend"
+          - result.bodyjson.orgstructure ShouldEqual "Engineering/Regular/Test"
+          - result.bodyjson.teammembership.teammembership0 ShouldEqual "Engineering/Regular/Test"
+          - result.bodyjson.isvendor ShouldBeFalse
           - result.bodyjson ShouldNotContainKey permissions
-          - result.statuscode ShouldEqual 200
-  - name: Test GET /v1/teams
-    steps:
-      - type: http
-        method: GET
-        url: "http://{{.url}}:{{.httpPort}}/v1/teams"
-        headers:
-          User-Agent: "Venom/0 (Kiwi.com test)"
-          authorization: "Bearer testtoken"
-        assertions:
-          - result.bodyjson.engineering ShouldEqual 2
-          - result.bodyjson.engineering_content_+_cs_systems ShouldEqual 1
-          - result.bodyjson.engineering_utitlies ShouldEqual 1
           - result.statuscode ShouldEqual 200
   - name: Test getting permissions for multiple services
     steps:
