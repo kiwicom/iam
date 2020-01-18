@@ -11,7 +11,7 @@ COPY . /app/
 ARG CI_COMMIT_SHORT_SHA
 RUN make build
 
-FROM alpine:3.11.2
+FROM alpine:3.11.3
 RUN  apk add --no-cache --virtual=.run-deps ca-certificates &&\
   mkdir /app
 
