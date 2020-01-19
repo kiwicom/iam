@@ -45,4 +45,5 @@ message UserResponse {
     string manager = 9;
     repeated string team_membership = 10;
     BoocsekAttributes boocsek = 11;
+    repeated string permissions = 12;
 }
