@@ -196,7 +196,7 @@ func main() {
 	cache := storage.NewRedisCache(
 		storageConfig.RedisHost,
 		storageConfig.RedisPort,
-		1,
+		2,
 	)
 	lock := storage.NewLockManager(
 		cache,
