@@ -252,7 +252,7 @@ func main() {
 
 	s, _ := grpcAPI.CreateServer(oktaClient)
 
-	creds, err := credentials.NewClientTLSFromFile(iamConfig.GRPCCertFile, iamConfig.GRPCKeyFile)
+	creds, err := credentials.NewServerTLSFromFile(iamConfig.GRPCCertFile, iamConfig.GRPCKeyFile)
 	if err != nil {
 		log.Println("TLS disabled on GRPC:", err)
 		raven.CaptureError(err, nil)
