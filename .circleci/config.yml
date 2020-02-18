@@ -4,14 +4,14 @@ jobs:
   # Test Jobs
   build:
     docker:
-      - image: golang:1.13.6
+      - image: golang:1.13.8
     steps:
       - checkout
       - run: make build
 
   test:
     docker:
-      - image: golang:1.13.6
+      - image: golang:1.13.8
     steps:
       - checkout
       - run: make test/ci
@@ -45,7 +45,7 @@ jobs:
   # Deploy Jobs
   deploy/sandbox:
     docker:
-      - image: golang:1.13.6
+      - image: golang:1.13.8
     steps:
       - run: |
           curl -X POST \
@@ -57,7 +57,7 @@ jobs:
 
   deploy/production:
     docker:
-      - image: golang:1.13.6
+      - image: golang:1.13.8
     steps:
       - run: |
           curl -X POST \
