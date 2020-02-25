@@ -25,9 +25,6 @@ func (c *Client) fetchGroupMembership(groupID string) ([]string, error) {
 	}
 
 	var allUsers []string
-	var resources []struct {
-		Profile oktaUserProfile
-	}
 
 	responses, err := c.fetchPagedResource(url)
 	if err != nil {
@@ -35,6 +32,10 @@ func (c *Client) fetchGroupMembership(groupID string) ([]string, error) {
 	}
 
 	for _, response := range responses {
+		var resources []struct {
+			Profile oktaUserProfile
+		}
+
 		jsonErr := json.UnmarshalFromString(response, &resources)
 		if jsonErr != nil {
 			return nil, jsonErr
@@ -72,8 +73,6 @@ func (c *Client) fetchGroupMemberships(groups []Group) ([]GroupMembership, error
 var groupPattern = regexp.MustCompile(`^iam-[\w-]+\.([\w-]+\.?)+$`)
 
 func (c *Client) updateGroupMemberships(memberships []GroupMembership) error {
-	cachedGroupMemberships := make(map[string]map[string]bool)
-
 	for _, membership := range memberships {
 		if !groupPattern.Match([]byte(membership.GroupName)) {
 			formatErr := errors.New("group name has incorrect format: " + membership.GroupName)
@@ -81,9 +80,11 @@ func (c *Client) updateGroupMemberships(memberships []GroupMembership) error {
 			continue
 		}
 
-		// iam-serviceName:rule
+		// iam-serviceName.rule
 		groupParts := strings.SplitAfterN(membership.GroupName, ".", 2)
 		serviceName := groupMembershipPrefix + strings.Replace(strings.TrimRight(groupParts[0], "."), iamGroupPrefix, "", 1)
+
+		cachedGroupMemberships := make(map[string]map[string]bool)
 
 		err := c.cache.Get(serviceName, &cachedGroupMemberships)
 		if err != nil {

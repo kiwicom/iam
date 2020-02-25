@@ -44,12 +44,6 @@ func (c *Client) fetchGroups(userID, since string) ([]Group, error) {
 	}
 
 	var allGroups []Group
-	var resources []struct {
-		ID                    string
-		Profile               oktaGroupProfile
-		LastMembershipUpdated time.Time
-		LastFetched           time.Time
-	}
 
 	responses, err := c.fetchPagedResource(url + filter)
 	if err != nil {
@@ -57,6 +51,13 @@ func (c *Client) fetchGroups(userID, since string) ([]Group, error) {
 	}
 
 	for _, response := range responses {
+		var resources []struct {
+			ID                    string
+			Profile               oktaGroupProfile
+			LastMembershipUpdated time.Time
+			LastFetched           time.Time
+		}
+
 		jsonErr := json.UnmarshalFromString(response, &resources)
 		if jsonErr != nil {
 			return nil, jsonErr
