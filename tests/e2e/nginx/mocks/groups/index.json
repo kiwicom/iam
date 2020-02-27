@@ -39,8 +39,8 @@
     "objectClass": ["okta:user_group"],
     "type": "OKTA_GROUP",
     "profile": {
-      "name": "iam-venom.credit-card.create",
-      "description": "Create credit cards."
+      "name": "iam-othergroup.access.admin",
+      "description": "Access admin panel."
     },
     "_links": {
       "logo": [
@@ -71,8 +71,8 @@
     "objectClass": ["okta:user_group"],
     "type": "OKTA_GROUP",
     "profile": {
-      "name": "iam-othergroup.access.admin",
-      "description": "Access admin panel."
+      "name": "iam-venom.credit-card.create",
+      "description": "Create credit cards."
     },
     "_links": {
       "logo": [
