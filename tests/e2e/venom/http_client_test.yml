@@ -87,6 +87,7 @@ testcases:
           - result.bodyjson.teammembership.teammembership0 ShouldEqual "Engineering/Regular/Test"
 
           - result.bodyjson.permissions.permissions0 ShouldEqual credit-card.create
+          - result.bodyjson.permissions.permissions1 ShouldNotExist
           - result.statuscode ShouldEqual 200
   - name: Test getting existing user with deprecated token scheme
     steps:
