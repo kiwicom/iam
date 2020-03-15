@@ -116,8 +116,8 @@ github.com/julienschmidt/httprouter v1.2.0 h1:TDTW5Yz1mjftljbcKqRcrYhd4XeOoI98t+
 github.com/julienschmidt/httprouter v1.2.0/go.mod h1:SYymIcj16QtmaHHD7aYtjjsJG7VTCxuUUipMqKk8s4w=
 github.com/kisielk/errcheck v1.1.0/go.mod h1:EZBBE59ingxPouuu3KfxchcWSUPOHkagtvWXihfKN4Q=
 github.com/kisielk/gotool v1.0.0/go.mod h1:XhKaO+MFFWcvkIS/tQcRk01m1F5IRFswLeQ+oQHNcck=
-github.com/kiwicom/go-useragent v0.0.0-20190712102753-95f5c5fe2ab0 h1:nJNJdGvgIU0GqaeUoXuz5WDjSKI6m9TJkWeHqgSEX0w=
-github.com/kiwicom/go-useragent v0.0.0-20190712102753-95f5c5fe2ab0/go.mod h1:w4iOimG1h2MkiemRvkF9bkwC3KEzvn03RpK1oyW5OGk=
+github.com/kiwicom/go-useragent v0.0.0-20200315101851-ba2a7d39e4db h1:ot08Ql0+4rwPsFHZUbwGJ5t8MPtCoGZcfQ6rc5Jo7cE=
+github.com/kiwicom/go-useragent v0.0.0-20200315101851-ba2a7d39e4db/go.mod h1:5VbikJ92sLL7VquPzXGaTqAk3myGaIuWHumvgopUtgU=
 github.com/konsorten/go-windows-terminal-sequences v1.0.1/go.mod h1:T0+1ngSBFLxvqU3pZ+m/2kptfBszLMUkC4ZK/EgS/cQ=
 github.com/kr/logfmt v0.0.0-20140226030751-b84e30acd515/go.mod h1:+0opPa2QZZtGFBFZlji/RkVcI2GknAs/DXo4wKdlNEc=
 github.com/kr/pretty v0.1.0 h1:L/CwN0zerZDmRFUapSPitk6f+Q3+0za1rQkzVuMiMFI=
