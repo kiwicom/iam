@@ -36,22 +36,6 @@ func TestGroupMemberships(t *testing.T) {
 	}
 }
 
-func TestGroupMembershipsWithInvalidNames(t *testing.T) {
-	client := NewClient(&ClientOpts{
-		Cache: storage.NewInMemoryCache(),
-	})
-	err := client.updateGroupMemberships([]GroupMembership{
-		{"group-id", "service", []string{"user1", "user2"}},
-		{"group-id", "iam-service.valid.permission", []string{"user1", "user2"}},
-	})
-
-	assert.NoError(t, err)
-	permissions, err := client.GetServicePermissions("service")
-	assert.NoError(t, err)
-	assert.Contains(t, permissions["valid.permission"], "user1")
-	assert.Contains(t, permissions["valid.permission"], "user2")
-}
-
 func TestGroupMembershipsInvalidation(t *testing.T) {
 	cache := storage.NewInMemoryCache()
 	client := NewClient(&ClientOpts{Cache: cache})

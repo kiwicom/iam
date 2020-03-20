@@ -16,8 +16,6 @@ var json = jsoniter.ConfigCompatibleWithStandardLibrary
 type oktaService interface {
 	AddPermissions(*okta.User, string) error
 	GetUser(string) (okta.User, error)
-	GetServicesPermissions([]string) (map[string]okta.Permissions, error)
-	GetUserPermissions(string, []string) (map[string][]string, error)
 	GetGroups() ([]okta.Group, error)
 }
 
