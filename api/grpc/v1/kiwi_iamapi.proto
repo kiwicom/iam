@@ -17,6 +17,7 @@ service KiwiIAMAPI {
 
 message UserRequest {
     string email = 1;
+    string service = 2;
 }
 
 message BoocsekAttributes {

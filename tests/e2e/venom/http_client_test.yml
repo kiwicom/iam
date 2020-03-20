@@ -43,6 +43,56 @@ testcases:
     steps:
       - type: http
         method: GET
+        url: "http://{{.url}}:{{.httpPort}}/v1/user?email=cached@tester.kiwi&service=venom"
+        headers:
+          User-Agent: "whatever/0 (Kiwi.com test)"
+          authorization: "Bearer testtoken"
+        assertions:
+          - result.bodyjson.firstname ShouldEqual Test
+          - result.bodyjson.lastname ShouldEqual Cached
+          - result.bodyjson.location ShouldEqual Praha
+          - result.bodyjson.position ShouldEqual Janitor
+          - result.bodyjson.boocsek.position ShouldEqual BoocsekJanitor
+          - result.bodyjson.boocsek.kiwibaseid ShouldEqual 123456
+          - result.bodyjson.boocsek.substate ShouldEqual ""
+          - result.bodyjson.boocsek.skills.skills0 ShouldEqual skill1
+          - result.bodyjson.boocsek.skills.skills1 ShouldEqual skill2
+          - result.bodyjson.boocsek.teammanager ShouldEqual cached@test.manager.kiwi
+          - result.bodyjson.department ShouldEqual "Engineering/Content + CS Systems/CS systems/CS Systems Frontend"
+          - result.bodyjson.orgstructure ShouldEqual "Engineering/Regular/Test"
+          - result.bodyjson.teammembership.teammembership0 ShouldEqual "Engineering/Regular/Test"
+          - result.bodyjson.permissions.permissions0 ShouldEqual credit-card.create
+          - result.bodyjson.permissions.permissions1 ShouldNotExist
+          - result.statuscode ShouldEqual 200
+  - name: Test getting existing user with permissions
+    steps:
+      - type: http
+        method: GET
+        url: "http://{{.url}}:{{.httpPort}}/v1/user?email=cached@tester.kiwi&service=venom"
+        headers:
+          User-Agent: "whatever/0 (Kiwi.com test)"
+          authorization: "Bearer testtoken"
+        assertions:
+          - result.bodyjson.firstname ShouldEqual Test
+          - result.bodyjson.lastname ShouldEqual Cached
+          - result.bodyjson.location ShouldEqual Praha
+          - result.bodyjson.position ShouldEqual Janitor
+          - result.bodyjson.boocsek.position ShouldEqual BoocsekJanitor
+          - result.bodyjson.boocsek.kiwibaseid ShouldEqual 123456
+          - result.bodyjson.boocsek.substate ShouldEqual ""
+          - result.bodyjson.boocsek.skills.skills0 ShouldEqual skill1
+          - result.bodyjson.boocsek.skills.skills1 ShouldEqual skill2
+          - result.bodyjson.boocsek.teammanager ShouldEqual cached@test.manager.kiwi
+          - result.bodyjson.department ShouldEqual "Engineering/Content + CS Systems/CS systems/CS Systems Frontend"
+          - result.bodyjson.orgstructure ShouldEqual "Engineering/Regular/Test"
+          - result.bodyjson.teammembership.teammembership0 ShouldEqual "Engineering/Regular/Test"
+          - result.bodyjson.permissions.permissions0 ShouldEqual credit-card.create
+          - result.bodyjson.permissions.permissions1 ShouldNotExist
+          - result.statuscode ShouldEqual 200
+  - name: Test getting existing user with permissions based on user-agent
+    steps:
+      - type: http
+        method: GET
         url: "http://{{.url}}:{{.httpPort}}/v1/user?email=cached@tester.kiwi"
         headers:
           User-Agent: "Venom/0 (Kiwi.com test)"
@@ -61,31 +111,6 @@ testcases:
           - result.bodyjson.department ShouldEqual "Engineering/Content + CS Systems/CS systems/CS Systems Frontend"
           - result.bodyjson.orgstructure ShouldEqual "Engineering/Regular/Test"
           - result.bodyjson.teammembership.teammembership0 ShouldEqual "Engineering/Regular/Test"
-          - result.bodyjson ShouldNotContainKey permissions
-          - result.statuscode ShouldEqual 200
-  - name: Test getting existing user with permissions
-    steps:
-      - type: http
-        method: GET
-        url: "http://{{.url}}:{{.httpPort}}/v1/user?email=cached@tester.kiwi&permissions=true"
-        headers:
-          User-Agent: "Venom/0 (Kiwi.com test)"
-          authorization: "Bearer testtoken"
-        assertions:
-          - result.bodyjson.firstname ShouldEqual Test
-          - result.bodyjson.lastname ShouldEqual Cached
-          - result.bodyjson.location ShouldEqual Praha
-          - result.bodyjson.position ShouldEqual Janitor
-          - result.bodyjson.boocsek.position ShouldEqual BoocsekJanitor
-          - result.bodyjson.boocsek.kiwibaseid ShouldEqual 123456
-          - result.bodyjson.boocsek.substate ShouldEqual ""
-          - result.bodyjson.boocsek.skills.skills0 ShouldEqual skill1
-          - result.bodyjson.boocsek.skills.skills1 ShouldEqual skill2
-          - result.bodyjson.boocsek.teammanager ShouldEqual cached@test.manager.kiwi
-          - result.bodyjson.department ShouldEqual "Engineering/Content + CS Systems/CS systems/CS Systems Frontend"
-          - result.bodyjson.orgstructure ShouldEqual "Engineering/Regular/Test"
-          - result.bodyjson.teammembership.teammembership0 ShouldEqual "Engineering/Regular/Test"
-
           - result.bodyjson.permissions.permissions0 ShouldEqual credit-card.create
           - result.bodyjson.permissions.permissions1 ShouldNotExist
           - result.statuscode ShouldEqual 200
@@ -104,9 +129,9 @@ testcases:
     steps:
       - type: http
         method: GET
-        url: "http://{{.url}}:{{.httpPort}}/v1/user?email=boocsek@tester.kiwi"
+        url: "http://{{.url}}:{{.httpPort}}/v1/user?email=boocsek@tester.kiwi&service=venom"
         headers:
-          User-Agent: "Venom/0 (Kiwi.com test)"
+          User-Agent: "whatever/0 (Kiwi.com test)"
           authorization: "Bearer testtoken"
         assertions:
           - result.bodyjson.firstname ShouldEqual Test
@@ -123,15 +148,15 @@ testcases:
           - result.bodyjson.orgstructure ShouldEqual Engineering/Test/Test
           - result.bodyjson.teammembership.teammembership0 ShouldEqual "Engineering/Test/Test"
           - result.bodyjson.isvendor ShouldBeTrue
-          - result.bodyjson ShouldNotContainKey permissions
+          - result.bodyjson ShouldContainKey permissions
           - result.statuscode ShouldEqual 200
   - name: Test getting existing non-cached user (without boocsek attributes)
     steps:
       - type: http
         method: GET
-        url: "http://{{.url}}:{{.httpPort}}/v1/user?email=fetched@tester.kiwi"
+        url: "http://{{.url}}:{{.httpPort}}/v1/user?email=fetched@tester.kiwi&service=venom"
         headers:
-          User-Agent: "Venom/0 (Kiwi.com test)"
+          User-Agent: "whatever/0 (Kiwi.com test)"
           authorization: "Bearer testtoken"
         assertions:
           - result.bodyjson.firstname ShouldEqual Test
@@ -146,7 +171,7 @@ testcases:
           - result.bodyjson.orgstructure ShouldEqual "Engineering/Regular/Test"
           - result.bodyjson.teammembership.teammembership0 ShouldEqual "Engineering/Regular/Test"
           - result.bodyjson.isvendor ShouldBeFalse
-          - result.bodyjson ShouldNotContainKey permissions
+          - result.bodyjson ShouldContainKey permissions
           - result.statuscode ShouldEqual 200
   - name: Test getting permissions for multiple services
     steps:

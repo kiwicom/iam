@@ -50,10 +50,11 @@ testcases:
         url: {{.url}}:{{.grpcPort}}
         plaintext: true
         headers:
-          service-agent: "Venom/0 (Kiwi.com test)"
+          service-agent: "whatever/0 (Kiwi.com test)"
           authorization: "Bearer testtoken"
         data:
           email: "cached@tester.kiwi"
+          service: "venom"
         service:  {{.serviceName}}
         method: User
         assertions:

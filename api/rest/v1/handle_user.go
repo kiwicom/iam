@@ -22,12 +22,16 @@ func (s *Server) handleUserGET() http.HandlerFunc {
 			return
 		}
 		email := params["email"]
-		permissions := params["permissions"] == "true"
+		serviceName := params["service"]
 
-		service, getServiceErr := security.GetService(r.Header.Get("User-Agent"))
-		if getServiceErr != nil {
-			http.Error(w, "Invalid user agent", http.StatusBadRequest)
-			return
+		if serviceName == "" {
+			service, getServiceErr := security.GetService(r.Header.Get("User-Agent"))
+			if getServiceErr != nil {
+				http.Error(w, "Missing service and invalid user agent", http.StatusBadRequest)
+				return
+			}
+
+			serviceName = service.Name
 		}
 
 		// getUser just wraps GetUser in tracing
@@ -52,25 +56,24 @@ func (s *Server) handleUserGET() http.HandlerFunc {
 		addPermissions := func() error {
 			span, _ := s.Tracer.StartSpanWithContext(r.Context(), "permissions", "okta-controller", "http")
 			defer s.Tracer.FinishSpan(span)
-			permErr := s.OktaService.AddPermissions(oktaUser, service.Name)
+			permErr := s.OktaService.AddPermissions(oktaUser, serviceName)
 
 			return permErr
 		}
 
-		if permissions {
-			permErr := addPermissions()
-			if permErr != nil {
-				log.Println("[ERROR]", permErr.Error())
-				raven.CaptureError(permErr, nil)
-			}
+		permErr := addPermissions()
+		if permErr != nil {
+			log.Println("[ERROR]", permErr.Error())
+			raven.CaptureError(permErr, nil)
 		}
+
 		oktaUser.OktaID = ""           // OktaID is used only internally
 		oktaUser.GroupMembership = nil // GroupMembership is used only internally
 
 		w.Header().Set("Content-Type", "application/json")
 		je := json.NewEncoder(w)
 
-		mapUser, err := formatUser(oktaUser, permissions)
+		mapUser, err := formatUser(oktaUser)
 		if err != nil {
 			http.Error(w, "Internal error", http.StatusInternalServerError)
 			return
@@ -91,8 +94,8 @@ func validateUsersParams(rawQuery string) (map[string]string, error) {
 	}
 
 	params := map[string]string{
-		"email":       values.Get("email"),
-		"permissions": values.Get("permissions"),
+		"email":   values.Get("email"),
+		"service": values.Get("service"),
 	}
 
 	if params["email"] == "" {
@@ -105,9 +108,8 @@ func validateUsersParams(rawQuery string) (map[string]string, error) {
 	return params, nil
 }
 
-// formatUser converts the given user to map and keeps or removes the
-// permissions field based on the withPermissions parameter.
-func formatUser(s *okta.User, withPermissions bool) (map[string]interface{}, error) {
+// formatUser converts the given user to map
+func formatUser(s *okta.User) (map[string]interface{}, error) {
 	str, err := json.Marshal(s)
 	if err != nil {
 		return nil, err
@@ -115,8 +117,6 @@ func formatUser(s *okta.User, withPermissions bool) (map[string]interface{}, err
 
 	var m map[string]interface{}
 	err = json.Unmarshal(str, &m)
-	if !withPermissions {
-		delete(m, "permissions")
-	}
+
 	return m, err
 }

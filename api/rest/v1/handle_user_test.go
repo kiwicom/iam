@@ -81,7 +81,7 @@ func TestMissingUserAgent(t *testing.T) {
 	assert.Equal(t, 400, response.Code, "Returns 400 when a user agent header is missing")
 
 	responseBody := response.Body.String()
-	assert.Equal(t, "Invalid user agent\n", responseBody, "Returns correct body")
+	assert.Equal(t, "Missing service and invalid user agent\n", responseBody, "Returns correct body")
 	userService.AssertNotCalled(t, "GetUser")
 	userService.AssertNotCalled(t, "AddPermissions")
 }
@@ -89,8 +89,8 @@ func TestMissingUserAgent(t *testing.T) {
 func TestHappyPathWithPermissions(t *testing.T) {
 	// Success response
 	userService := &mockOktaService{}
-	request, _ := http.NewRequest("GET", "/?email=test@test.com&permissions=true", nil)
-	request.Header.Set("User-Agent", "service/0 (Kiwi.com test)")
+	request, _ := http.NewRequest("GET", "/?email=test@test.com&service=service", nil)
+	request.Header.Set("User-Agent", "whatever/0 (Kiwi.com test)")
 	response := httptest.NewRecorder()
 	server := setupServer()
 	server.OktaService = userService
@@ -106,49 +106,38 @@ func TestHappyPathWithPermissions(t *testing.T) {
 	var responseUser okta.User
 	_ = json.Unmarshal(responseJSON, &responseUser)
 
-	// For some reason response adds a extra line break
 	assert.Equal(t, testUser, responseUser, "Returns correct body")
 	userService.AssertNumberOfCalls(t, "GetUser", 1)
 	userService.AssertNumberOfCalls(t, "AddPermissions", 1)
 }
 
-func TestHappyPathNoPermissions(t *testing.T) {
-	// Success response
-	urls := []string{
-		"/?email=test@test.com&permissions=false",
-		"/?email=test@test.com", // default value of permissions is false
-	}
+func TestUserAgentFallback(t *testing.T) {
+	request, _ := http.NewRequest("GET", "/?email=test@test.com", nil)
+	request.Header.Set("User-Agent", "service/0 (Kiwi.com test)")
+	response := httptest.NewRecorder()
 
-	for _, url := range urls {
-		request, _ := http.NewRequest("GET", url, nil)
-		request.Header.Set("User-Agent", "service/0 (Kiwi.com test)")
-		response := httptest.NewRecorder()
+	userService := &mockOktaService{}
+	server := setupServer()
+	server.OktaService = userService
 
-		userService := &mockOktaService{}
-		server := setupServer()
-		server.OktaService = userService
+	handler := server.handleUserGET()
+	userService.On("GetUser", "test@test.com").Return(testUser, nil)
+	userService.On("AddPermissions", &testUser, "service").Return(nil)
 
-		handler := server.handleUserGET()
-		userService.On("GetUser", "test@test.com").Return(testUser, nil)
-		userService.On("AddPermissions", &testUser, "service").Return(nil)
+	handler.ServeHTTP(response, request)
+	assert.Equal(t, 200, response.Code, "Returns 200 on success")
 
-		handler.ServeHTTP(response, request)
-		assert.Equal(t, 200, response.Code, "Returns 200 on success")
+	responseJSON := response.Body.Bytes()
+	var responseMap map[string]interface{}
+	_ = json.Unmarshal(responseJSON, &responseMap)
 
-		responseJSON := response.Body.Bytes()
-		var responseMap map[string]interface{}
-		_ = json.Unmarshal(responseJSON, &responseMap)
+	var expectedUser map[string]interface{}
+	str, _ := json.Marshal(testUser)
+	_ = json.Unmarshal(str, &expectedUser)
 
-		var expectedUser map[string]interface{}
-		str, _ := json.Marshal(testUser)
-		_ = json.Unmarshal(str, &expectedUser)
-		delete(expectedUser, "permissions")
-
-		// For some reason response adds a extra line break
-		assert.Equal(t, expectedUser, responseMap, "Returns correct body")
-		userService.AssertNumberOfCalls(t, "GetUser", 1)
-		userService.AssertNumberOfCalls(t, "AddPermissions", 0)
-	}
+	assert.Equal(t, expectedUser, responseMap, "Returns correct body")
+	userService.AssertNumberOfCalls(t, "GetUser", 1)
+	userService.AssertNumberOfCalls(t, "AddPermissions", 1)
 }
 
 func TestControllerFailurePath(t *testing.T) {

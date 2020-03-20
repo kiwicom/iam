@@ -127,11 +127,11 @@ paths:
           description: Email of user
           type: string
         - in: query
-          name: permissions
-          required: false
+          name: service
+          required: true
           description: |
-            Whether the response will contain a list of permissions
-            for the user or not. In case it doesn't, the field will be omitted.
+            Permissions for the defined service will be included in the response. 
+            If missing, the user-agent is used to determine the service (backwards compatibility).
           type: boolean
           default: false
       responses:

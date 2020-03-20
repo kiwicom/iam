@@ -46,12 +46,18 @@ func (s *Server) User(ctx context.Context, in *pb.UserRequest) (*pb.UserResponse
 		return nil, errBadUA
 	}
 
-	service, getServiceErr := security.GetService(md[metadataUserAgent][0])
-	if getServiceErr != nil {
-		return nil, errBadUA
+	serviceName := in.Service
+
+	if serviceName == "" {
+		service, getServiceErr := security.GetService(md[metadataUserAgent][0])
+		if getServiceErr != nil {
+			return nil, errBadUA
+		}
+
+		serviceName = service.Name
 	}
 
-	permErr := s.userService.AddPermissions(&user, service.Name)
+	permErr := s.userService.AddPermissions(&user, serviceName)
 	if permErr != nil {
 		log.Println("[ERROR]", permErr.Error())
 		raven.CaptureError(permErr, nil)
