@@ -168,6 +168,7 @@ func (c *Client) SyncUsers() {
 	users, err := c.fetchAllUsers()
 	if err != nil {
 		log.Println("Error fetching users", err)
+		c.metrics.Incr("okta_sync", monitoring.Tag("type", "users"), monitoring.Tag("status", "error"))
 		raven.CaptureError(err, nil)
 		return
 	}
@@ -181,12 +182,13 @@ func (c *Client) SyncUsers() {
 	err = c.cache.MSet(pairs, time.Hour*24)
 	if err != nil {
 		log.Println("Error caching users", err)
+		c.metrics.Incr("okta_sync", monitoring.Tag("type", "users"), monitoring.Tag("status", "error"))
 		raven.CaptureError(err, nil)
 		return
 	}
 	log.Println("Cached", len(users), "users")
 
-	c.metrics.Incr("successful.sync", monitoring.Tag("type", "users"))
+	c.metrics.Incr("okta_sync", monitoring.Tag("type", "users"), monitoring.Tag("status", "ok"))
 }
 
 // SyncGroups gets all groups from Okta and saves them into cache.
@@ -202,6 +204,7 @@ func (c *Client) SyncGroups() {
 	groups, err := c.fetchGroups("", c.getLastSyncTime())
 	if err != nil {
 		log.Println("Error fetching groups", err)
+		c.metrics.Incr("okta_sync", monitoring.Tag("type", "groups"), monitoring.Tag("status", "error"))
 		raven.CaptureError(err, nil)
 		return
 	}
@@ -210,6 +213,7 @@ func (c *Client) SyncGroups() {
 	groupMemberships, err := c.fetchGroupMemberships(groups)
 	if err != nil {
 		log.Println("Error fetching group memberships ", err)
+		c.metrics.Incr("okta_sync", monitoring.Tag("type", "groups"), monitoring.Tag("status", "error"))
 		raven.CaptureError(err, nil)
 		return
 	}
@@ -217,6 +221,7 @@ func (c *Client) SyncGroups() {
 	if len(groupMemberships) > 0 {
 		if err = c.updateGroupMemberships(groupMemberships); err != nil {
 			log.Println("Error updating group memeberships ", err)
+			c.metrics.Incr("okta_sync", monitoring.Tag("type", "groups"), monitoring.Tag("status", "error"))
 			raven.CaptureError(err, nil)
 			return
 		}
@@ -224,10 +229,12 @@ func (c *Client) SyncGroups() {
 
 	if err = c.cache.Set("groups-sync-timestamp", syncStart, cfg.Expirations.GroupsLastSync); err != nil {
 		log.Println("Error while caching last synchronization time ", err)
+		c.metrics.Incr("okta_sync", monitoring.Tag("type", "groups"), monitoring.Tag("status", "error"))
 		raven.CaptureError(err, nil)
+		return
 	}
 	log.Println("Cached", len(groupMemberships), "group memberships")
-	c.metrics.Incr("successful.sync", monitoring.Tag("type", "groups"))
+	c.metrics.Incr("okta_sync", monitoring.Tag("type", "groups"), monitoring.Tag("status", "ok"))
 }
 
 func (c *Client) getLastSyncTime() string {

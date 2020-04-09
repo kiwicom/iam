@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"net/url"
 	"path"
+	"strconv"
 	"time"
 
 	jsoniter "github.com/json-iterator/go"
@@ -56,7 +57,7 @@ func (res Response) JSON(body interface{}) error {
 
 // defaultFetcher returns a function to send HTTP requests response, this
 // wrapper is used to set the userAgent, and metrics client package wide.
-func defaultFetcher(userAgent string, metrics *monitoring.Metrics) func(req Request) (*Response, error) {
+func defaultFetcher(userAgent string, service string, metrics *monitoring.Metrics) func(req Request) (*Response, error) {
 	return func(req Request) (*Response, error) {
 		log.Println(req.Method, req.URL)
 
@@ -68,11 +69,12 @@ func defaultFetcher(userAgent string, metrics *monitoring.Metrics) func(req Requ
 		httpReq.Header.Set("User-Agent", userAgent)
 		httpReq.Header.Set("Authorization", req.Token)
 
-		metrics.Incr("outgoing.requests", monitoring.Tag("url", req.URL))
 		httpRes, err := httpClient.Do(httpReq) //nolint:bodyclose // body is closed on reading either to string or JSON
 		if err != nil {
+			metrics.Incr("outgoing.requests", monitoring.Tag("service", service), monitoring.Tag("http_code", strconv.Itoa(httpRes.StatusCode)), monitoring.Tag("status", "error"))
 			return nil, err
 		}
+		metrics.Incr("outgoing.requests", monitoring.Tag("service", service), monitoring.Tag("http_code", strconv.Itoa(httpRes.StatusCode)), monitoring.Tag("status", "ok"))
 		return &Response{httpRes}, nil
 	}
 }

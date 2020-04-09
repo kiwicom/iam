@@ -73,7 +73,7 @@ func NewClient(opts *ClientOpts) *Client {
 		raven.CaptureError(uaErr, nil)
 	}
 
-	fetch := defaultFetcher(uaString, opts.Metrics)
+	fetch := defaultFetcher(uaString, "okta", opts.Metrics)
 	if opts.CustomFetcher != nil {
 		fetch = opts.CustomFetcher(uaString, opts.Metrics)
 	}
