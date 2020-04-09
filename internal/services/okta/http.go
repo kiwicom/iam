@@ -71,7 +71,7 @@ func defaultFetcher(userAgent string, service string, metrics *monitoring.Metric
 
 		httpRes, err := httpClient.Do(httpReq) //nolint:bodyclose // body is closed on reading either to string or JSON
 		if err != nil {
-			metrics.Incr("outgoing.requests", monitoring.Tag("service", service), monitoring.Tag("http_code", strconv.Itoa(httpRes.StatusCode)), monitoring.Tag("status", "error"))
+			metrics.Incr("outgoing.requests", monitoring.Tag("service", service), monitoring.Tag("status", "error"))
 			return nil, err
 		}
 		metrics.Incr("outgoing.requests", monitoring.Tag("service", service), monitoring.Tag("http_code", strconv.Itoa(httpRes.StatusCode)), monitoring.Tag("status", "ok"))
