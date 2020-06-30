@@ -9,7 +9,6 @@ require (
 	github.com/go-redis/redis v6.15.7+incompatible
 	github.com/golang/protobuf v1.3.2
 	github.com/gorilla/mux v1.7.3 // indirect
-	github.com/hashicorp/vault/api v1.0.5-0.20190730042357-746c0b111519
 	github.com/json-iterator/go v1.1.9
 	github.com/kiwicom/go-useragent v0.0.0-20200315101851-ba2a7d39e4db
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
@@ -23,7 +22,6 @@ require (
 	github.com/stretchr/objx v0.2.0 // indirect
 	github.com/stretchr/testify v1.5.1
 	github.com/tinylib/msgp v1.1.0 // indirect
-	golang.org/x/crypto v0.0.0-20191011191535-87dc89f01550 // indirect
 	golang.org/x/net v0.0.0-20200226121028-0de0cce0169b // indirect
 	golang.org/x/sync v0.0.0-20190911185100-cd5d95a43a6e
 	golang.org/x/sys v0.0.0-20200409092240-59c9f1ba88fa // indirect

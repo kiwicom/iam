@@ -43,24 +43,17 @@ func syncOkta(client *okta.Client) {
 	}
 }
 
-func syncVault(client *secrets.VaultManager) {
-	log.Println("Start token sync with Vault")
-	err := client.SyncAppTokens()
+func syncSecrets(manager *secrets.JSONFileManager) {
+	log.Println("Scheduling secrets sync.")
 
-	if err != nil {
-		log.Println("[ERROR] failed to sync tokens with Vault: ", err)
-		raven.CaptureError(err, nil)
-	}
-
-	ticker := time.NewTicker(time.Minute * 10)
+	ticker := time.NewTicker(time.Minute * 3)
 	defer ticker.Stop()
 
 	for tick := range ticker.C {
-		log.Println("Start caching app tokens from Vault", tick.Round(time.Second))
-		err := client.SyncAppTokens()
-
+		log.Println("Starting secrets sync...", tick.Round(time.Second))
+		err := manager.SyncSecrets()
 		if err != nil {
-			log.Println("[ERROR] failed to sync tokens with Vault: ", err)
+			log.Println("[ERROR] failed to sync secrets: ", err)
 			raven.CaptureError(err, nil)
 		}
 	}
@@ -92,28 +85,23 @@ func clearGroupsLastSync(cache Cacher) {
 	}
 }
 
-func createSecretManager(vault cfg.VaultConfig) secrets.SecretManager {
-	// Load data from Vault and set them if possible
-	vaultClient, vaultErr := secrets.CreateNewVaultClient(
-		vault.Address,
-		vault.Token,
-		vault.Namespace,
-	)
-	if vaultErr == nil {
-		// This sync needs to happen synchronously
-		err := vaultClient.SyncAppSettings()
+func createSecretManager(path string) secrets.SecretManager {
+	manager, err := secrets.CreateNewJSONFileManager(path)
 
-		// If Vault is set up, but connection fails or settings are empty then kill the app as oktaToken will not be available
+	if err == nil {
+		err := manager.SyncSecrets()
+
+		// If JSON secrets file exists, but can't be processed then kill the app as oktaToken will not be available
 		if err != nil {
 			panic(err)
 		}
 
-		go capturePanic(func() { syncVault(vaultClient) })
+		go capturePanic(func() { syncSecrets(manager) })
 
-		return vaultClient
+		return manager
 	}
 
-	log.Println("Vault integration disabled: ", vaultErr)
+	log.Println("Using local secrets:", err)
 
 	localSecretManager := secrets.CreateNewLocalSecretManager()
 
@@ -162,17 +150,17 @@ func main() {
 		storageConfig cfg.StorageConfig
 		datadogConfig cfg.DatadogConfig
 		sentryConfig  cfg.SentryConfig
-		vaultConfig   cfg.VaultConfig
+		secretsConfig cfg.SecretsConfig
 	)
 
 	// If there is an error loading the envs kill the app, as nothing will work without them.
-	if err := cfg.LoadConfigs(&iamConfig, &oktaConfig, &storageConfig, &datadogConfig, &sentryConfig, &vaultConfig); err != nil {
+	if err := cfg.LoadConfigs(&iamConfig, &oktaConfig, &storageConfig, &datadogConfig, &sentryConfig, &secretsConfig); err != nil {
 		log.Println("[ERROR]", err.Error())
 		panic(err)
 	}
 
 	initErrorTracking(sentryConfig)
-	secretManager := createSecretManager(vaultConfig)
+	secretManager := createSecretManager(secretsConfig.Path)
 
 	// Datadog tracer
 	tracer, _ := monitoring.CreateNewTracingService(monitoring.TracerOptions{

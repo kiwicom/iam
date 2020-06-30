@@ -81,11 +81,9 @@ type SentryConfig struct {
 	Release     string `mapstructure:"SENTRY_RELEASE"`
 }
 
-// VaultConfig stores configuration values for Vault client
-type VaultConfig struct {
-	Token     string `mapstructure:"VAULT_TOKEN"`
-	Address   string `mapstructure:"VAULT_ADDR"`
-	Namespace string `mapstructure:"VAULT_NAMESPACE"`
+// SecretsConfig stores configuration values for S2S authentication handling
+type SecretsConfig struct {
+	Path string `mapstructure:"SECRETS_PATH"`
 }
 
 var defaultValues = map[string]interface{}{
@@ -115,7 +113,5 @@ var defaultValues = map[string]interface{}{
 	// Env is taken from APP_ENV.
 	"DATADOG_ADDR":    "",
 	"DD_AGENT_HOST":   "",
-	"VAULT_ADDR":      "",
-	"VAULT_TOKEN":     "",
-	"VAULT_NAMESPACE": "",
+	"SECRETS_PATH": "/etc/vault/iam-secrets-from-vault.json",
 }

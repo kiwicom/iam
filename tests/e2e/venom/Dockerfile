@@ -1,7 +1,7 @@
 FROM golang:1.12.9-alpine3.9
 
 RUN apk add --no-cache \
-    git~=2.20.2 \
+    git~=2.20.4 \
     autoconf~=2.69 \
     libtool~=2.4.6 \
     curl~=7.64.0 \
