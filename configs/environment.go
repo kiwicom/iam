@@ -113,5 +113,5 @@ var defaultValues = map[string]interface{}{
 	// Env is taken from APP_ENV.
 	"DATADOG_ADDR":    "",
 	"DD_AGENT_HOST":   "",
-	"SECRETS_PATH": "/etc/vault/iam-secrets-from-vault.json",
+	"SECRETS_PATH": "/etc/vault/secrets.json",
 }
