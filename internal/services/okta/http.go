@@ -18,7 +18,7 @@ import (
 var json = jsoniter.ConfigCompatibleWithStandardLibrary
 
 var httpClient = &http.Client{
-	Timeout: time.Second * 10,
+	Timeout: time.Second * 30,
 }
 
 // Request contains options for an HTTP request created using shared.Fetch
