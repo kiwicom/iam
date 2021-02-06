@@ -10,7 +10,7 @@ require (
 	github.com/golang/protobuf v1.3.2
 	github.com/gorilla/mux v1.7.3 // indirect
 	github.com/json-iterator/go v1.1.10
-	github.com/kiwicom/go-useragent v0.0.0-20200315101851-ba2a7d39e4db
+	github.com/kiwicom/go-useragent v0.0.0-20200512110835-791d63a29b7e
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.1 // indirect
 	github.com/onsi/ginkgo v1.10.2 // indirect
