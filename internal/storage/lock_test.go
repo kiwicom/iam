@@ -19,27 +19,33 @@ type mockCache struct {
 }
 
 // `value` is overwritten before use
-// nolint: staticcheck
+// nolint:staticcheck // tests
 func (c *mockCache) Get(key string, value interface{}) error {
 	v, ok := c.data[key]
 	if !ok || time.Since(v.expiration) > 0 {
 		delete(c.data, key)
+
 		return ErrNotFound
 	}
 	// ineffective assignment of `value`
-	// nolint: ineffassign
+	// nolint:wastedassign,ineffassign // tests
 	value = &v
+
 	return nil
 }
+
 func (c *mockCache) Set(key string, value interface{}, ttl time.Duration) error {
 	c.data[key] = cacheItem{
 		value:      value,
 		expiration: time.Now().Add(ttl),
 	}
+
 	return nil
 }
+
 func (c *mockCache) Del(key string) error {
 	delete(c.data, key)
+
 	return nil
 }
 

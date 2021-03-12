@@ -6,17 +6,20 @@ package userv1
 import (
 	context "context"
 	fmt "fmt"
+	math "math"
+
 	proto "github.com/golang/protobuf/proto"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -42,15 +45,19 @@ func (*UserRequest) Descriptor() ([]byte, []int) {
 func (m *UserRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_UserRequest.Unmarshal(m, b)
 }
+
 func (m *UserRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_UserRequest.Marshal(b, m, deterministic)
 }
+
 func (m *UserRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_UserRequest.Merge(m, src)
 }
+
 func (m *UserRequest) XXX_Size() int {
 	return xxx_messageInfo_UserRequest.Size(m)
 }
+
 func (m *UserRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_UserRequest.DiscardUnknown(m)
 }
@@ -98,15 +105,19 @@ func (*BoocsekAttributes) Descriptor() ([]byte, []int) {
 func (m *BoocsekAttributes) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_BoocsekAttributes.Unmarshal(m, b)
 }
+
 func (m *BoocsekAttributes) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_BoocsekAttributes.Marshal(b, m, deterministic)
 }
+
 func (m *BoocsekAttributes) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_BoocsekAttributes.Merge(m, src)
 }
+
 func (m *BoocsekAttributes) XXX_Size() int {
 	return xxx_messageInfo_BoocsekAttributes.Size(m)
 }
+
 func (m *BoocsekAttributes) XXX_DiscardUnknown() {
 	xxx_messageInfo_BoocsekAttributes.DiscardUnknown(m)
 }
@@ -219,15 +230,19 @@ func (*UserResponse) Descriptor() ([]byte, []int) {
 func (m *UserResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_UserResponse.Unmarshal(m, b)
 }
+
 func (m *UserResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_UserResponse.Marshal(b, m, deterministic)
 }
+
 func (m *UserResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_UserResponse.Merge(m, src)
 }
+
 func (m *UserResponse) XXX_Size() int {
 	return xxx_messageInfo_UserResponse.Size(m)
 }
+
 func (m *UserResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_UserResponse.DiscardUnknown(m)
 }
@@ -375,8 +390,10 @@ var fileDescriptor_1c6f8aa01589961e = []byte{
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ context.Context
-var _ grpc.ClientConn
+var (
+	_ context.Context
+	_ grpc.ClientConn
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
@@ -414,8 +431,7 @@ type KiwiIAMAPIServer interface {
 }
 
 // UnimplementedKiwiIAMAPIServer can be embedded to have forward compatible implementations.
-type UnimplementedKiwiIAMAPIServer struct {
-}
+type UnimplementedKiwiIAMAPIServer struct{}
 
 func (*UnimplementedKiwiIAMAPIServer) User(ctx context.Context, req *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method User not implemented")

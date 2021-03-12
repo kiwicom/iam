@@ -6,13 +6,8 @@ import (
 
 	"github.com/getsentry/raven-go"
 
-	"github.com/kiwicom/iam/internal/services/okta"
 	"github.com/kiwicom/iam/internal/storage"
 )
-
-type groupsGetter interface {
-	GetGroups() ([]okta.Group, error)
-}
 
 func (s *Server) handleGroupsGET() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
@@ -21,10 +16,12 @@ func (s *Server) handleGroupsGET() http.HandlerFunc {
 			// No value available for groups yet
 			w.Header().Add("Retry-After", "30")
 			http.Error(w, "Groups not loaded yet, try later", http.StatusServiceUnavailable)
+
 			return
 		}
 		if err != nil {
 			http.Error(w, "Service unavailable", http.StatusInternalServerError)
+
 			return
 		}
 

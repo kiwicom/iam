@@ -4,7 +4,7 @@ import (
 	"time"
 )
 
-// Expirations contains expiration times for anything that needs to be cached
+// Expirations contains expiration times for anything that needs to be cached.
 var Expirations = struct {
 	User             time.Duration
 	GroupMemberships time.Duration

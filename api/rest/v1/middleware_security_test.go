@@ -15,10 +15,7 @@ type mockedSecretManager struct {
 }
 
 func (s *mockedSecretManager) DoesTokenExist(token string) bool {
-	if token == "valid token" {
-		return true
-	}
-	return false
+	return token == "valid token"
 }
 
 func (s *mockedSecretManager) GetSetting(_ string) (string, error) {

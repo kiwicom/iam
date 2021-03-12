@@ -25,7 +25,7 @@ type metricService interface {
 	Incr(string, ...string)
 }
 
-// Server houses all dependencies and routing of the server
+// Server houses all dependencies and routing of the server.
 type Server struct {
 	Router        *tracingRouter.Router
 	SecretManager secrets.SecretManager
@@ -36,7 +36,7 @@ type Server struct {
 	ServiceName string
 }
 
-// NewServer creates a new instance of server and sets up routes
+// NewServer creates a new instance of server and sets up routes.
 func NewServer(serviceName string) *Server {
 	s := Server{
 		ServiceName: serviceName,

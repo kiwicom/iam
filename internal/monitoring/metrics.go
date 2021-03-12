@@ -9,7 +9,7 @@ import (
 	"github.com/pkg/errors"
 )
 
-// MetricSettings are settings required to set up metrics client
+// MetricSettings are settings required to set up metrics client.
 type MetricSettings struct {
 	Host        string
 	Port        string
@@ -17,16 +17,17 @@ type MetricSettings struct {
 	Environment string
 }
 
-// Metrics is the instance of metrics to be used
+// Metrics is the instance of metrics to be used.
 type Metrics struct {
 	client *statsd.Client
 	rate   float64
 }
 
-// CreateNewMetricService creates an instance of Metrics and returns it
+// CreateNewMetricService creates an instance of Metrics and returns it.
 func CreateNewMetricService(settings MetricSettings) (*Metrics, error) {
 	if settings.Host == "" || settings.Port == "" {
 		log.Println("Datadog metrics disabled.")
+
 		return &Metrics{rate: 1.0}, nil
 	}
 
@@ -39,13 +40,14 @@ func CreateNewMetricService(settings MetricSettings) (*Metrics, error) {
 
 	if ddErr != nil {
 		ddErr = errors.Wrap(ddErr, "couldn't initialize Datadog client")
+
 		return &Metrics{}, ddErr
 	}
 
 	return &Metrics{client: dataDogClient, rate: 1.0}, nil
 }
 
-// Incr increases a metric by 1
+// Incr increases a metric by 1.
 func (c *Metrics) Incr(name string, tags ...string) {
 	if c == nil || c.client == nil {
 		return

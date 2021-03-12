@@ -5,7 +5,7 @@ import (
 	"net/http"
 )
 
-// handleHello is a route for HelloWorld
+// handleHello is a route for HelloWorld.
 func (s *Server) handleHello() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		message := "42"

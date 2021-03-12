@@ -7,6 +7,10 @@ import (
 	"time"
 
 	"github.com/getsentry/raven-go"
+	_ "google.golang.org/appengine"
+	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials"
+	"google.golang.org/grpc/reflection"
 
 	grpcAPI "github.com/kiwicom/iam/api/grpc"
 	pb "github.com/kiwicom/iam/api/grpc/v1"
@@ -16,13 +20,6 @@ import (
 	"github.com/kiwicom/iam/internal/security/secrets"
 	"github.com/kiwicom/iam/internal/services/okta"
 	"github.com/kiwicom/iam/internal/storage"
-
-	// AppEngine is added manually due to issues with go.mod
-	// https://skypicker.slack.com/archives/CA154LA5T/p1560781760024700
-	_ "google.golang.org/appengine"
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/credentials"
-	"google.golang.org/grpc/reflection"
 )
 
 func syncOkta(client *okta.Client) {
@@ -59,7 +56,7 @@ func syncSecrets(manager *secrets.JSONFileManager) {
 	}
 }
 
-// Cacher contains methods needed from a cache
+// Cacher contains methods needed from a cache.
 type Cacher interface {
 	Del(key string) error
 }
@@ -89,11 +86,8 @@ func createSecretManager(path string) secrets.SecretManager {
 	manager, err := secrets.CreateNewJSONFileManager(path)
 
 	if err == nil {
-		err := manager.SyncSecrets()
-
-		// If JSON secrets file exists, but can't be processed then kill the app as oktaToken will not be available
-		if err != nil {
-			panic(err)
+		if syncErr := manager.SyncSecrets(); syncErr != nil {
+			panic(syncErr)
 		}
 
 		go capturePanic(func() { syncSecrets(manager) })
@@ -111,6 +105,7 @@ func createSecretManager(path string) secrets.SecretManager {
 func initErrorTracking(sentry cfg.SentryConfig) {
 	if sentry.Token == "" {
 		log.Println("SENTRY_DSN is not set. Error logging disabled.")
+
 		return
 	}
 	err := raven.SetDSN(sentry.Token)
@@ -208,12 +203,12 @@ func main() {
 	restServer.Tracer = tracer
 
 	// 0.0.0.0 is specified to allow listening in Docker
-	var address = "0.0.0.0"
+	address := "0.0.0.0"
 	if iamConfig.UseLocalhost {
 		address = "localhost"
 	}
 
-	var serveAddr = net.JoinHostPort(address, iamConfig.Port)
+	serveAddr := net.JoinHostPort(address, iamConfig.Port)
 	server := &http.Server{
 		Handler:      restServer.Router,
 		Addr:         serveAddr,

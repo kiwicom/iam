@@ -5,10 +5,10 @@ import (
 	"strings"
 )
 
-var oktaLinkPattern = regexp.MustCompile(`(?:<)(.*)(?:>)`)
+var oktaLinkPattern = regexp.MustCompile(`<(.*)>`)
 
 func (c *Client) fetchResource(url string) (*Response, error) {
-	var request = Request{
+	request := Request{
 		Method: "GET",
 		URL:    url,
 		Body:   nil,

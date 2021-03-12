@@ -6,15 +6,14 @@ import (
 
 	"github.com/getsentry/raven-go"
 	"github.com/kiwicom/go-useragent"
+	"golang.org/x/sync/singleflight"
 
 	cfg "github.com/kiwicom/iam/configs"
 	"github.com/kiwicom/iam/internal/monitoring"
 	"github.com/kiwicom/iam/internal/storage"
-
-	"golang.org/x/sync/singleflight"
 )
 
-// Cacher contains methods needed from a cache
+// Cacher contains methods needed from a cache.
 type Cacher interface {
 	Get(key string, value interface{}) error
 	Set(key string, value interface{}, ttl time.Duration) error
@@ -25,7 +24,7 @@ type Cacher interface {
 // Fetcher is a function used to send HTTP requests.
 type Fetcher func(req Request) (*Response, error)
 
-// ClientOpts contains options to create an Okta client
+// ClientOpts contains options to create an Okta client.
 type ClientOpts struct {
 	Cache         Cacher
 	LockManager   *storage.LockManager
@@ -36,7 +35,7 @@ type ClientOpts struct {
 	CustomFetcher func(userAgent string, metrics *monitoring.Metrics) Fetcher
 }
 
-// Client represent an Okta client
+// Client represent an Okta client.
 type Client struct {
 	group     singleflight.Group
 	cache     Cacher
@@ -62,10 +61,11 @@ func getUserAgent(iamConfig *cfg.ServiceConfig) (string, error) {
 	}
 
 	uaString, uaErr := ua.Format()
+
 	return uaString, uaErr
 }
 
-// NewClient creates an Okta client based on the given options
+// NewClient creates an Okta client based on the given options.
 func NewClient(opts *ClientOpts) *Client {
 	uaString, uaErr := getUserAgent(opts.IAMConfig)
 	if uaErr != nil {

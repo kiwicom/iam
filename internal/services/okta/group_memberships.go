@@ -11,7 +11,7 @@ import (
 	"github.com/kiwicom/iam/internal/storage"
 )
 
-// GroupMembership holds the current user ids for users who are part of a given group
+// GroupMembership holds the current user ids for users who are part of a given group.
 type GroupMembership struct {
 	GroupID   string
 	GroupName string
@@ -77,6 +77,7 @@ func (c *Client) updateGroupMemberships(memberships []GroupMembership) error {
 		if !groupPattern.Match([]byte(membership.GroupName)) {
 			formatErr := errors.New("group name has incorrect format: " + membership.GroupName)
 			raven.CaptureError(formatErr, nil)
+
 			continue
 		}
 
