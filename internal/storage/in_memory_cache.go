@@ -5,16 +5,16 @@ import (
 	"time"
 )
 
-// item represent a value in cache
+// item represent a value in cache.
 type item struct {
 	value      []byte
 	expiration time.Time
 }
 
-// InMemoryCache is an in memory cache used as a backup when Redis is unavailable
+// InMemoryCache is an in memory cache used as a backup when Redis is unavailable.
 type InMemoryCache map[string]item
 
-// NewInMemoryCache initializes and returns an InMemoryCache
+// NewInMemoryCache initializes and returns an InMemoryCache.
 func NewInMemoryCache() InMemoryCache {
 	return make(map[string]item)
 }
@@ -22,7 +22,7 @@ func NewInMemoryCache() InMemoryCache {
 // Get retrieves an item from cache.
 // `key` is case insensitive.
 // `value` is a pointer to the variable that will receive the data.
-// `error` is ErrNotFound when no value is found
+// `error` is ErrNotFound when no value is found.
 func (c InMemoryCache) Get(key string, value interface{}) error {
 	lowerKey := strings.ToLower(key)
 	data, ok := c[lowerKey]
@@ -54,17 +54,19 @@ func (c InMemoryCache) Set(key string, value interface{}, ttl time.Duration) err
 		strVal,
 		expiration,
 	}
+
 	return nil
 }
 
-// Del deletes an item from cache
+// Del deletes an item from cache.
 func (c InMemoryCache) Del(key string) error {
 	lowerKey := strings.ToLower(key)
 	delete(c, lowerKey)
+
 	return nil
 }
 
-// MSet writes items to cache in bulk
+// MSet writes items to cache in bulk.
 func (c InMemoryCache) MSet(pairs map[string]interface{}, ttl time.Duration) error {
 	bytePairs := make(map[string][]byte)
 
@@ -90,5 +92,6 @@ func (c InMemoryCache) MSet(pairs map[string]interface{}, ttl time.Duration) err
 			expiration,
 		}
 	}
+
 	return nil
 }

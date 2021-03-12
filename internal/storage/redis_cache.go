@@ -16,23 +16,23 @@ import (
 
 var json = jsoniter.ConfigCompatibleWithStandardLibrary
 
-// RedisCache contains redis client
+// RedisCache contains redis client.
 type RedisCache struct {
 	client  *redisTrace.Client
 	backup  InMemoryCache
 	version int
 }
 
-// ErrNotFound is returned when an item is not present in cache
+// ErrNotFound is returned when an item is not present in cache.
 var ErrNotFound = errors.New("item not found")
 
-// shouldUseRedisBackup returns whether or not the inMemory backup for Redis
+// shouldUseRedisBackup returns whether or not the inMemory backup for Redis.
 // should be used, depending on the error returned by Redis.
 func shouldUseRedisBackup(err error) bool {
 	return err != nil && err != redis.Nil
 }
 
-// NewRedisCache initializes and returns a RedisCache
+// NewRedisCache initializes and returns a RedisCache.
 func NewRedisCache(host, port string, version int) *RedisCache {
 	opts := &redis.Options{Addr: net.JoinHostPort(host, port)}
 
@@ -52,6 +52,7 @@ func (c *RedisCache) Get(key string, value interface{}) error {
 	data, err := c.client.Get(lowerKey).Bytes()
 	if err == nil {
 		err = json.Unmarshal(data, &value)
+
 		return err
 	}
 	if err == redis.Nil {
@@ -63,10 +64,11 @@ func (c *RedisCache) Get(key string, value interface{}) error {
 		raven.CaptureMessage("Redis down using inMemory GET", nil)
 		err = c.backup.Get(key, value)
 	}
+
 	return err
 }
 
-// Set writes data to cache with the specified lifespan
+// Set writes data to cache with the specified lifespan.
 // `key` is case insensitive.
 func (c *RedisCache) Set(key string, value interface{}, ttl time.Duration) error {
 	strVal, err := json.Marshal(value)
@@ -81,10 +83,11 @@ func (c *RedisCache) Set(key string, value interface{}, ttl time.Duration) error
 		raven.CaptureMessage("Redis down using inMemory SET", nil)
 		err = c.backup.Set(key, value, ttl)
 	}
+
 	return err
 }
 
-// Del deletes an item from cache
+// Del deletes an item from cache.
 func (c *RedisCache) Del(key string) error {
 	lowerKey := c.cacheKey(key)
 	_, err := c.client.Del(lowerKey).Result()
@@ -93,10 +96,11 @@ func (c *RedisCache) Del(key string) error {
 		raven.CaptureMessage("Redis down using inMemory DEL", nil)
 		_ = c.backup.Del(key)
 	}
+
 	return err
 }
 
-// MSet writes items to cache in bulk
+// MSet writes items to cache in bulk.
 func (c *RedisCache) MSet(pairs map[string]interface{}, ttl time.Duration) error {
 	args := make([]interface{}, len(pairs)*2)
 	i := 0
@@ -116,6 +120,7 @@ func (c *RedisCache) MSet(pairs map[string]interface{}, ttl time.Duration) error
 		log.Println("Redis down using inMemory MSET")
 		raven.CaptureMessage("Redis down using inMemory MSET", nil)
 		err = c.backup.MSet(pairs, ttl)
+
 		return err
 	}
 

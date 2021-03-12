@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-// GetToken extracts token from Bearer scheme
+// GetToken extracts token from Bearer scheme.
 func GetToken(authorization string) (string, error) {
 	token := strings.SplitN(authorization, "Bearer", 2)
 

@@ -21,7 +21,7 @@ var httpClient = &http.Client{
 	Timeout: time.Second * 30,
 }
 
-// Request contains options for an HTTP request created using shared.Fetch
+// Request contains options for an HTTP request created using shared.Fetch.
 type Request struct {
 	Method string
 	URL    string
@@ -30,7 +30,7 @@ type Request struct {
 }
 
 // Response for an HTTP request, exposes a JSON method to get the
-// retrieved data
+// retrieved data.
 type Response struct {
 	*http.Response
 }
@@ -41,12 +41,13 @@ func (res Response) String() (string, error) {
 
 	buf := new(bytes.Buffer)
 	_, err := buf.ReadFrom(res.Body)
+
 	return buf.String(), err
 }
 
 // JSON retrieves data from HTTP response and store it in the struct pointed by
 // `body` (note: `body` should be a pointer to the struct you expect the HTTP
-// call to return)
+// call to return).
 func (res Response) JSON(body interface{}) error {
 	// Right before returning, close the stream used for reading the
 	// response's body.
@@ -57,7 +58,7 @@ func (res Response) JSON(body interface{}) error {
 
 // defaultFetcher returns a function to send HTTP requests response, this
 // wrapper is used to set the userAgent, and metrics client package wide.
-func defaultFetcher(userAgent string, service string, metrics *monitoring.Metrics) func(req Request) (*Response, error) {
+func defaultFetcher(userAgent, service string, metrics *monitoring.Metrics) func(req Request) (*Response, error) {
 	return func(req Request) (*Response, error) {
 		log.Println(req.Method, req.URL)
 
@@ -72,22 +73,30 @@ func defaultFetcher(userAgent string, service string, metrics *monitoring.Metric
 		httpRes, err := httpClient.Do(httpReq) //nolint:bodyclose // body is closed on reading either to string or JSON
 		if err != nil {
 			metrics.Incr("outgoing.requests", monitoring.Tag("service", service), monitoring.Tag("status", "error"))
+
 			return nil, err
 		}
-		metrics.Incr("outgoing.requests", monitoring.Tag("service", service), monitoring.Tag("http_code", strconv.Itoa(httpRes.StatusCode)), monitoring.Tag("status", "ok"))
+		metrics.Incr(
+			"outgoing.requests",
+			monitoring.Tag("service", service),
+			monitoring.Tag("http_code", strconv.Itoa(httpRes.StatusCode)),
+			monitoring.Tag("status", "ok"),
+		)
+
 		return &Response{httpRes}, nil
 	}
 }
 
-// joinURL parses and joins a base URL to a path safely
+// joinURL parses and joins a base URL to a path safely.
 func joinURL(baseURL string, pathname ...string) (string, error) {
 	u, err := url.Parse(baseURL)
 	if err != nil {
 		return "", err
 	}
 
-	// prepend u.Path to pathname slice
+	// Prepend u.Path to pathname slice.
 	elems := append([]string{u.Path}, pathname...)
 	u.Path = path.Join(elems...)
+
 	return u.String(), nil
 }

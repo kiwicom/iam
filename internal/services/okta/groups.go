@@ -13,7 +13,7 @@ import (
 
 const iamGroupPrefix = "iam-"
 
-// Group represents an Okta group
+// Group represents an Okta group.
 type Group struct {
 	ID                    string    `json:"id"`
 	Name                  string    `json:"name"`
@@ -100,6 +100,7 @@ func (c *Client) getUserGroups(user *User) ([]Group, error) {
 			if err := c.cache.Get(user.Email, &u); err != nil {
 				return nil, err
 			}
+
 			return u.GroupMembership, nil
 		}
 		defer c.lock.Delete(lockName)
@@ -114,11 +115,13 @@ func (c *Client) getUserGroups(user *User) ([]Group, error) {
 		if cacheErr != nil {
 			raven.CaptureError(cacheErr, nil)
 		}
+
 		return groups, nil
 	})
 
 	if err != nil {
 		return nil, err
 	}
+
 	return val.([]Group), nil
 }

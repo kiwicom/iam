@@ -11,10 +11,10 @@ const (
 	serviceNamePattern string = `^[\w\s-]+`
 )
 
-// It's important to add $ in order to match the whole string
+// It's important to add $ in order to match the whole string.
 var checkServiceNameRe = regexp.MustCompile(serviceNamePattern + "$")
 
-// CheckServiceName returns if the given service name contains expected characters only
+// CheckServiceName returns if the given service name contains expected characters only.
 func CheckServiceName(service string) error {
 	safe := checkServiceNameRe.MatchString(service)
 	if !safe {
@@ -24,17 +24,18 @@ func CheckServiceName(service string) error {
 	return nil
 }
 
-// Service holds the requesting service's name and environment
+// Service holds the requesting service's name and environment.
 type Service struct {
 	Name        string
 	Environment string
 }
 
-// GetService returns the service name and environment based on the given user agent
+// GetService returns the service name and environment based on the given user agent.
 func GetService(incomingUserAgent string) (Service, error) {
 	ua, err := useragent.Parse(incomingUserAgent)
 	if err != nil {
 		return Service{}, err
 	}
+
 	return Service{ua.Name, ua.Environment}, nil
 }

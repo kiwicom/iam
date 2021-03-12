@@ -19,17 +19,17 @@ type userDataService interface {
 	AddPermissions(*okta.User, string) error
 }
 
-// Server is an instance of the GRPC server struct which includes all dependencies
+// Server is an instance of the GRPC server struct which includes all dependencies.
 type Server struct {
 	userService userDataService
 }
 
-// CreateServer creates a new Server struct and assigns all dependencies to it
+// CreateServer creates a new Server struct and assigns all dependencies to it.
 func CreateServer(userServiceClient userDataService) (*Server, error) {
 	return &Server{userService: userServiceClient}, nil
 }
 
-// User returns a single user based on email
+// User returns a single user based on email.
 func (s *Server) User(ctx context.Context, in *pb.UserRequest) (*pb.UserResponse, error) {
 	user, userErr := s.userService.GetUser(in.Email)
 	if userErr != nil {
@@ -61,6 +61,7 @@ func (s *Server) User(ctx context.Context, in *pb.UserRequest) (*pb.UserResponse
 	if permErr != nil {
 		log.Println("[ERROR]", permErr.Error())
 		raven.CaptureError(permErr, nil)
+
 		return nil, errors.New("unexpected server error")
 	}
 

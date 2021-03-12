@@ -13,12 +13,14 @@ import (
 	"github.com/kiwicom/iam/internal/services/okta"
 )
 
-// handleUser looks up an Okta user by email
+// handleUser looks up an Okta user by email.
+// nolint:funlen // todo: refactor
 func (s *Server) handleUserGET() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		params, paramErr := validateUsersParams(r.URL.RawQuery)
 		if paramErr != nil {
 			http.Error(w, paramErr.Error(), http.StatusBadRequest)
+
 			return
 		}
 		email := params["email"]
@@ -28,6 +30,7 @@ func (s *Server) handleUserGET() http.HandlerFunc {
 			service, getServiceErr := security.GetService(r.Header.Get("User-Agent"))
 			if getServiceErr != nil {
 				http.Error(w, "Missing service and invalid user agent", http.StatusBadRequest)
+
 				return
 			}
 
@@ -45,10 +48,12 @@ func (s *Server) handleUserGET() http.HandlerFunc {
 		oktaUser, err := getUser()
 		if err == okta.ErrUserNotFound {
 			http.Error(w, "User "+email+" not found", http.StatusNotFound)
+
 			return
 		}
 		if err != nil {
 			http.Error(w, "Service unavailable", http.StatusInternalServerError)
+
 			return
 		}
 
@@ -76,6 +81,7 @@ func (s *Server) handleUserGET() http.HandlerFunc {
 		mapUser, err := formatUser(oktaUser)
 		if err != nil {
 			http.Error(w, "Internal error", http.StatusInternalServerError)
+
 			return
 		}
 
@@ -108,7 +114,7 @@ func validateUsersParams(rawQuery string) (map[string]string, error) {
 	return params, nil
 }
 
-// formatUser converts the given user to map
+// formatUser converts the given user to map.
 func formatUser(s *okta.User) (map[string]interface{}, error) {
 	str, err := json.Marshal(s)
 	if err != nil {

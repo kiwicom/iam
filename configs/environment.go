@@ -54,7 +54,7 @@ type ServiceConfig struct {
 	Release      string `mapstructure:"SENTRY_RELEASE"`
 }
 
-// OktaConfig stores configuration values for Okta client
+// OktaConfig stores configuration values for Okta client.
 type OktaConfig struct {
 	URL string `mapstructure:"OKTA_URL"`
 }
@@ -67,21 +67,21 @@ type StorageConfig struct {
 	LockExpiration time.Duration `mapstructure:"REDIS_LOCK_EXPIRATION"`
 }
 
-// DatadogConfig stores configuration values for Datadog client
+// DatadogConfig stores configuration values for Datadog client.
 type DatadogConfig struct {
 	Environment string `mapstructure:"APP_ENV"`
 	URL         string `mapstructure:"DATADOG_ADDR"`
 	AgentHost   string `mapstructure:"DD_AGENT_HOST"`
 }
 
-// SentryConfig stores configuration values for Sentry client
+// SentryConfig stores configuration values for Sentry client.
 type SentryConfig struct {
 	Token       string `mapstructure:"SENTRY_DSN"`
 	Environment string `mapstructure:"APP_ENV"`
 	Release     string `mapstructure:"SENTRY_RELEASE"`
 }
 
-// SecretsConfig stores configuration values for S2S authentication handling
+// SecretsConfig stores configuration values for S2S authentication handling.
 type SecretsConfig struct {
 	Path string `mapstructure:"SECRETS_PATH"`
 }
@@ -111,7 +111,7 @@ var defaultValues = map[string]interface{}{
 	// generation, and for finding regressions on Sentry.
 	"SENTRY_RELEASE": "",
 	// Env is taken from APP_ENV.
-	"DATADOG_ADDR":    "",
-	"DD_AGENT_HOST":   "",
-	"SECRETS_PATH": "/etc/vault/secrets.json",
+	"DATADOG_ADDR":  "",
+	"DD_AGENT_HOST": "",
+	"SECRETS_PATH":  "/etc/vault/secrets.json",
 }

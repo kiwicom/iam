@@ -4,13 +4,14 @@ import (
 	"log"
 	"net/http"
 
+	"gopkg.in/DataDog/dd-trace-go.v1/ddtrace/tracer"
+
 	"github.com/kiwicom/iam/api"
 	"github.com/kiwicom/iam/internal/monitoring"
 	"github.com/kiwicom/iam/internal/security"
-	"gopkg.in/DataDog/dd-trace-go.v1/ddtrace/tracer"
 )
 
-// AuthWrapper wraps a router to validate the authentication token
+// AuthWrapper wraps a router to validate the authentication token.
 func (s *Server) middlewareSecurity(h http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		err := s.checkAuth(r)
@@ -22,6 +23,7 @@ func (s *Server) middlewareSecurity(h http.HandlerFunc) http.HandlerFunc {
 			}
 
 			log.Println("[ERROR]", err.Error())
+
 			return
 		}
 
@@ -30,7 +32,7 @@ func (s *Server) middlewareSecurity(h http.HandlerFunc) http.HandlerFunc {
 	}
 }
 
-// checkAuth checks if user has proper token + user agent
+// checkAuth checks if user has proper token + user agent.s.
 func (s *Server) checkAuth(r *http.Request) error {
 	requestToken, err := security.GetToken(r.Header.Get("Authorization"))
 	if err != nil {
@@ -48,7 +50,7 @@ func (s *Server) checkAuth(r *http.Request) error {
 		span.SetTag("service-name", service.Name)
 	}
 
-	tokenErr := security.VerifyToken(s.SecretManager, service, requestToken)
+	tokenErr := security.VerifyToken(s.SecretManager, requestToken)
 
 	if tokenErr != nil {
 		return api.Error{Message: "Unauthorized: " + tokenErr.Error(), Code: http.StatusUnauthorized}

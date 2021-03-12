@@ -65,10 +65,10 @@ func formatUser(oktaID string, user *oktaUserProfile) User {
 	}
 }
 
-// ErrUserNotFound is returned when a user is not present in Okta
+// ErrUserNotFound is returned when a user is not present in Okta.
 var ErrUserNotFound = errors.New("user not found")
 
-// fetchUser retrieves a user from Okta by email
+// fetchUser retrieves a user from Okta by email.
 func (c *Client) fetchUser(email string) (User, error) {
 	userURL, err := joinURL(c.baseURL, "/users/", email)
 	if err != nil {
@@ -79,7 +79,7 @@ func (c *Client) fetchUser(email string) (User, error) {
 		ID      string
 		Profile oktaUserProfile
 	}
-	var request = Request{
+	request := Request{
 		Method: "GET",
 		URL:    userURL,
 		Body:   nil,
@@ -94,8 +94,9 @@ func (c *Client) fetchUser(email string) (User, error) {
 		return User{}, ErrUserNotFound
 	}
 	if httpResponse.StatusCode != http.StatusOK {
-		var errorMessage = "GET " + userURL + " returned error: " + httpResponse.Status
+		errorMessage := "GET " + userURL + " returned error: " + httpResponse.Status
 		log.Println(errorMessage)
+
 		return User{}, errors.New(errorMessage)
 	}
 
@@ -104,11 +105,12 @@ func (c *Client) fetchUser(email string) (User, error) {
 		return User{}, jsonErr
 	}
 
-	var user = formatUser(response.ID, &response.Profile)
+	user := formatUser(response.ID, &response.Profile)
+
 	return user, nil
 }
 
-// fetchAllUsers retrieves all Okta users
+// fetchAllUsers retrieves all Okta users.
 func (c *Client) fetchAllUsers() ([]User, error) {
 	var allUsers []User
 

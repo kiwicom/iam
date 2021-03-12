@@ -28,11 +28,12 @@ func (b *BodyMock) Read(p []byte) (int, error) {
 
 func (b *BodyMock) Close() error {
 	b.Called()
+
 	return nil
 }
 
 func TestString(t *testing.T) {
-	var body = BodyMock{Value: `{ "message": "this is a test" }`}
+	body := BodyMock{Value: `{ "message": "this is a test" }`}
 	body.On("Close").Return()
 
 	res := Response{
@@ -47,18 +48,16 @@ func TestString(t *testing.T) {
 }
 
 func TestJSON(t *testing.T) {
-	var body = BodyMock{Value: `{ "message": "this is a test" }`}
+	body := BodyMock{Value: `{ "message": "this is a test" }`}
 	body.On("Close").Return()
 
 	type Data struct{ Message string }
 	var expectedData Data
 
-	var res = Response{
+	res := Response{
 		&http.Response{Body: &body},
 	}
-	err := res.JSON(&expectedData)
-
-	if err != nil {
+	if err := res.JSON(&expectedData); err != nil {
 		panic(err)
 	}
 

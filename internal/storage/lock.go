@@ -21,7 +21,7 @@ type LockManager struct {
 	expiration time.Duration
 }
 
-// NewLockManager initializes and returns a LockManager for Redis
+// NewLockManager initializes and returns a LockManager for Redis.
 func NewLockManager(cache cache, retryDelay, expiration time.Duration) *LockManager {
 	return &LockManager{
 		cache:      cache,
@@ -65,14 +65,14 @@ func (l *LockManager) Create(name string) error {
 		err = errors.Wrap(err, "error creating lock")
 		raven.CaptureError(err, nil)
 	}
+
 	return nil
 }
 
 // Delete removes a lock for the provided name.
 func (l *LockManager) Delete(name string) {
 	key := "lock:" + name
-	err := l.cache.Del(key)
-	if err != nil {
+	if err := l.cache.Del(key); err != nil {
 		raven.CaptureError(err, nil)
 	}
 }

@@ -4,13 +4,13 @@ import (
 	"context"
 	"log"
 
-	"github.com/kiwicom/iam/internal/security"
-	"github.com/kiwicom/iam/internal/security/secrets"
-
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
 	"google.golang.org/grpc/status"
+
+	"github.com/kiwicom/iam/internal/security"
+	"github.com/kiwicom/iam/internal/security/secrets"
 )
 
 var (
@@ -39,7 +39,7 @@ func UnarySecurityWrapper(secretManager secrets.SecretManager) grpc.UnaryServerI
 			return nil, errBadUA
 		}
 
-		service, serviceErr := security.GetService(md[metadataUserAgent][0])
+		_, serviceErr := security.GetService(md[metadataUserAgent][0])
 
 		if serviceErr != nil {
 			return nil, errBadUA
@@ -54,9 +54,10 @@ func UnarySecurityWrapper(secretManager secrets.SecretManager) grpc.UnaryServerI
 			return nil, errInvalidToken
 		}
 
-		tokenErr := security.VerifyToken(secretManager, service, token)
+		tokenErr := security.VerifyToken(secretManager, token)
 		if tokenErr != nil {
 			log.Println(tokenErr)
+
 			return nil, errInvalidToken
 		}
 
@@ -64,6 +65,7 @@ func UnarySecurityWrapper(secretManager secrets.SecretManager) grpc.UnaryServerI
 		if err != nil {
 			log.Printf("RPC failed with error %v", err)
 		}
+
 		return m, err
 	}
 }

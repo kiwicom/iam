@@ -1,29 +1,31 @@
 package secrets
 
 import (
-	"encoding/json"
 	"errors"
 	"io/ioutil"
-	"log"	
+	"log"
+
+	jsoniter "github.com/json-iterator/go"
 )
 
-// Secrets represents the JSON file structure 
+var json = jsoniter.ConfigCompatibleWithStandardLibrary
+
+// Secrets represents the JSON file structure.
 type Secrets struct {
 	Settings map[string]string            `json:"settings"`
 	TokenMap map[string]map[string]string `json:"tokens"`
 }
 
-// JSONFileManager holds a local copy of all secrets (settings & S2S tokens)
+// JSONFileManager holds a local copy of all secrets (settings & S2S tokens).
 type JSONFileManager struct {
-	raw []byte
+	raw      []byte
 	settings map[string]string
-	tokens map[string]bool
+	tokens   map[string]bool
 }
 
-// CreateNewJSONFileManager creates a new secret manager hooked up to Viper
+// CreateNewJSONFileManager creates a new secret manager hooked up to Viper.
 func CreateNewJSONFileManager(path string) (*JSONFileManager, error) {
 	data, err := ioutil.ReadFile(path)
-
 	if err != nil {
 		return nil, err
 	}
@@ -31,11 +33,13 @@ func CreateNewJSONFileManager(path string) (*JSONFileManager, error) {
 	log.Println("Using JSON secret file at:", path)
 
 	return &JSONFileManager{
-		raw: data,
+		raw:      data,
+		settings: nil,
+		tokens:   nil,
 	}, nil
 }
 
-// SyncSecrets syncs all the available tokens from env and saves them to local state
+// SyncSecrets syncs all the available tokens from env and saves them to local state.
 func (s *JSONFileManager) SyncSecrets() error {
 	var secrets Secrets
 
@@ -61,12 +65,12 @@ func (s *JSONFileManager) SyncSecrets() error {
 	return nil
 }
 
-// DoesTokenExist checks if a token is present in the secret manager
+// DoesTokenExist checks if a token is present in the secret manager.
 func (s JSONFileManager) DoesTokenExist(reqToken string) bool {
 	return s.tokens[reqToken]
 }
 
-// GetSetting gets a setting from the secret manager
+// GetSetting gets a setting from the secret manager.
 func (s JSONFileManager) GetSetting(key string) (string, error) {
 	data := s.settings[key]
 

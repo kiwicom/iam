@@ -6,14 +6,14 @@ import (
 	"strings"
 	"time"
 
+	"github.com/getsentry/raven-go"
+
 	cfg "github.com/kiwicom/iam/configs"
 	"github.com/kiwicom/iam/internal/monitoring"
 	"github.com/kiwicom/iam/internal/storage"
-
-	"github.com/getsentry/raven-go"
 )
 
-// BoocsekAttributes contains formatted Boocsek attributes provided by Okta
+// BoocsekAttributes contains formatted Boocsek attributes provided by Okta.
 type BoocsekAttributes struct {
 	Site        string   `json:"site"`
 	Position    string   `json:"position"`
@@ -28,7 +28,7 @@ type BoocsekAttributes struct {
 	Skills      []string `json:"skills"`
 }
 
-// User contains formatted user data provided by Okta
+// User contains formatted user data provided by Okta.
 type User struct {
 	OktaID                string            `json:"oktaId,omitempty"` // Exported to be cache-able
 	EmployeeNumber        string            `json:"employeeNumber"`
@@ -87,6 +87,7 @@ func (c *Client) GetUser(email string) (User, error) {
 				cacheErr := c.cache.Set(email, User{}, cfg.Expirations.User)
 				raven.CaptureError(cacheErr, nil)
 			}
+
 			return User{}, fetchErr
 		}
 
@@ -94,12 +95,14 @@ func (c *Client) GetUser(email string) (User, error) {
 		if cacheErr != nil {
 			raven.CaptureError(cacheErr, nil)
 		}
+
 		return user, nil
 	})
 
 	if err != nil {
 		return User{}, err
 	}
+
 	return val.(User), nil
 }
 
@@ -120,6 +123,7 @@ func (c *Client) AddPermissions(user *User, service string) error {
 			// If there are no groups cached for the service and it's less than 10
 			// minutes from the last sync, we assume that there are no groups for that
 			// service.
+
 			return nil
 		}
 
@@ -149,10 +153,11 @@ func (c *Client) AddPermissions(user *User, service string) error {
 	return nil
 }
 
-// GetGroups retrieves Okta groups
+// GetGroups retrieves Okta groups.
 func (c *Client) GetGroups() ([]Group, error) {
 	var groups []Group
 	err := c.cache.Get("groups", &groups)
+
 	return groups, err
 }
 
@@ -161,6 +166,7 @@ func (c *Client) SyncUsers() {
 	lockErr := c.lock.Create("sync_users")
 	if lockErr == storage.ErrLockExists {
 		log.Println("Aborted, users were already fetched")
+
 		return
 	}
 	defer c.lock.Delete("sync_users")
@@ -170,6 +176,7 @@ func (c *Client) SyncUsers() {
 		log.Println("Error fetching users", err)
 		c.metrics.Incr("okta_sync", monitoring.Tag("type", "users"), monitoring.Tag("status", "error"))
 		raven.CaptureError(err, nil)
+
 		return
 	}
 
@@ -184,6 +191,7 @@ func (c *Client) SyncUsers() {
 		log.Println("Error caching users", err)
 		c.metrics.Incr("okta_sync", monitoring.Tag("type", "users"), monitoring.Tag("status", "error"))
 		raven.CaptureError(err, nil)
+
 		return
 	}
 	log.Println("Cached", len(users), "users")
@@ -196,6 +204,7 @@ func (c *Client) SyncGroups() {
 	lockErr := c.lock.Create("sync_groups")
 	if lockErr == storage.ErrLockExists {
 		log.Println("Aborted, groups were already fetched")
+
 		return
 	}
 	defer c.lock.Delete("sync_groups")
@@ -206,15 +215,17 @@ func (c *Client) SyncGroups() {
 		log.Println("Error fetching groups", err)
 		c.metrics.Incr("okta_sync", monitoring.Tag("type", "groups"), monitoring.Tag("status", "error"))
 		raven.CaptureError(err, nil)
+
 		return
 	}
 
-	// We need to keep track of users assigned to various groups
+	// We need to keep track of users assigned to various groups.
 	groupMemberships, err := c.fetchGroupMemberships(groups)
 	if err != nil {
 		log.Println("Error fetching group memberships ", err)
 		c.metrics.Incr("okta_sync", monitoring.Tag("type", "groups"), monitoring.Tag("status", "error"))
 		raven.CaptureError(err, nil)
+
 		return
 	}
 
@@ -223,6 +234,7 @@ func (c *Client) SyncGroups() {
 			log.Println("Error updating group memeberships ", err)
 			c.metrics.Incr("okta_sync", monitoring.Tag("type", "groups"), monitoring.Tag("status", "error"))
 			raven.CaptureError(err, nil)
+
 			return
 		}
 	}
@@ -231,6 +243,7 @@ func (c *Client) SyncGroups() {
 		log.Println("Error while caching last synchronization time ", err)
 		c.metrics.Incr("okta_sync", monitoring.Tag("type", "groups"), monitoring.Tag("status", "error"))
 		raven.CaptureError(err, nil)
+
 		return
 	}
 	log.Println("Cached", len(groupMemberships), "group memberships")
