@@ -4,7 +4,7 @@ install_deps:
 	go mod download
 	GO111MODULE=off go get github.com/cespare/reflex
 	GO111MODULE=off go get -u github.com/golang/protobuf/protoc-gen-go
-	GO111MODULE=off go get -u github.com/go-swagger/go-swagger/cmd/swagger
+	GO111MODULE=on go get -u github.com/go-swagger/go-swagger/cmd/swagger
 
 start:
 	go run cmd/main.go
