@@ -2,9 +2,9 @@ GOLANGCI_LINT := $(shell command -v golangci-lint 2> /dev/null)
 
 install_deps:
 	go mod download
-	GO111MODULE=off go get github.com/cespare/reflex
-	GO111MODULE=off go get -u github.com/golang/protobuf/protoc-gen-go
-	GO111MODULE=on go get -u github.com/go-swagger/go-swagger/cmd/swagger
+	go install github.com/cespare/reflex@v0.3.0
+	go install github.com/golang/protobuf/protoc-gen-go@v1.4.3
+	go install github.com/go-swagger/go-swagger/cmd/swagger@v0.26.1
 
 start:
 	go run cmd/main.go
