@@ -7,7 +7,7 @@ require (
 	github.com/certifi/gocertifi v0.0.0-20190905060710-a5e0173ced67 // indirect
 	github.com/getsentry/raven-go v0.2.0
 	github.com/go-redis/redis v6.15.7+incompatible
-	github.com/golang/protobuf v1.3.2
+	github.com/golang/protobuf v1.5.2
 	github.com/gorilla/mux v1.7.3 // indirect
 	github.com/json-iterator/go v1.1.10
 	github.com/kiwicom/go-useragent v0.0.0-20200315101851-ba2a7d39e4db
