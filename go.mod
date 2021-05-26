@@ -3,11 +3,13 @@ module github.com/kiwicom/iam
 go 1.13
 
 require (
-	github.com/DataDog/datadog-go v3.7.2+incompatible
+	github.com/DataDog/datadog-go v4.4.0+incompatible
+	github.com/Microsoft/go-winio v0.5.0 // indirect
 	github.com/certifi/gocertifi v0.0.0-20190905060710-a5e0173ced67 // indirect
 	github.com/getsentry/raven-go v0.2.0
 	github.com/go-redis/redis v6.15.7+incompatible
-	github.com/golang/protobuf v1.3.2
+	github.com/golang/protobuf v1.4.1
+	github.com/google/uuid v1.2.0 // indirect
 	github.com/gorilla/mux v1.7.3 // indirect
 	github.com/json-iterator/go v1.1.10
 	github.com/kiwicom/go-useragent v0.0.0-20200315101851-ba2a7d39e4db
@@ -20,15 +22,11 @@ require (
 	github.com/pkg/errors v0.9.1
 	github.com/spf13/viper v1.6.2
 	github.com/stretchr/objx v0.2.0 // indirect
-	github.com/stretchr/testify v1.5.1
-	github.com/tinylib/msgp v1.1.0 // indirect
+	github.com/stretchr/testify v1.7.0
 	golang.org/x/net v0.0.0-20200226121028-0de0cce0169b // indirect
 	golang.org/x/sync v0.0.0-20201207232520-09787c993a3a
-	golang.org/x/sys v0.0.0-20200409092240-59c9f1ba88fa // indirect
-	golang.org/x/xerrors v0.0.0-20191204190536-9bdfabe68543 // indirect
 	google.golang.org/appengine v1.6.5
-	google.golang.org/genproto v0.0.0-20190927181202-20e1ac93f88c // indirect
-	google.golang.org/grpc v1.25.1
-	gopkg.in/DataDog/dd-trace-go.v1 v1.22.0
+	google.golang.org/grpc v1.27.0
+	gopkg.in/DataDog/dd-trace-go.v1 v1.31.1
 	gopkg.in/check.v1 v1.0.0-20190902080502-41f04d3bba15 // indirect
 )
